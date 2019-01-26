@@ -1,0 +1,17 @@
+Kera/NNuntuk/SCamankan/pesta olahraga/NN====================Pemerintah/NNP
+kota/NNP
+Delhi/NNP
+mengerahkan/VB
+monyet/NN
+untuk/SC
+mengusir/
+monyet-monyet/NN
+lain/JJ
+yang/SC
+berbadan/
+lebih/RB
+kecil/JJ
+dari/IN
+arena/NN
+Pesta Olahraga/NNPPersemakmuran/NNP
+====================

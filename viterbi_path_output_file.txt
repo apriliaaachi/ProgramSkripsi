@@ -1,0 +1,3 @@
+test sentence words: [start, selamat, siang, palembang, entah, kenapa, saya, suka, sangat, lihat, liukan, dan, lekukan, bentuk, jalur, lrt, palembang, , end]
+vibertiPath        : [start, NN, NNP, VB, NN, NNP, VB, NN, SC, VB, NN, SC, VB, NN, SC, VB, NN, SC, end]
+
