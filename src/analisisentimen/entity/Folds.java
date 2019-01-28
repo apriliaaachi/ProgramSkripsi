@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package analisisentimen.control;
+package analisisentimen.entity;
 
 import analisisentimen.entity.Tweet;
 import java.util.ArrayList;
@@ -16,11 +16,11 @@ import java.util.Random;
  *
  * @author Asus
  */
-public class KFoldCrossValidation {
+public class Folds {
      private List<Tweet> tweetList;
     private int folds;
 
-    public KFoldCrossValidation(int folds, List<Tweet> tweetList) {
+    public Folds(int folds, List<Tweet> tweetList) {
         this.tweetList = tweetList;
         this.folds = folds;
     }

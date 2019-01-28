@@ -5,8 +5,6 @@
  */
 package analisisentimen.control;
 
-import analisisentimen.entity.ConditionalProbability;
-import analisisentimen.entity.PriorProbability;
 import analisisentimen.entity.Tweet;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,57 +17,60 @@ import java.util.stream.DoubleStream;
  * @author Asus
  */
 public class MNBProbabilistik {
+    private double[] prior;
+    private double[][] conditional;
+    private Weighting bobotTerm;
     
-    
-    public MNBProbabilistik() {
-        
+    public MNBProbabilistik(Weighting bobot) {
+        bobotTerm = bobot;
         
     }
 
-    public List<PriorProbability> calculatePriorProbability(List<Tweet> trainingSet, Weighting bobot){
+    public double[] calculatePriorProbability(){
        
         int classes[] = new int[2];
         classes[0] = 0;
         classes[1] = 1;
-        List<PriorProbability> prior = new ArrayList<>();
-        int numberOfData = trainingSet.size();
+        double[] prior = new double[classes.length];
+        int numberOfData = bobotTerm.getTweetList().size();
         double hasil = 0;
-        
-        
         
         for (int i = 0; i < classes.length; i++) {
             
-            //System.out.println(numberOfDataWithClass + "+" + 1 + "/" + numberOfData + "+" + classes.length + ":");  
-            hasil = (double)(bobot.numberOfDataWithClass(classes[i]) + 1) / (numberOfData + classes.length);
-            
-            PriorProbability priProb = new PriorProbability(classes[i], hasil);
-            prior.add(priProb);
+            hasil = (double)(bobotTerm.numberOfDataWithClass(classes[i]) + 1) / (numberOfData + classes.length);
+            prior[i] = hasil; 
                                 
         }
-
+        
         return prior;
     }
     
-    public List<ConditionalProbability> calculateConditionalProbability(List<Tweet> trainingSet, Weighting bobot) {
+    public double[][] calculateConditionalProbability() {
         int classes[] = new int[2];
         classes[0] = 0;
         classes[1] = 1;
-        double hasil = 0;
-        List<ConditionalProbability> con = new ArrayList<>();
-        int totalTerm = bobot.getGlobalTermList().getTotalTerm();
+  
+        int totalTerm = bobotTerm.getGlobalTermList().getTotalTerm();
+        conditional = new double[classes.length][totalTerm];
+        
         
         for(int i=0; i < classes.length; i++){
-            for (int j = 0; j < totalTerm ; j++) {
             
-                hasil = (bobot.numberOfWeightWithClassInData(i, bobot.getGlobalTermList().getTermAt(j))+1)/((bobot.numberOfAllWeightWithClass(i))+totalTerm);
-
-                ConditionalProbability conProb = new ConditionalProbability(classes[0], hasil);
-                con.add(conProb);
+            for (int j = 0; j < totalTerm ; j++) {
+//                System.out.println(bobot.numberOfWeightWithClassInData(i, bobot.getGlobalTermList().getTermAt(j)));
+                
+//                System.out.println(bobot.numberOfWeightWithClassInData(i, bobot.getGlobalTermList().getTermAt(j)) + 
+//                        " " + "+" + "1" + "/" + bobot.numberOfAllWeightWithClass(i) + "+" + totalTerm + ":");
+                double hasil = (bobotTerm.numberOfWeightWithClassInData(i, bobotTerm.getGlobalTermList().getTermAt(j))+1)/((bobotTerm.numberOfAllWeightWithClass(i)) + totalTerm);
+                conditional[i][j] = hasil;
 
             }
+            //System.out.println("==============================");
+                                  
         }        
-        
-        return con;
+        return conditional;
     }
+    
+    
  
 }

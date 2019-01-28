@@ -46,11 +46,10 @@ public class Praprocess {
     }
     
     public void PraWithoutPOSTag(Tweet tweetList) throws IOException {
-        
-        Normalization normalisasi = new Normalization();    
-        String[] r = normalisasi.removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
-        String[] u = normalisasi.removeUniqueCharacter(r);
-        String[] n = normalisasi.dictionaryFormalize(u);
+         
+        String[] r = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
+        String[] u = removeUniqueCharacter(r);
+        String[] n = dictionaryFormalize(u);
         String[] s = Stemming(n);
 
 	listTokenCurrent = new TermList();
@@ -71,17 +70,16 @@ public class Praprocess {
     
 
     public void PraWithPOSTag (Tweet tweetList) throws IOException{
-        Normalization normalisasi = new Normalization(); 
         Viterbi viterbi = new Viterbi();
-        String[] r = normalisasi.removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
-        String[] u = normalisasi.removeUniqueCharacter(r);
-        String[] n = normalisasi.dictionaryFormalize(u);       
+        String[] r = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
+        String[] u = removeUniqueCharacter(r);
+        String[] n = dictionaryFormalize(u);       
         viterbi.prepareCountViterbi(n); 
         viterbi.posTagger();
         
-        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
-        System.out.println("vibertiPath        : " + viterbi.getListTag());
-        System.out.println("\n");
+//        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
+//        System.out.println("vibertiPath        : " + viterbi.getListTag());
+//        System.out.println("\n");
         
 
         Stemming stem = new Stemming();
@@ -105,7 +103,7 @@ public class Praprocess {
         
         String[] combine = new String[st.length];
         for (k=0; k<st.length; k++){
-            combine[k] = st[k] + "-" + tag[k];
+            combine[k] = st[k] + "/" + tag[k];
             //System.out.println(combine[k]);
         }
 
@@ -129,6 +127,63 @@ public class Praprocess {
 		}
             }
         }
+    }
+    
+    public String[] removeUniqueCharacter(String[] token){
+          
+          List<String> list = new ArrayList<String>(Arrays.asList(token));
+          List<Integer> temp = new ArrayList<Integer>();
+          int index;
+          
+          int i=0;
+          for(i=0; i<list.size(); i++){
+              if(list.get(i).contains("#")||
+                 list.get(i).contains("@")||
+                 list.get(i).contains("http")||
+                 list.get(i).contains("https")||
+                 list.get(i).contains("www")||
+                 list.get(i).contains("com")) {
+                  
+                 temp.add(i);
+                 
+              }
+
+          } 
+            
+        int k;
+        for(k=temp.size()-1;k>=0;k--){
+            index = temp.get(k);
+            list.remove(index);
+        }
+        
+        token = list.toArray(new String[0]);
+          
+        return token;
+    }
+    
+    
+    public String[] dictionaryFormalize(String[] token) throws IOException {
+        
+        Corpus corpus = new Corpus();
+        String[][] kamusFormal = corpus.readKamusFormal();
+        
+        for(int i=0;i<token.length;i++){
+            for(int j=0;j<kamusFormal.length;j++){
+                if(token[i].equals(kamusFormal[j][0])){
+
+                    token[i] = token[i].toLowerCase().replaceAll(token[i], kamusFormal[j][1]);
+                }
+            }
+        }
+
+        return token;
+    }
+    
+    public String removePunctuation(String tweet){
+        // Filter Punctuation
+        String result = tweet;
+        String P = "[!\"$%&'()*\\+,./;<=>?\\[\\]^~_\\`{|}…0987654321]";
+        return result.replaceAll(P, "");
     }
 
     public String[] Stemming (String[] token){

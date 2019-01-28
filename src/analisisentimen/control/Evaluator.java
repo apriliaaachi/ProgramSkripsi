@@ -15,31 +15,47 @@ import java.util.List;
 public class Evaluator {
     private MNBClassifier mnbClassifier;
 
-    public Evaluator(List<Tweet> trainingSet, Weighting bobot) {
+
+    public Evaluator(Weighting bobot) {
         
-        mnbClassifier = new MNBClassifier();
+        MNBProbabilistik mnbProbabilistik = new MNBProbabilistik(bobot);
         
-        MNBProbabilistik mnbProbabilistik = new MNBProbabilistik();
-        
-        System.out.println("INI DIA");
-        System.out.println(bobot.getGlobalTermList().getTotalTerm());
-        
-        mnbProbabilistik.calculatePriorProbability(trainingSet, bobot);
-        for (int i = 0; i < mnbProbabilistik.calculatePriorProbability(trainingSet, bobot).size(); i++) {
-            System.out.println(mnbProbabilistik.calculatePriorProbability(trainingSet, bobot).size());
-            System.out.println("Probabilitas Kelas" + " " + i + " " + "=" + mnbProbabilistik.calculatePriorProbability(trainingSet, bobot).get(i).getPriorProbability());
-            System.out.println();
+//        System.out.println(bobot.getGlobalTermList().getTotalTerm());
+        //mnbProbabilistik.calculatePriorProbability(bobot);
+        double priorProb[] = mnbProbabilistik.calculatePriorProbability();
+        mnbProbabilistik.calculatePriorProbability();
+        for (int i = 0; i < priorProb.length; i++) {
+            //System.out.println(mnbProbabilistik.calculatePriorProbability(bobot).size());
+            System.out.println("Kelas :" + " " + i);
+            System.out.println(priorProb[i]);
         }
         
-        for (int i = 0; i < mnbProbabilistik.calculateConditionalProbability(trainingSet, bobot).size(); i++) {
-            
-            System.out.println(mnbProbabilistik.calculatePriorProbability(trainingSet, bobot).size());
-            System.out.println("Probabilitas Word" + " " + i + " " + "=" + mnbProbabilistik.calculateConditionalProbability(trainingSet, bobot).get(i).getPriorProbability());
-            System.out.println();
-        }
+        double data[][] = mnbProbabilistik.calculateConditionalProbability();
+//        for (int i = 0; i < data.length; i++) {
+//            //System.out.println("Kelas :" + " " + i);
+//            for (int j = 0; j < data[0].length; j++) {
+//                
+//                System.out.println( data[i][j] + " ");
+//            }
+//            //System.out.println(mnbProbabilistik.calculatePriorProbability(bobot).size());
+//            System.out.println();
+//            
+//        }
+        
+//        System.out.println("=============================");
         //mnbProbabilistik.calculateConditionalProbability(trainingSet, bobot);
         
+//        MNBClassifier mnbc = new MNBClassifier();
+//        mnbc.prepareToClassification();
+//        List<Tweet> hasil = mnbc.getTweetList();
+//        for (int i = 0; i < hasil.size(); i++) {
+//            //System.out.println(hasil.get(i).getTermList().getTotalTerm());
+//            System.out.println(hasil.get(i).getContentTweet());
+//        }
+//        
+//        mnbc.cetak();
         
-  
+        
+        
     }
 }

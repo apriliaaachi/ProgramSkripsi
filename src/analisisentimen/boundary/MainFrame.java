@@ -17,10 +17,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import analisisentimen.control.DocumentReader;
 import analisisentimen.control.Evaluator;
 import analisisentimen.control.HMMProb;
-import analisisentimen.control.KFoldCrossValidation;
+import analisisentimen.control.MNBClassifier;
+import analisisentimen.entity.Folds;
 import analisisentimen.control.Viterbi;
 import analisisentimen.control.Weighting;
-import analisisentimen.control.WeightingPOS;
 import analisisentimen.entity.Tweet;
 import java.util.List;
 import java.util.Random;
@@ -35,11 +35,10 @@ public class MainFrame extends javax.swing.JFrame {
     private String selectedFile;
     private DefaultTableModel modelBobot;  
     private DocumentReader dr;
-    private static KFoldCrossValidation kFoldCV;
+    private static Folds kFoldCV;
     private List<Tweet> tweetList;
 //    private static DocumentReader tweet = new DocumentReader();
     Weighting pembobotan;
-    WeightingPOS pembobotanPOS;
 
     /** Creates new form MainFrame */
     public MainFrame() {
@@ -396,8 +395,8 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mnbRBActionPerformed
     
-    public void doProses (List<Tweet> tweetList) throws IOException {
-        KFoldCrossValidation kFoldCV = new KFoldCrossValidation(10, tweetList);
+    public void doProsesWithoutPOSTag (List<Tweet> tweetList) throws IOException {
+        Folds kFoldCV = new Folds(10, tweetList);
         kFoldCV.shuffle(new Random(), tweetList);
         
         int folds = kFoldCV.getFolds();
@@ -405,37 +404,73 @@ public class MainFrame extends javax.swing.JFrame {
         
         
         for (int i = 0; i < folds; ++i) {
-            List<Tweet> testingSet = kFoldCV.getTrainingSet(i);
-            Weighting bobot = new Weighting(testingSet);
-            bobot.doPembobotan();
-            Evaluator evaluator = new Evaluator(testingSet, bobot);
+            List<Tweet> trainingSet = kFoldCV.getTrainingSet(i);
+            Weighting bobot = new Weighting(trainingSet);
+            bobot.prepareCountWeight();
+            bobot.doWeighting();
+            Evaluator evaluator = new Evaluator(bobot);
+            
+            List<Tweet> testingSet = kFoldCV.getTestSet(i);
+            MNBClassifier mnbc = new MNBClassifier(testingSet,bobot);
+            mnbc.prepareToClassification();
+            mnbc.classifyFull();
+            mnbc.cetak();
             
             //System.out.format("Fold: %s, Accuracy: %s\n", i, bobot.getHasilPembobotan());
             System.out.format("Fold: %s", i);
             System.out.println();
         }
     }
+    
+    public void doProsesWithPOSTag (List<Tweet> tweetList) throws IOException {
+        Folds kFoldCV = new Folds(10, tweetList);
+        kFoldCV.shuffle(new Random(), tweetList);
+        
+        int folds = kFoldCV.getFolds();
+        System.out.format("Number of folds: %s\n\n", folds);
+        
+        
+        for (int i = 0; i < folds; ++i) {
+            System.out.format("Fold: %s", i);
+            System.out.println();
+            
+            List<Tweet> trainingSet = kFoldCV.getTrainingSet(i);
+            Weighting bobot = new Weighting(trainingSet);
+            bobot.prepareCountWeightPOS();
+            bobot.doWeightingPOS();
+            Evaluator evaluator = new Evaluator(bobot);
+            
+            List<Tweet> testingSet = kFoldCV.getTestSet(i);
+            
+            
+        }
+    }
 
     
     private void prosesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesBtnActionPerformed
+        dr = new DocumentReader(selectedFile);
+        try {
+            dr.readTweetSet();
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tweetList = dr.getTweetList();
+        
         if(mnbRB.isSelected()) {
-            dr = new DocumentReader(selectedFile);
-            try {
-                dr.readTweetSet();
-            } catch (IOException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            tweetList = dr.getTweetList();
             try {
                 //System.out.println(tweetList);
-                doProses(tweetList);
+                doProsesWithoutPOSTag(tweetList);
             } catch (IOException ex) {
                 Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         } else if(mnbPosRB.isSelected()) {
             
-            
+            try {
+                doProsesWithPOSTag(tweetList);
+            } catch (IOException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }//GEN-LAST:event_prosesBtnActionPerformed
@@ -462,19 +497,7 @@ public class MainFrame extends javax.swing.JFrame {
                 selectedFile = String.valueOf(chooser.getSelectedFile());
                 nameFile.setText(selectedFile);
                 System.out.println("Selected File: " + selectedFile);
-                
-                
-                //Pembobotan tanpa menerapkan POS Tagging
-//                pembobotan = new Weighting(selectedFile);
-//                pembobotan.doPembobotan();
-//                double [][] data = pembobotan.transpose(pembobotan.getHasilPembobotan());
-                //KFoldCrossValidation kfold = new KFoldCrossValidation(data);
-                
-                //Pembobotan berdasarkan POS Tagging
-//                pembobotanPOS = new WeightingPOS(selectedFile);
-//                pembobotanPOS.doPembobotan();
-                
-
+       
             } catch (NullPointerException e) {
                     JOptionPane.showMessageDialog(null, "format file not .txt", "Failed", JOptionPane.ERROR_MESSAGE);
             }
