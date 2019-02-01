@@ -243,7 +243,6 @@ public class Weighting {
         int numberOfTermWeightWithClass = 0;
         List<Integer> temp = new ArrayList<Integer>();
         
-        
         for (int i = 0; i < tweetList.size(); i++) {
             
             if(tweetList.get(i).getClassSentiment() == classes ) {
@@ -261,9 +260,6 @@ public class Weighting {
         double[][] data = new double[getHasilTransposeBobot().length][getHasilTransposeBobot()[0].length];
         data = getHasilTransposeBobot();
         double numberOfWeightWithClass = 0;
-        //int[][] temp = new int[numberOfDataWithClass(classes)][getHasilTransposeBobot()[0].length];
-        
-        //System.out.println("===============================================");
 
         for(int i=0; i<data.length; i++){
             if(tweetList.get(i).getClassSentiment() == classes ){

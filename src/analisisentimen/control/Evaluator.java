@@ -6,6 +6,7 @@
 package analisisentimen.control;
 
 import analisisentimen.entity.Tweet;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,49 +14,58 @@ import java.util.List;
  * @author Asus
  */
 public class Evaluator {
-    private MNBClassifier mnbClassifier;
 
-
-    public Evaluator(Weighting bobot) {
+    public Evaluator(MNBClassifier mnbc) {
+        int TP=0, FP=0, TN=0, FN=0;
+        //System.out.println(mnbc.classifyFull());
         
-        MNBProbabilistik mnbProbabilistik = new MNBProbabilistik(bobot);
         
-//        System.out.println(bobot.getGlobalTermList().getTotalTerm());
-        //mnbProbabilistik.calculatePriorProbability(bobot);
-        double priorProb[] = mnbProbabilistik.calculatePriorProbability();
-        mnbProbabilistik.calculatePriorProbability();
-        for (int i = 0; i < priorProb.length; i++) {
-            //System.out.println(mnbProbabilistik.calculatePriorProbability(bobot).size());
-            System.out.println("Kelas :" + " " + i);
-            System.out.println(priorProb[i]);
+        for (int i = 0; i < mnbc.classifyFull().length; i++) {
+            //System.out.println(mnbc.classifyFull()[i]);
+            if(mnbc.classifyFull()[i] == 0) {
+                if(mnbc.classifyFull()[i] == mnbc.getTweetList().get(i).getClassSentiment()) {
+                    TN++;
+                } else {
+                    FN++;
+                }
+            } else if(mnbc.classifyFull()[i] == 1) {
+                if(mnbc.classifyFull()[i] == mnbc.getTweetList().get(i).getClassSentiment()) {
+                    TP++;
+                } else {
+                    FP++;
+                }
+            }
+            
         }
+
         
-        double data[][] = mnbProbabilistik.calculateConditionalProbability();
-//        for (int i = 0; i < data.length; i++) {
-//            //System.out.println("Kelas :" + " " + i);
-//            for (int j = 0; j < data[0].length; j++) {
-//                
-//                System.out.println( data[i][j] + " ");
-//            }
-//            //System.out.println(mnbProbabilistik.calculatePriorProbability(bobot).size());
-//            System.out.println();
-//            
-//        }
-        
-//        System.out.println("=============================");
-        //mnbProbabilistik.calculateConditionalProbability(trainingSet, bobot);
-        
-//        MNBClassifier mnbc = new MNBClassifier();
-//        mnbc.prepareToClassification();
-//        List<Tweet> hasil = mnbc.getTweetList();
-//        for (int i = 0; i < hasil.size(); i++) {
-//            //System.out.println(hasil.get(i).getTermList().getTotalTerm());
-//            System.out.println(hasil.get(i).getContentTweet());
-//        }
+//        System.out.println("TN :" + " " + TN );
+//        System.out.println("FN :" + " " + FN );
+//        System.out.println("TP :" + " " + TP );
+//        System.out.println("FP :" + " " + FP );
 //        
-//        mnbc.cetak();
+//        
+//        System.out.println("precision :" + precision(TN, FN, TP, FP));
+//        System.out.println("recall :" + recall(TN, FN, TP, FP));
+//        System.out.println("fmeasure :" + fMeasure(TN, FN, TP, FP));
+//        System.out.println("accuracy :" + accuracy(TN, FN, TP, FP));
         
-        
-        
+    }
+    
+
+    private double precision(int TN, int FN, int TP, int FP) {
+        return (double)TP/(TP+FP);
+    }
+
+    private double recall(int TN, int FN, int TP, int FP) {
+         return (double)TP/(TP+FN);
+    }
+
+    private double fMeasure(int TN, int FN, int TP, int FP) {
+         return (double)2 * ((precision(TN, FN, TP, FP)* recall(TN, FN, TP, FP))/(precision(TN, FN, TP, FP)+ recall(TN, FN, TP, FP)));
+    }
+
+    private double accuracy(int TN, int FN, int TP, int FP) {
+        return (double)(TP+TN)/(TP+TN+FP+FN);
     }
 }

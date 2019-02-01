@@ -11,6 +11,7 @@ import analisisentimen.entity.Tweet;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
+import static java.util.Collections.max;
 import java.util.List;
 
 /**
@@ -29,7 +30,6 @@ public class MNBClassifier {
 
     public MNBClassifier(List<Tweet> testingSet, Weighting bobot) {
         tweetList = testingSet;
-        //prepareToClassification();
         bobotan = bobot;
     }
 
@@ -37,7 +37,26 @@ public class MNBClassifier {
         
     }
     
-    public void prepareToClassification(){
+    public void prepareToClassifyWithPOS(){
+        try{
+            
+            for(int i=0; i< tweetList.size();i++) {
+                Tweet tweet = tweetList.get(i);
+                
+                praproses.PraWithPOSTag(tweet);
+
+                tweet.setTermlist(praproses.getCurrentTokenList());
+
+            }
+            
+        }catch(FileNotFoundException ex){
+            
+        }catch(IOException ex){
+            
+        }
+    }
+    
+    public void prepareToClassify(){
         try{
             
             for(int i=0; i< tweetList.size();i++) {
@@ -48,9 +67,6 @@ public class MNBClassifier {
                 tweet.setTermlist(praproses.getCurrentTokenList());
 
             }
-//            globaltermlist = praproses.getTokenList();
-//            System.out.println(globaltermlist);
-            
 
         }catch(FileNotFoundException ex){
             
@@ -59,7 +75,7 @@ public class MNBClassifier {
         }
     }
     
-    public double[][] classifyFull(){
+    public int[] classifyFull(){
         mnbProb = new MNBProbabilistik(bobotan);
         double label[][] = new double[tweetList.size()][mnbProb.calculatePriorProbability().length];    
         double result;
@@ -67,45 +83,68 @@ public class MNBClassifier {
         for (int i = 0; i < tweetList.size(); i++) {
             for (int j = 0; j < tweetList.get(i).getTermList().getTotalTerm(); j++) {
                 for (int k = 0; k < mnbProb.calculatePriorProbability().length; k++) {
-                    result = mnbProb.calculatePriorProbability()[k] + tweetList.get(i).getTermList().getTotalTerm() *
+                    result = Math.log10(mnbProb.calculatePriorProbability()[k]) + tweetList.get(i).getTermList().getTotalTerm() *
                             (numberOfConditionalProb(tweetList.get(i).getTermList().getTermAt(j).getTerm(), k));
                     label[i][k] = result;
                 }
             }
         }
         
-        return label;
+        return argMax(label);
     }
     
     
     private double numberOfConditionalProb(String term, int i){
         double result=0;
         double conditional[][] = mnbProb.calculateConditionalProbability();
-        //for (int i = 0; i < conditional.length; i++) {
-            for (int k = 0; k < conditional[0].length; k++) {
-                if(term.equals(bobotan.getGlobalTermList().getTermAt(k).getTerm())){
-                    result += conditional[i][k];
+
+        for (int k = 0; k < conditional[0].length; k++) {
+            if(term.equals(bobotan.getGlobalTermList().getTermAt(k).getTerm())){
+                result += Math.log10(conditional[i][k]);
                     
-                }
             }
-        //}
+        }
         
         return result;
+    }
+    
+    private int[] argMax(double[][] classifyFull){
+        double[][] data = classifyFull;
+        int outClass[] = new int[data.length];
+        
+        int index_max = 0;
+        for (int i = 0; i < data.length; i++) {
+            double max = Integer.MIN_VALUE;
+            for (int j = 0; j < data[0].length; j++) {
+                if(data[i][j] > max) {
+                    max = data[i][j];
+                    index_max = j;
+                }
+                    
+            }
+            outClass[i] = index_max; 
+            
+        }
+        return outClass;
     }
     
     public List<Tweet> getTweetList(){
         return tweetList;
     }
     
-    public void cetak(){
-        double[][] data = classifyFull();
-        for (int i = 0; i < data.length; i++) {
-            for (int j = 0; j < data[0].length; j++) {
-                System.out.println(data[i][j]);
-            }
-            System.out.println();
-        }
-    }
+    
+//    public void cetak(){
+//        double[][] data = classifyFull();
+//        for (int i = 0; i < data.length; i++) {
+//            for (int j = 0; j < data[0].length; j++) {
+//                System.out.println(data[i][j]);
+//            }
+//            System.out.println();
+//        }
+//        
+//    }
+    
+
     
     
     

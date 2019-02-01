@@ -57,15 +57,11 @@ public class MNBProbabilistik {
         for(int i=0; i < classes.length; i++){
             
             for (int j = 0; j < totalTerm ; j++) {
-//                System.out.println(bobot.numberOfWeightWithClassInData(i, bobot.getGlobalTermList().getTermAt(j)));
-                
-//                System.out.println(bobot.numberOfWeightWithClassInData(i, bobot.getGlobalTermList().getTermAt(j)) + 
-//                        " " + "+" + "1" + "/" + bobot.numberOfAllWeightWithClass(i) + "+" + totalTerm + ":");
+
                 double hasil = (bobotTerm.numberOfWeightWithClassInData(i, bobotTerm.getGlobalTermList().getTermAt(j))+1)/((bobotTerm.numberOfAllWeightWithClass(i)) + totalTerm);
                 conditional[i][j] = hasil;
 
             }
-            //System.out.println("==============================");
                                   
         }        
         return conditional;

@@ -22,6 +22,7 @@ import analisisentimen.entity.Folds;
 import analisisentimen.control.Viterbi;
 import analisisentimen.control.Weighting;
 import analisisentimen.entity.Tweet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import javax.swing.table.DefaultTableModel;
@@ -70,7 +71,6 @@ public class MainFrame extends javax.swing.JFrame {
         mnbPosRB = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         prosesBtn = new javax.swing.JButton();
-        testBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -151,20 +151,11 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3.setText("Klasifikasi");
 
         prosesBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        prosesBtn.setText("Train");
+        prosesBtn.setText("Proses");
         prosesBtn.setPreferredSize(new java.awt.Dimension(65, 29));
         prosesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prosesBtnActionPerformed(evt);
-            }
-        });
-
-        testBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        testBtn.setText("Test");
-        testBtn.setPreferredSize(new java.awt.Dimension(65, 29));
-        testBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testBtnActionPerformed(evt);
             }
         });
 
@@ -239,21 +230,15 @@ public class MainFrame extends javax.swing.JFrame {
             klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(klasifikasiLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(klasifikasiLayout.createSequentialGroup()
-                        .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel9)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                            .addComponent(jLabel3)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(6, 6, 6))
-                    .addGroup(klasifikasiLayout.createSequentialGroup()
-                        .addComponent(prosesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                        .addComponent(testBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(prosesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                    .addComponent(jLabel9)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         klasifikasiLayout.setVerticalGroup(
             klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,14 +252,12 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
-                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prosesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(testBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(prosesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -313,23 +296,23 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel17)
-                .addGap(45, 45, 45))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel15)
                     .addComponent(jLabel2)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
                     .addComponent(jScrollPane5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                    .addContainerGap(566, Short.MAX_VALUE)
-                    .addComponent(jLabel18)
-                    .addGap(52, 52, 52)))
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(71, 71, 71))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addGap(79, 79, 79))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,18 +321,15 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
-                .addGap(17, 17, 17)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                    .addContainerGap(790, Short.MAX_VALUE)
-                    .addComponent(jLabel18)
-                    .addGap(39, 39, 39)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -359,7 +339,8 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(klasifikasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,9 +352,7 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 44, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,11 +370,51 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(mnbRB.isSelected()){
             prosesBtn.setEnabled(true);
-            testBtn.setEnabled(false);
+
         }
     }//GEN-LAST:event_mnbRBActionPerformed
     
     public void doProsesWithoutPOSTag (List<Tweet> tweetList) throws IOException {
+        Folds kFoldCV = new Folds(10, tweetList);
+        kFoldCV.shuffle(new Random(), tweetList);
+        
+        List<Integer> pengujian = new ArrayList<>();
+        int folds = kFoldCV.getFolds();
+        System.out.format("Number of folds: %s\n\n", folds);
+        int[][] evaluasi = new int[folds][4];
+        
+        
+        //for (int i = 0; i < folds; ++i) {
+            List<Tweet> trainingSet = kFoldCV.getTrainingSet(1);
+            Weighting bobot = new Weighting(trainingSet);
+            bobot.prepareCountWeight();
+            bobot.doWeighting();
+            
+            
+            List<Tweet> testingSet = kFoldCV.getTestSet(1);
+            MNBClassifier mnbc = new MNBClassifier(testingSet,bobot);
+            mnbc.prepareToClassify();
+            //mnbc.classifyFull();
+            //mnbc.cetak();
+            Evaluator evaluator = new Evaluator(mnbc);
+            
+            
+            System.out.format("Fold: %s", 1);
+            System.out.println();
+        //}
+        
+//        for (int i = 0; i < folds; i++) {
+//            for (int j = 0; j < 4; j++) {
+//                evaluasi[i][j] = pengujian.get(j);
+//            }
+//        }
+        
+        loadBobot(evaluasi);
+        
+        
+    }
+    
+    public void doProsesWithPOSTag (List<Tweet> tweetList) throws IOException {
         Folds kFoldCV = new Folds(10, tweetList);
         kFoldCV.shuffle(new Random(), tweetList);
         
@@ -408,41 +427,17 @@ public class MainFrame extends javax.swing.JFrame {
             Weighting bobot = new Weighting(trainingSet);
             bobot.prepareCountWeight();
             bobot.doWeighting();
-            Evaluator evaluator = new Evaluator(bobot);
+            //Evaluator evaluator = new Evaluator(bobot);
             
             List<Tweet> testingSet = kFoldCV.getTestSet(i);
             MNBClassifier mnbc = new MNBClassifier(testingSet,bobot);
-            mnbc.prepareToClassification();
+            mnbc.prepareToClassifyWithPOS();
             mnbc.classifyFull();
-            mnbc.cetak();
+            //mnbc.cetak();
             
             //System.out.format("Fold: %s, Accuracy: %s\n", i, bobot.getHasilPembobotan());
             System.out.format("Fold: %s", i);
             System.out.println();
-        }
-    }
-    
-    public void doProsesWithPOSTag (List<Tweet> tweetList) throws IOException {
-        Folds kFoldCV = new Folds(10, tweetList);
-        kFoldCV.shuffle(new Random(), tweetList);
-        
-        int folds = kFoldCV.getFolds();
-        System.out.format("Number of folds: %s\n\n", folds);
-        
-        
-        for (int i = 0; i < folds; ++i) {
-            System.out.format("Fold: %s", i);
-            System.out.println();
-            
-            List<Tweet> trainingSet = kFoldCV.getTrainingSet(i);
-            Weighting bobot = new Weighting(trainingSet);
-            bobot.prepareCountWeightPOS();
-            bobot.doWeightingPOS();
-            Evaluator evaluator = new Evaluator(bobot);
-            
-            List<Tweet> testingSet = kFoldCV.getTestSet(i);
-            
-            
         }
     }
 
@@ -482,7 +477,6 @@ public class MainFrame extends javax.swing.JFrame {
     private void loadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBtnActionPerformed
         // TODO add your handling code here:
         prosesBtn.setEnabled(false);
-        testBtn.setEnabled(false);
         mnbRB.setEnabled(true);
         mnbPosRB.setEnabled(true);
         
@@ -512,22 +506,17 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(mnbPosRB.isSelected()){
             prosesBtn.setEnabled(true);
-            testBtn.setEnabled(false);
+
         }
         
         
     }//GEN-LAST:event_mnbPosRBActionPerformed
 
-    private void testBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testBtnActionPerformed
-        // TODO add your handling code here:
-        //refreshBtn.setEnabled(true);
-    }//GEN-LAST:event_testBtnActionPerformed
-
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
     
-    private void loadBobot(double hasilPembobotan[][]){
+    private void loadBobot(int hasilPembobotan[][]){
         int baris = hasilPembobotan.length;
         int kolom = hasilPembobotan[0].length;
         modelBobot = (DefaultTableModel) klasifikasiTable1.getModel();
@@ -615,7 +604,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton mnbRB;
     private javax.swing.JTextField nameFile;
     private javax.swing.JButton prosesBtn;
-    private javax.swing.JButton testBtn;
     // End of variables declaration//GEN-END:variables
 
 }
