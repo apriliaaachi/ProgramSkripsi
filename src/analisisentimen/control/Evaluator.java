@@ -13,10 +13,12 @@ import java.util.List;
  *
  * @author Asus
  */
-public class Evaluator {
-
+public final class Evaluator {
+    double fMeasure, precision, accuracy, recall;
+    int TP, FP, TN, FN;
+    
     public Evaluator(MNBClassifier mnbc) {
-        int TP=0, FP=0, TN=0, FN=0;
+        TP=0; FP=0; TN=0; FN=0;
         //System.out.println(mnbc.classifyFull());
         
         
@@ -39,33 +41,69 @@ public class Evaluator {
         }
 
         
-//        System.out.println("TN :" + " " + TN );
-//        System.out.println("FN :" + " " + FN );
-//        System.out.println("TP :" + " " + TP );
-//        System.out.println("FP :" + " " + FP );
-//        
-//        
-//        System.out.println("precision :" + precision(TN, FN, TP, FP));
-//        System.out.println("recall :" + recall(TN, FN, TP, FP));
-//        System.out.println("fmeasure :" + fMeasure(TN, FN, TP, FP));
-//        System.out.println("accuracy :" + accuracy(TN, FN, TP, FP));
+        System.out.println("TN :" + " " + TN );
+        System.out.println("FN :" + " " + FN );
+        System.out.println("TP :" + " " + TP );
+        System.out.println("FP :" + " " + FP );
+        
+//        getTruePositive(TP);
+//        getFalsePositive(FP);
+//        getTrueNegative(TN);
+//        getFalseNegative(FN);
+        
+        precision(TN, FN, TP, FP);
+        recall(TN, FN, TP, FP);
+        fMeasure(TN, FN, TP, FP);
+        accuracy(TN, FN, TP, FP);
         
     }
     
 
-    private double precision(int TN, int FN, int TP, int FP) {
-        return (double)TP/(TP+FP);
+    private void precision(int TN, int FN, int TP, int FP) {
+        precision = (double)TP/(TP+FP);
+    }
+    
+    public double getPrecision(){
+        return precision;
     }
 
-    private double recall(int TN, int FN, int TP, int FP) {
-         return (double)TP/(TP+FN);
+    private void recall(int TN, int FN, int TP, int FP) {
+        recall = (double)TP/(TP+FN);
+    }
+    
+    public double getRecall(){
+        return recall;
     }
 
-    private double fMeasure(int TN, int FN, int TP, int FP) {
-         return (double)2 * ((precision(TN, FN, TP, FP)* recall(TN, FN, TP, FP))/(precision(TN, FN, TP, FP)+ recall(TN, FN, TP, FP)));
+    private void fMeasure(int TN, int FN, int TP, int FP) {
+        fMeasure = (double)2 * ((getPrecision()* getRecall())/(getPrecision()+ getRecall()));
+    }
+    
+    public double getFMeasure(){
+        return fMeasure;
     }
 
-    private double accuracy(int TN, int FN, int TP, int FP) {
-        return (double)(TP+TN)/(TP+TN+FP+FN);
+    private void accuracy(int TN, int FN, int TP, int FP) {
+        accuracy = (double)(TP+TN)/(TP+TN+FP+FN);
+    }
+    
+    public double getAccuracy(){
+        return accuracy;
+    }
+    
+    public int getFalsePositive(){
+        return FP;
+    }
+    
+    public int getTruePositive(){
+        return TP;
+    }
+    
+    public int getTrueNegative(){
+        return TN;
+    }
+    
+    public int getFalseNegative(){
+        return FN;
     }
 }

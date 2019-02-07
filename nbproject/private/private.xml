@@ -5,8 +5,10 @@
         <group>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Weighting.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/MNBClassifier.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Praprocess.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Evaluator.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/boundary/MainFrame.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/MNBProbabilistik.java</file>
         </group>
     </open-files>
 </project-private>

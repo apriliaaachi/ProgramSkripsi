@@ -181,7 +181,7 @@ public class Weighting {
             }
         }
 //        return n;
-        return n/tweet.length;
+        return n;
     }
     
     static double tfPOS(String[] tweet, String term){

@@ -18,6 +18,7 @@ import analisisentimen.control.DocumentReader;
 import analisisentimen.control.Evaluator;
 import analisisentimen.control.HMMProb;
 import analisisentimen.control.MNBClassifier;
+import analisisentimen.control.MNBProbabilistik;
 import analisisentimen.entity.Folds;
 import analisisentimen.control.Viterbi;
 import analisisentimen.control.Weighting;
@@ -38,16 +39,18 @@ public class MainFrame extends javax.swing.JFrame {
     private DocumentReader dr;
     private static Folds kFoldCV;
     private List<Tweet> tweetList;
+    private int fold;
+    
 //    private static DocumentReader tweet = new DocumentReader();
-    Weighting pembobotan;
 
     /** Creates new form MainFrame */
     public MainFrame() {
         initComponents();
         prosesBtn.setEnabled(false);
-        
         mnbRB.setEnabled(false);
         mnbPosRB.setEnabled(false);
+        foldCombo.setEnabled(false);
+        limitCombo.setEnabled(false);
     }
 
 
@@ -70,33 +73,62 @@ public class MainFrame extends javax.swing.JFrame {
         mnbRB = new javax.swing.JRadioButton();
         mnbPosRB = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
-        prosesBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        precisionP = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        recallP = new javax.swing.JTextField();
+        accuracyP = new javax.swing.JTextField();
+        fMeasureP = new javax.swing.JTextField();
+        recall = new javax.swing.JTextField();
+        fMeasure = new javax.swing.JTextField();
+        accuracy = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        precision = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        prosesBtn = new javax.swing.JButton();
+        foldCombo = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        limitCombo = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         klasifikasiTable2 = new javax.swing.JTable();
         jScrollPane7 = new javax.swing.JScrollPane();
         klasifikasiTable1 = new javax.swing.JTable();
         jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        fp = new javax.swing.JTextField();
+        fn = new javax.swing.JTextField();
+        tp = new javax.swing.JTextField();
+        tn = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        tpP = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        fpP = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        tnP = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        fnP = new javax.swing.JTextField();
+        testExecTime = new javax.swing.JTextField();
+        trainExecTime = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        trainPOSExecTime = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        testPOSExecTime = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +136,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        nameFile.setEditable(false);
         nameFile.setPreferredSize(new java.awt.Dimension(94, 39));
         nameFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,30 +183,19 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Klasifikasi");
 
-        prosesBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        prosesBtn.setText("Proses");
-        prosesBtn.setPreferredSize(new java.awt.Dimension(65, 29));
-        prosesBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prosesBtnActionPerformed(evt);
-            }
-        });
-
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setPreferredSize(new java.awt.Dimension(216, 202));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        precisionP.setEditable(false);
+        precisionP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        precisionP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                precisionPActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 55, 90, 31));
-
-        jLabel5.setText("Precision");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        jPanel2.add(precisionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 55, 90, 31));
 
         jLabel6.setText("Recall");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 101, -1, 18));
@@ -184,31 +206,33 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8.setText("Accurascy");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 175, -1, 31));
 
-        jTextField6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 95, 90, 31));
+        recallP.setEditable(false);
+        recallP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.add(recallP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 95, 90, 31));
 
-        jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 175, 90, 31));
+        accuracyP.setEditable(false);
+        accuracyP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.add(accuracyP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 175, 90, 31));
 
-        jTextField8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 135, 90, 31));
+        fMeasureP.setEditable(false);
+        fMeasureP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.add(fMeasureP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 135, 90, 31));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 55, 90, 31));
+        recall.setEditable(false);
+        recall.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        recall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        recall.setPreferredSize(new java.awt.Dimension(6, 26));
+        jPanel2.add(recall, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 95, 90, 31));
 
-        jTextField9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 95, 90, 31));
+        fMeasure.setEditable(false);
+        fMeasure.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        fMeasure.setPreferredSize(new java.awt.Dimension(6, 26));
+        jPanel2.add(fMeasure, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 135, 90, 31));
 
-        jTextField10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 135, 90, 31));
-
-        jTextField11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 175, 90, 31));
+        accuracy.setEditable(false);
+        accuracy.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        accuracy.setPreferredSize(new java.awt.Dimension(6, 26));
+        jPanel2.add(accuracy, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 175, 90, 31));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("MNB");
@@ -218,11 +242,73 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel11.setText("MNB (POS Tagging)");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
+        jLabel16.setText("Precision");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
+        precision.setEditable(false);
+        precision.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        precision.setPreferredSize(new java.awt.Dimension(6, 26));
+        precision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precisionActionPerformed(evt);
+            }
+        });
+        jPanel2.add(precision, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 55, 90, 31));
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Evaluasi");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("Dataset");
+
+        prosesBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        prosesBtn.setText("Proses");
+        prosesBtn.setPreferredSize(new java.awt.Dimension(65, 29));
+        prosesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prosesBtnActionPerformed(evt);
+            }
+        });
+
+        foldCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        foldCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fold 1", "Fold 2", "Fold 3", "Fold 4", "Fold 5", "Fold 6", "Fold 7", "Fold 8", "Fold 9", "Fold 10" }));
+        foldCombo.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                foldComboAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        foldCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foldComboActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setText("Folds");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setText("Limit");
+
+        limitCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        limitCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "20", "50", "100", "500" }));
+        limitCombo.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                limitComboAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        limitCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limitComboActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout klasifikasiLayout = new javax.swing.GroupLayout(klasifikasi);
         klasifikasi.setLayout(klasifikasiLayout);
@@ -230,15 +316,24 @@ public class MainFrame extends javax.swing.JFrame {
             klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(klasifikasiLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(prosesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                    .addComponent(jLabel9)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                    .addComponent(jLabel3)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(klasifikasiLayout.createSequentialGroup()
+                        .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
+                        .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(limitCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)))
+                    .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(prosesBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         klasifikasiLayout.setVerticalGroup(
             klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,20 +346,25 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(18, 18, 18)
+                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(limitCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(prosesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(46, 46, 46))
         );
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Hasil Pengujian MNB");
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        jLabel17.setText("Waktu Eksekusi :");
 
         klasifikasiTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -289,8 +389,145 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel15.setText("Hasil Pengujian MNB (POS Tagging)");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        jLabel18.setText("Waktu Eksekusi :");
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jLabel17.setText("Training Exec. Time :");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jLabel19.setText("Testing Exec. Time  :");
+
+        fp.setEditable(false);
+        fp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        fp.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        fp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fpActionPerformed(evt);
+            }
+        });
+
+        fn.setEditable(false);
+        fn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        fn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        fn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fnActionPerformed(evt);
+            }
+        });
+
+        tp.setEditable(false);
+        tp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tp.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tpActionPerformed(evt);
+            }
+        });
+
+        tn.setEditable(false);
+        tn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel18.setText("TP");
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel22.setText("TN");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel23.setText("FP");
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel24.setText("FN");
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel25.setText("TP");
+
+        tpP.setEditable(false);
+        tpP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tpP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tpP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tpPActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel26.setText("FP");
+
+        fpP.setEditable(false);
+        fpP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        fpP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        fpP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fpPActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel27.setText("TN");
+
+        tnP.setEditable(false);
+        tnP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tnP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tnP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnPActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel28.setText("FN");
+
+        fnP.setEditable(false);
+        fnP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        fnP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        fnP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fnPActionPerformed(evt);
+            }
+        });
+
+        testExecTime.setEditable(false);
+        testExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        testExecTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testExecTimeActionPerformed(evt);
+            }
+        });
+
+        trainExecTime.setEditable(false);
+        trainExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        trainExecTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trainExecTimeActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jLabel29.setText("Training Exec. Time :");
+
+        trainPOSExecTime.setEditable(false);
+        trainPOSExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        trainPOSExecTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trainPOSExecTimeActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jLabel30.setText("Testing Exec. Time  :");
+
+        testPOSExecTime.setEditable(false);
+        testPOSExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        testPOSExecTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testPOSExecTimeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -298,38 +535,147 @@ public class MainFrame extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5))
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(71, 71, 71))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
                         .addComponent(jLabel18)
-                        .addGap(79, 79, 79))))
+                        .addGap(125, 125, 125)
+                        .addComponent(jLabel23)
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel22)
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel24))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(tp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56)
+                                .addComponent(fp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                                .addComponent(tn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(fn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel2)
+                            .addComponent(jScrollPane7)
+                            .addComponent(jScrollPane5)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabel25)
+                                .addGap(125, 125, 125)
+                                .addComponent(jLabel26)
+                                .addGap(127, 127, 127)
+                                .addComponent(jLabel27)
+                                .addGap(124, 124, 124)
+                                .addComponent(jLabel28))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(tpP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(55, 55, 55)
+                                .addComponent(fpP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(tnP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(fnP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(trainExecTime)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(testExecTime)
+                                    .addComponent(trainPOSExecTime)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(testPOSExecTime, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(8, 8, 8)
+                        .addComponent(trainExecTime, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(testExecTime, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel22)
+                        .addComponent(jLabel23))
+                    .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
-                .addGap(24, 24, 24)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel29)
+                        .addGap(8, 8, 8)
+                        .addComponent(trainPOSExecTime, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(testPOSExecTime, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addGap(41, 41, 41))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel27)
+                        .addComponent(jLabel26))
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fpP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tpP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tnP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fnP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55))
+        );
+
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+
+        jLabel5.setText("Copyright © 2019 by");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Achi Aprilia A");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(558, 558, 558)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel14))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -337,26 +683,35 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(klasifikasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(klasifikasi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(klasifikasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -368,117 +723,126 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void mnbRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnbRBActionPerformed
         // TODO add your handling code here:
-        if(mnbRB.isSelected()){
-            prosesBtn.setEnabled(true);
-
-        }
+        
     }//GEN-LAST:event_mnbRBActionPerformed
     
-    public void doProsesWithoutPOSTag (List<Tweet> tweetList) throws IOException {
-        Folds kFoldCV = new Folds(10, tweetList);
-        kFoldCV.shuffle(new Random(), tweetList);
-        
-        List<Integer> pengujian = new ArrayList<>();
+    public void doProsesWithoutPOSTag () throws IOException {
+//        Folds kFoldCV = new Folds(10, tweetList);
+//        kFoldCV.shuffle(new Random(), tweetList);
+        double trainingElapsedTime = 0.0;
+        double testElapsedTime = 0.0;
+        double[] priorProbability;
+        double[][] conditionalProbability;
         int folds = kFoldCV.getFolds();
         System.out.format("Number of folds: %s\n\n", folds);
-        int[][] evaluasi = new int[folds][4];
+
         
         
         //for (int i = 0; i < folds; ++i) {
-            List<Tweet> trainingSet = kFoldCV.getTrainingSet(1);
+            double trainingStartTime = System.currentTimeMillis();
+            List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
             Weighting bobot = new Weighting(trainingSet);
             bobot.prepareCountWeight();
             bobot.doWeighting();
+            MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
+            priorProbability = mnbp.calculatePriorProbability();
+            conditionalProbability = mnbp.calculateConditionalProbability();
+            trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
             
-            
-            List<Tweet> testingSet = kFoldCV.getTestSet(1);
-            MNBClassifier mnbc = new MNBClassifier(testingSet,bobot);
+            double testStartTime = System.currentTimeMillis();
+            List<Tweet> testingSet = kFoldCV.getTestSet(fold);
+            MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
             mnbc.prepareToClassify();
-            //mnbc.classifyFull();
-            //mnbc.cetak();
+            
+            Evaluator evaluator = new Evaluator(mnbc);
+            testElapsedTime += System.currentTimeMillis() - testStartTime;
+            
+            System.out.format("Fold: %s", fold + 1);
+            System.out.println();
+            System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
+            System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
+            System.out.println();
+            trainExecTime.setText("" + trainingElapsedTime / 1000d);
+            testExecTime.setText("" + testElapsedTime / 1000d);
+            
+            tp.setText("" + evaluator.getTruePositive());
+            fp.setText("" + evaluator.getFalsePositive());
+            tn.setText("" + evaluator.getTrueNegative());
+            fn.setText("" + evaluator.getFalseNegative());
+            
+            precision.setText("" + evaluator.getPrecision());
+            recall.setText("" + evaluator.getRecall());
+            fMeasure.setText("" + evaluator.getFMeasure());
+            accuracy.setText("" + evaluator.getAccuracy());
+        //}
+            
+    }
+    
+     public void doProsesWithPOSTag () throws IOException {
+//        Folds kFoldCV = new Folds(10, tweetList);
+//        kFoldCV.shuffle(new Random(), tweetList);
+        
+        double trainingElapsedTime = 0.0;
+        double testElapsedTime = 0.0;
+        int folds = kFoldCV.getFolds();
+        double[] priorProbability;
+        double[][] conditionalProbability;
+        System.out.format("Number of folds: %s\n\n", folds);
+
+        
+        
+        //for (int i = 0; i < folds; ++i) {
+            double trainingStartTime = System.currentTimeMillis();
+            List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
+            Weighting bobot = new Weighting(trainingSet);
+            bobot.prepareCountWeightPOS();
+            bobot.doWeightingPOS();
+            MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
+            priorProbability = mnbp.calculatePriorProbability();
+            conditionalProbability = mnbp.calculateConditionalProbability();
+            trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
+            
+            double testStartTime = System.currentTimeMillis();
+            List<Tweet> testingSet = kFoldCV.getTestSet(fold);
+            MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
+            mnbc.prepareToClassifyWithPOS();
+            testElapsedTime += System.currentTimeMillis() - testStartTime;
             Evaluator evaluator = new Evaluator(mnbc);
             
             
-            System.out.format("Fold: %s", 1);
+            System.out.format("Fold: %s", fold + 1);
             System.out.println();
+            System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
+            System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
+            System.out.println();
+            trainPOSExecTime.setText("" + trainingElapsedTime / 1000d);
+            testPOSExecTime.setText("" + testElapsedTime / 1000d);
+            
+            tpP.setText("" + evaluator.getTruePositive());
+            fpP.setText("" + evaluator.getFalsePositive());
+            tnP.setText("" + evaluator.getTrueNegative());
+            fnP.setText("" + evaluator.getFalseNegative());
+            
+            precisionP.setText("" + evaluator.getPrecision());
+            recallP.setText("" + evaluator.getRecall());
+            fMeasureP.setText("" + evaluator.getFMeasure());
+            accuracyP.setText("" + evaluator.getAccuracy());
         //}
-        
-//        for (int i = 0; i < folds; i++) {
-//            for (int j = 0; j < 4; j++) {
-//                evaluasi[i][j] = pengujian.get(j);
-//            }
-//        }
-        
-        loadBobot(evaluasi);
-        
-        
+            
     }
     
-    public void doProsesWithPOSTag (List<Tweet> tweetList) throws IOException {
-        Folds kFoldCV = new Folds(10, tweetList);
-        kFoldCV.shuffle(new Random(), tweetList);
-        
-        int folds = kFoldCV.getFolds();
-        System.out.format("Number of folds: %s\n\n", folds);
-        
-        
-        for (int i = 0; i < folds; ++i) {
-            List<Tweet> trainingSet = kFoldCV.getTrainingSet(i);
-            Weighting bobot = new Weighting(trainingSet);
-            bobot.prepareCountWeight();
-            bobot.doWeighting();
-            //Evaluator evaluator = new Evaluator(bobot);
-            
-            List<Tweet> testingSet = kFoldCV.getTestSet(i);
-            MNBClassifier mnbc = new MNBClassifier(testingSet,bobot);
-            mnbc.prepareToClassifyWithPOS();
-            mnbc.classifyFull();
-            //mnbc.cetak();
-            
-            //System.out.format("Fold: %s, Accuracy: %s\n", i, bobot.getHasilPembobotan());
-            System.out.format("Fold: %s", i);
-            System.out.println();
-        }
-    }
-
     
-    private void prosesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesBtnActionPerformed
-        dr = new DocumentReader(selectedFile);
-        try {
-            dr.readTweetSet();
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        tweetList = dr.getTweetList();
-        
-        if(mnbRB.isSelected()) {
-            try {
-                //System.out.println(tweetList);
-                doProsesWithoutPOSTag(tweetList);
-            } catch (IOException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        } else if(mnbPosRB.isSelected()) {
-            
-            try {
-                doProsesWithPOSTag(tweetList);
-            } catch (IOException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-    }//GEN-LAST:event_prosesBtnActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void precisionPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precisionPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_precisionPActionPerformed
 
     private void loadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBtnActionPerformed
         // TODO add your handling code here:
-        prosesBtn.setEnabled(false);
+        prosesBtn.setEnabled(true);
         mnbRB.setEnabled(true);
         mnbPosRB.setEnabled(true);
+        foldCombo.setEnabled(true);
+        limitCombo.setEnabled(true);
         
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Pilih File");
@@ -491,12 +855,20 @@ public class MainFrame extends javax.swing.JFrame {
                 selectedFile = String.valueOf(chooser.getSelectedFile());
                 nameFile.setText(selectedFile);
                 System.out.println("Selected File: " + selectedFile);
+                dr = new DocumentReader(selectedFile);
+                dr.readTweetSet();
+                tweetList = dr.getTweetList();
+                
+                kFoldCV = new Folds(10, tweetList);
+                kFoldCV.shuffle(new Random(), tweetList);
        
             } catch (NullPointerException e) {
                     JOptionPane.showMessageDialog(null, "format file not .txt", "Failed", JOptionPane.ERROR_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-                            System.out.println("Failed");
+                System.out.println("Failed");
 
         }
         
@@ -505,16 +877,123 @@ public class MainFrame extends javax.swing.JFrame {
     private void mnbPosRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnbPosRBActionPerformed
         // TODO add your handling code here:
         if(mnbPosRB.isSelected()){
-            prosesBtn.setEnabled(true);
+            
 
         }
         
         
     }//GEN-LAST:event_mnbPosRBActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void fpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_fpActionPerformed
+
+    private void prosesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesBtnActionPerformed
+        
+        
+        if(mnbRB.isSelected()) {
+            try {
+                //System.out.println(tweetList);
+                doProsesWithoutPOSTag();
+            } catch (IOException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        } else if(mnbPosRB.isSelected()) {
+            
+            try {
+                doProsesWithPOSTag();
+            } catch (IOException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_prosesBtnActionPerformed
+
+    private void foldComboAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_foldComboAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_foldComboAncestorAdded
+
+    private void foldComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foldComboActionPerformed
+        // TODO add your handling code here:
+        if(foldCombo.getSelectedItem() == "Fold 1"){
+            fold = 0;
+        } else if(foldCombo.getSelectedItem() == "Fold 2") {
+            fold = 1;
+        } else if(foldCombo.getSelectedItem() == "Fold 3") {
+            fold = 2;
+        } else if(foldCombo.getSelectedItem() == "Fold 4") {
+            fold = 3;
+        } else if(foldCombo.getSelectedItem() == "Fold 5") {
+            fold = 4;
+        } else if(foldCombo.getSelectedItem() == "Fold 6") {
+            fold = 5;
+        } else if(foldCombo.getSelectedItem() == "Fold 7") {
+            fold = 6;
+        } else if(foldCombo.getSelectedItem() == "Fold 8") {
+            fold = 7;
+        } else if(foldCombo.getSelectedItem() == "Fold 9") {
+            fold = 8;
+        } else if(foldCombo.getSelectedItem() == "Fold 10") {
+            fold = 9;
+        }
+        
+    }//GEN-LAST:event_foldComboActionPerformed
+
+    private void limitComboAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_limitComboAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_limitComboAncestorAdded
+
+    private void limitComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limitComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_limitComboActionPerformed
+
+    private void precisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precisionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precisionActionPerformed
+
+    private void fnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnActionPerformed
+
+    private void tpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tpActionPerformed
+
+    private void tnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnActionPerformed
+
+    private void tpPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tpPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tpPActionPerformed
+
+    private void fpPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fpPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fpPActionPerformed
+
+    private void tnPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnPActionPerformed
+
+    private void fnPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnPActionPerformed
+
+    private void testExecTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testExecTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_testExecTimeActionPerformed
+
+    private void trainExecTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainExecTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trainExecTimeActionPerformed
+
+    private void trainPOSExecTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainPOSExecTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trainPOSExecTimeActionPerformed
+
+    private void testPOSExecTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testPOSExecTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_testPOSExecTimeActionPerformed
     
     private void loadBobot(int hasilPembobotan[][]){
         int baris = hasilPembobotan.length;
@@ -567,14 +1046,37 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField accuracy;
+    private javax.swing.JTextField accuracyP;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField fMeasure;
+    private javax.swing.JTextField fMeasureP;
+    private javax.swing.JTextField fn;
+    private javax.swing.JTextField fnP;
+    private javax.swing.JComboBox<String> foldCombo;
+    private javax.swing.JTextField fp;
+    private javax.swing.JTextField fpP;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -585,25 +1087,31 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel klasifikasi;
     private javax.swing.JTable klasifikasiTable1;
     private javax.swing.JTable klasifikasiTable2;
+    private javax.swing.JComboBox<String> limitCombo;
     private javax.swing.JButton loadBtn;
     private javax.swing.JRadioButton mnbPosRB;
     private javax.swing.JRadioButton mnbRB;
     private javax.swing.JTextField nameFile;
+    private javax.swing.JTextField precision;
+    private javax.swing.JTextField precisionP;
     private javax.swing.JButton prosesBtn;
+    private javax.swing.JTextField recall;
+    private javax.swing.JTextField recallP;
+    private javax.swing.JTextField testExecTime;
+    private javax.swing.JTextField testPOSExecTime;
+    private javax.swing.JTextField tn;
+    private javax.swing.JTextField tnP;
+    private javax.swing.JTextField tp;
+    private javax.swing.JTextField tpP;
+    private javax.swing.JTextField trainExecTime;
+    private javax.swing.JTextField trainPOSExecTime;
     // End of variables declaration//GEN-END:variables
 
 }

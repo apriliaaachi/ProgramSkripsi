@@ -24,19 +24,19 @@ public class MNBClassifier {
     private TermList globaltermlist;
     private double[][] hasilPembobotan;
     private Praprocess praproses = new Praprocess();
-    private MNBProbabilistik mnbProb;
+    private double[] priorProb;
+    private double[][] conditionalProb;
     private Weighting bobotan;
     
 
-    public MNBClassifier(List<Tweet> testingSet, Weighting bobot) {
+    public MNBClassifier(List<Tweet> testingSet, double[] priorProbability, double[][] conditionalProbability,Weighting bobot) {
         tweetList = testingSet;
+        priorProb = priorProbability;
+        conditionalProb = conditionalProbability;
         bobotan = bobot;
     }
 
-    public MNBClassifier() {
-        
-    }
-    
+
     public void prepareToClassifyWithPOS(){
         try{
             
@@ -76,14 +76,15 @@ public class MNBClassifier {
     }
     
     public int[] classifyFull(){
-        mnbProb = new MNBProbabilistik(bobotan);
-        double label[][] = new double[tweetList.size()][mnbProb.calculatePriorProbability().length];    
+        //mnbProb = new MNBProbabilistik(bobotan);
+        double label[][] = new double[tweetList.size()][priorProb.length];    
         double result;
 
         for (int i = 0; i < tweetList.size(); i++) {
             for (int j = 0; j < tweetList.get(i).getTermList().getTotalTerm(); j++) {
-                for (int k = 0; k < mnbProb.calculatePriorProbability().length; k++) {
-                    result = Math.log10(mnbProb.calculatePriorProbability()[k]) + tweetList.get(i).getTermList().getTotalTerm() *
+            
+                for (int k = 0; k < priorProb.length; k++) {
+                    result = Math.log10(priorProb[k]) + tweetList.get(i).getTermList().getTotalTerm() *
                             (numberOfConditionalProb(tweetList.get(i).getTermList().getTermAt(j).getTerm(), k));
                     label[i][k] = result;
                 }
@@ -96,11 +97,10 @@ public class MNBClassifier {
     
     private double numberOfConditionalProb(String term, int i){
         double result=0;
-        double conditional[][] = mnbProb.calculateConditionalProbability();
 
-        for (int k = 0; k < conditional[0].length; k++) {
+        for (int k = 0; k < conditionalProb[0].length; k++) {
             if(term.equals(bobotan.getGlobalTermList().getTermAt(k).getTerm())){
-                result += Math.log10(conditional[i][k]);
+                result += Math.log10(conditionalProb[i][k]);
                     
             }
         }

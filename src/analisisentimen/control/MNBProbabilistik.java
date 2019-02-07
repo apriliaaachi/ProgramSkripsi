@@ -45,6 +45,8 @@ public class MNBProbabilistik {
         return prior;
     }
     
+    
+    
     public double[][] calculateConditionalProbability() {
         int classes[] = new int[2];
         classes[0] = 0;
