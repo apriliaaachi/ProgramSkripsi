@@ -45,11 +45,7 @@ public final class Evaluator {
         System.out.println("FN :" + " " + FN );
         System.out.println("TP :" + " " + TP );
         System.out.println("FP :" + " " + FP );
-        
-//        getTruePositive(TP);
-//        getFalsePositive(FP);
-//        getTrueNegative(TN);
-//        getFalseNegative(FN);
+
         
         precision(TN, FN, TP, FP);
         recall(TN, FN, TP, FP);

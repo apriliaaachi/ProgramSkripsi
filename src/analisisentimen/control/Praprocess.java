@@ -50,7 +50,7 @@ public class Praprocess {
         String[] r = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
         String[] u = removeUniqueCharacter(r);
         String[] n = dictionaryFormalize(u);
-        String[] s = Stemming(n);
+        String[] s = stemming(n);
 
 	listTokenCurrent = new TermList();
 
@@ -71,17 +71,16 @@ public class Praprocess {
 
     public void PraWithPOSTag (Tweet tweetList) throws IOException{
         Viterbi viterbi = new Viterbi();
-        String[] r = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
-        String[] u = removeUniqueCharacter(r);
+        String[] p = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
+        String[] u = removeUniqueCharacter(p);
         String[] n = dictionaryFormalize(u);       
         viterbi.prepareCountViterbi(n); 
         viterbi.posTagger();
         
-//        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
-//        System.out.println("vibertiPath        : " + viterbi.getListTag());
-//        System.out.println("\n");
+        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
+        System.out.println("vibertiPath        : " + viterbi.getListTag());
+        System.out.println("\n");
         
-
         Stemming stem = new Stemming();
         String[] st = new String[viterbi.getListWord().size()];
         int i,j,k;
@@ -92,7 +91,7 @@ public class Praprocess {
             //System.out.println(st[i]);
         }
         
-        String[] tag = new String[viterbi.getListTag().size()+10];
+        String[] tag = new String[viterbi.getListTag().size()+10]; //???
         
         for(j=0; j<viterbi.getListTag().size(); j++){
             tag[j] = stem.Stem(viterbi.getListTag().get(j).toString());
@@ -104,7 +103,7 @@ public class Praprocess {
         String[] combine = new String[st.length];
         for (k=0; k<st.length; k++){
             combine[k] = st[k] + "/" + tag[k];
-            //System.out.println(combine[k]);
+            System.out.println(combine[k]);
         }
 
 
@@ -186,7 +185,7 @@ public class Praprocess {
         return result.replaceAll(P, "");
     }
 
-    public String[] Stemming (String[] token){
+    public String[] stemming (String[] token){
         Stemming stem = new Stemming();
         
         String hasilStem = "";

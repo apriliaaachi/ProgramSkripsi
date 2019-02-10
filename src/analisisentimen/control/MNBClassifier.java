@@ -77,7 +77,7 @@ public class MNBClassifier {
     
     public int[] classifyFull(){
         //mnbProb = new MNBProbabilistik(bobotan);
-        double label[][] = new double[tweetList.size()][priorProb.length];    
+        double classifyFull[][] = new double[tweetList.size()][priorProb.length];    
         double result;
 
         for (int i = 0; i < tweetList.size(); i++) {
@@ -86,12 +86,12 @@ public class MNBClassifier {
                 for (int k = 0; k < priorProb.length; k++) {
                     result = Math.log10(priorProb[k]) + tweetList.get(i).getTermList().getTotalTerm() *
                             (numberOfConditionalProb(tweetList.get(i).getTermList().getTermAt(j).getTerm(), k));
-                    label[i][k] = result;
+                    classifyFull[i][k] = result;
                 }
             }
         }
         
-        return argMax(label);
+        return argMax(classifyFull);
     }
     
     
@@ -144,8 +144,5 @@ public class MNBClassifier {
 //        
 //    }
     
-
-    
-    
-    
+ 
 }

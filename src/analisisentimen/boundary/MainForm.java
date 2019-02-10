@@ -32,7 +32,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Asus
  */
-public class MainFrame extends javax.swing.JFrame {
+public class MainForm extends javax.swing.JFrame {
     private static final HMMProb hmmProbab = new HMMProb();
     private String selectedFile;
     private DefaultTableModel modelBobot;  
@@ -40,17 +40,19 @@ public class MainFrame extends javax.swing.JFrame {
     private static Folds kFoldCV;
     private List<Tweet> tweetList;
     private int fold;
-    
+    private String contentTweet;
+    private int classSentiment;
+    private int outputClass;
 //    private static DocumentReader tweet = new DocumentReader();
 
     /** Creates new form MainFrame */
-    public MainFrame() {
+    public MainForm() {
         initComponents();
         prosesBtn.setEnabled(false);
         mnbRB.setEnabled(false);
         mnbPosRB.setEnabled(false);
         foldCombo.setEnabled(false);
-        limitCombo.setEnabled(false);
+
     }
 
 
@@ -93,8 +95,6 @@ public class MainFrame extends javax.swing.JFrame {
         prosesBtn = new javax.swing.JButton();
         foldCombo = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        limitCombo = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -195,7 +195,7 @@ public class MainFrame extends javax.swing.JFrame {
                 precisionPActionPerformed(evt);
             }
         });
-        jPanel2.add(precisionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 55, 90, 31));
+        jPanel2.add(precisionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 55, 110, 31));
 
         jLabel6.setText("Recall");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 101, -1, 18));
@@ -208,31 +208,31 @@ public class MainFrame extends javax.swing.JFrame {
 
         recallP.setEditable(false);
         recallP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(recallP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 95, 90, 31));
+        jPanel2.add(recallP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 95, 110, 31));
 
         accuracyP.setEditable(false);
         accuracyP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(accuracyP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 175, 90, 31));
+        jPanel2.add(accuracyP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 175, 110, 31));
 
         fMeasureP.setEditable(false);
         fMeasureP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(fMeasureP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 135, 90, 31));
+        jPanel2.add(fMeasureP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 135, 110, 31));
 
         recall.setEditable(false);
         recall.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         recall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         recall.setPreferredSize(new java.awt.Dimension(6, 26));
-        jPanel2.add(recall, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 95, 90, 31));
+        jPanel2.add(recall, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 95, 110, 31));
 
         fMeasure.setEditable(false);
         fMeasure.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         fMeasure.setPreferredSize(new java.awt.Dimension(6, 26));
-        jPanel2.add(fMeasure, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 135, 90, 31));
+        jPanel2.add(fMeasure, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 135, 110, 31));
 
         accuracy.setEditable(false);
         accuracy.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         accuracy.setPreferredSize(new java.awt.Dimension(6, 26));
-        jPanel2.add(accuracy, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 175, 90, 31));
+        jPanel2.add(accuracy, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 175, 110, 31));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("MNB");
@@ -253,7 +253,7 @@ public class MainFrame extends javax.swing.JFrame {
                 precisionActionPerformed(evt);
             }
         });
-        jPanel2.add(precision, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 55, 90, 31));
+        jPanel2.add(precision, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 55, 110, 31));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Evaluasi");
@@ -290,26 +290,6 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("Folds");
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel13.setText("Limit");
-
-        limitCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        limitCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "20", "50", "100", "500" }));
-        limitCombo.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                limitComboAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        limitCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limitComboActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout klasifikasiLayout = new javax.swing.GroupLayout(klasifikasi);
         klasifikasi.setLayout(klasifikasiLayout);
         klasifikasiLayout.setHorizontalGroup(
@@ -317,14 +297,8 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(klasifikasiLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(klasifikasiLayout.createSequentialGroup()
-                        .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)
-                        .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(limitCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)))
+                    .addComponent(jLabel12)
+                    .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -347,13 +321,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
+                .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(limitCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(prosesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -585,10 +555,9 @@ public class MainFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(testExecTime)
                                     .addComponent(trainPOSExecTime)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(testPOSExecTime, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(testPOSExecTime, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -611,9 +580,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel24)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel22)
-                        .addComponent(jLabel23))
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel22)
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -637,9 +605,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel27)
-                        .addComponent(jLabel26))
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel27)
                     .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -722,65 +689,59 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_nameFileActionPerformed
 
     private void mnbRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnbRBActionPerformed
-        // TODO add your handling code here:
-        
+                    // TODO add your handling code here:
+        prosesBtn.setEnabled(true);
     }//GEN-LAST:event_mnbRBActionPerformed
     
     public void doProsesWithoutPOSTag () throws IOException {
-//        Folds kFoldCV = new Folds(10, tweetList);
-//        kFoldCV.shuffle(new Random(), tweetList);
         double trainingElapsedTime = 0.0;
         double testElapsedTime = 0.0;
         double[] priorProbability;
         double[][] conditionalProbability;
         int folds = kFoldCV.getFolds();
-        System.out.format("Number of folds: %s\n\n", folds);
 
+        System.out.format("Fold: %s", fold + 1 + " " + "MNB");
+        System.out.println();
+         
+//        Proses Training Usecase ke-5        
+        double trainingStartTime = System.currentTimeMillis();
+        List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
+        Weighting bobot = new Weighting(trainingSet);
+        bobot.prepareCountWeight();
+        bobot.doWeighting();
+        MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
+        priorProbability = mnbp.calculatePriorProbability();
+        conditionalProbability = mnbp.calculateConditionalProbability();
+        trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
+          
+//        Proses Testing Usecase ke-6
+        double testStartTime = System.currentTimeMillis();
+        List<Tweet> testingSet = kFoldCV.getTestSet(fold);
+        MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
+        mnbc.prepareToClassify(); 
+        Evaluator evaluator = new Evaluator(mnbc);
+        testElapsedTime += System.currentTimeMillis() - testStartTime;
+                
+        System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
+        System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
+        System.out.println();
         
-        
-        //for (int i = 0; i < folds; ++i) {
-            double trainingStartTime = System.currentTimeMillis();
-            List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
-            Weighting bobot = new Weighting(trainingSet);
-            bobot.prepareCountWeight();
-            bobot.doWeighting();
-            MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
-            priorProbability = mnbp.calculatePriorProbability();
-            conditionalProbability = mnbp.calculateConditionalProbability();
-            trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
+        trainExecTime.setText("" + trainingElapsedTime / 1000d);
+        testExecTime.setText("" + testElapsedTime / 1000d);
             
-            double testStartTime = System.currentTimeMillis();
-            List<Tweet> testingSet = kFoldCV.getTestSet(fold);
-            MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
-            mnbc.prepareToClassify();
+        tp.setText("" + evaluator.getTruePositive());
+        fp.setText("" + evaluator.getFalsePositive());
+        tn.setText("" + evaluator.getTrueNegative());
+        fn.setText("" + evaluator.getFalseNegative());
             
-            Evaluator evaluator = new Evaluator(mnbc);
-            testElapsedTime += System.currentTimeMillis() - testStartTime;
-            
-            System.out.format("Fold: %s", fold + 1);
-            System.out.println();
-            System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
-            System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
-            System.out.println();
-            trainExecTime.setText("" + trainingElapsedTime / 1000d);
-            testExecTime.setText("" + testElapsedTime / 1000d);
-            
-            tp.setText("" + evaluator.getTruePositive());
-            fp.setText("" + evaluator.getFalsePositive());
-            tn.setText("" + evaluator.getTrueNegative());
-            fn.setText("" + evaluator.getFalseNegative());
-            
-            precision.setText("" + evaluator.getPrecision());
-            recall.setText("" + evaluator.getRecall());
-            fMeasure.setText("" + evaluator.getFMeasure());
-            accuracy.setText("" + evaluator.getAccuracy());
-        //}
-            
+        precision.setText("" + evaluator.getPrecision());
+        recall.setText("" + evaluator.getRecall());
+        fMeasure.setText("" + evaluator.getFMeasure());
+        accuracy.setText("" + evaluator.getAccuracy());
+   
     }
     
      public void doProsesWithPOSTag () throws IOException {
-//        Folds kFoldCV = new Folds(10, tweetList);
-//        kFoldCV.shuffle(new Random(), tweetList);
         
         double trainingElapsedTime = 0.0;
         double testElapsedTime = 0.0;
@@ -789,61 +750,66 @@ public class MainFrame extends javax.swing.JFrame {
         double[][] conditionalProbability;
         System.out.format("Number of folds: %s\n\n", folds);
 
+        System.out.format("Fold: %s", fold + 1 + " " + "MNB(POS Tagging)");
+        System.out.println();
         
+//        Proses Training Usecase ke-2
+        double trainingStartTime = System.currentTimeMillis();
+        List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
+        Weighting bobot = new Weighting(trainingSet);
+        bobot.prepareCountWeightPOS();
+        bobot.doWeightingPOS();
+        MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
+        priorProbability = mnbp.calculatePriorProbability();
+        conditionalProbability = mnbp.calculateConditionalProbability();
+        trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
+         
+         System.out.println("==========================================");
         
-        //for (int i = 0; i < folds; ++i) {
-            double trainingStartTime = System.currentTimeMillis();
-            List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
-            Weighting bobot = new Weighting(trainingSet);
-            bobot.prepareCountWeightPOS();
-            bobot.doWeightingPOS();
-            MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
-            priorProbability = mnbp.calculatePriorProbability();
-            conditionalProbability = mnbp.calculateConditionalProbability();
-            trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
+//        Proses Testing Usecase ke-3
+        double testStartTime = System.currentTimeMillis();
+        List<Tweet> testingSet = kFoldCV.getTestSet(fold);
+        MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
+        mnbc.prepareToClassifyWithPOS();
+        testElapsedTime += System.currentTimeMillis() - testStartTime;
+        Evaluator evaluator = new Evaluator(mnbc);
+                
+        System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
+        System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
+        System.out.println();
+        
+        trainPOSExecTime.setText("" + trainingElapsedTime / 1000d);
+        testPOSExecTime.setText("" + testElapsedTime / 1000d);
             
-            double testStartTime = System.currentTimeMillis();
-            List<Tweet> testingSet = kFoldCV.getTestSet(fold);
-            MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
-            mnbc.prepareToClassifyWithPOS();
-            testElapsedTime += System.currentTimeMillis() - testStartTime;
-            Evaluator evaluator = new Evaluator(mnbc);
+        tpP.setText("" + evaluator.getTruePositive());
+        fpP.setText("" + evaluator.getFalsePositive());
+        tnP.setText("" + evaluator.getTrueNegative());
+        fnP.setText("" + evaluator.getFalseNegative());
             
-            
-            System.out.format("Fold: %s", fold + 1);
-            System.out.println();
-            System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
-            System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
-            System.out.println();
-            trainPOSExecTime.setText("" + trainingElapsedTime / 1000d);
-            testPOSExecTime.setText("" + testElapsedTime / 1000d);
-            
-            tpP.setText("" + evaluator.getTruePositive());
-            fpP.setText("" + evaluator.getFalsePositive());
-            tnP.setText("" + evaluator.getTrueNegative());
-            fnP.setText("" + evaluator.getFalseNegative());
-            
-            precisionP.setText("" + evaluator.getPrecision());
-            recallP.setText("" + evaluator.getRecall());
-            fMeasureP.setText("" + evaluator.getFMeasure());
-            accuracyP.setText("" + evaluator.getAccuracy());
-        //}
+        precisionP.setText("" + evaluator.getPrecision());
+        recallP.setText("" + evaluator.getRecall());
+        fMeasureP.setText("" + evaluator.getFMeasure());
+        accuracyP.setText("" + evaluator.getAccuracy());    
             
     }
+     
+    private void classification(String contentTweet, int classSentiment, int outputClass){
+        this.contentTweet = contentTweet;
+        this.classSentiment = classSentiment;
+        this.outputClass = outputClass;
+    }
     
-    
+//    public ArrayList resultOfClassification(){
+//        ArrayList<classification> list = new ArrayList<classification>;
+//    }
+//    
     private void precisionPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precisionPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_precisionPActionPerformed
 
     private void loadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBtnActionPerformed
         // TODO add your handling code here:
-        prosesBtn.setEnabled(true);
-        mnbRB.setEnabled(true);
-        mnbPosRB.setEnabled(true);
-        foldCombo.setEnabled(true);
-        limitCombo.setEnabled(true);
-        
+                
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Pilih File");
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -865,21 +831,24 @@ public class MainFrame extends javax.swing.JFrame {
             } catch (NullPointerException e) {
                     JOptionPane.showMessageDialog(null, "format file not .txt", "Failed", JOptionPane.ERROR_MESSAGE);
             } catch (IOException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
                 System.out.println("Failed");
 
         }
         
+        
+        mnbRB.setEnabled(true);
+        mnbPosRB.setEnabled(true);
+        foldCombo.setEnabled(true);
+
+        
     }//GEN-LAST:event_loadBtnActionPerformed
 
     private void mnbPosRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnbPosRBActionPerformed
         // TODO add your handling code here:
-        if(mnbPosRB.isSelected()){
-            
-
-        }
+        prosesBtn.setEnabled(true);
         
         
     }//GEN-LAST:event_mnbPosRBActionPerformed
@@ -896,7 +865,7 @@ public class MainFrame extends javax.swing.JFrame {
                 //System.out.println(tweetList);
                 doProsesWithoutPOSTag();
             } catch (IOException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         } else if(mnbPosRB.isSelected()) {
@@ -904,7 +873,7 @@ public class MainFrame extends javax.swing.JFrame {
             try {
                 doProsesWithPOSTag();
             } catch (IOException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_prosesBtnActionPerformed
@@ -938,14 +907,6 @@ public class MainFrame extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_foldComboActionPerformed
-
-    private void limitComboAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_limitComboAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_limitComboAncestorAdded
-
-    private void limitComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limitComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_limitComboActionPerformed
 
     private void precisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precisionActionPerformed
         // TODO add your handling code here:
@@ -1027,20 +988,21 @@ public class MainFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame().setVisible(true);
+                new MainForm().setVisible(true);
             }
         });
     }
@@ -1059,7 +1021,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1094,7 +1055,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel klasifikasi;
     private javax.swing.JTable klasifikasiTable1;
     private javax.swing.JTable klasifikasiTable2;
-    private javax.swing.JComboBox<String> limitCombo;
     private javax.swing.JButton loadBtn;
     private javax.swing.JRadioButton mnbPosRB;
     private javax.swing.JRadioButton mnbRB;

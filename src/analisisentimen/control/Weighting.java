@@ -130,11 +130,11 @@ public class Weighting {
 
         hasilPembobotan = new double[globaltermlist.getTotalTerm()][tweetList.size()];
         for(int i=0; i<tweetList.size(); i++){
-            String sdocs[] = tweetList.get(i).getTermList().toStringArray(); 
+            String sTweet[] = tweetList.get(i).getTermList().toStringArray(); 
 //            System.out.println("Data" + "ke :" + " " +i);
 //            System.out.println(twList.get(i).getContentTweet() + " : " + Arrays.toString(twList.get(i).getTermList().toStringArray()));
             for(int j=0; j<hasilPembobotan.length; j++){
-                hasilPembobotan[j][i] = tfPOS(sdocs, globaltermlist.getTermAt(j).getTerm()) * 
+                hasilPembobotan[j][i] = tfPOS(sTweet, globaltermlist.getTermAt(j).getTerm()) * 
                         idf(tweetList, globaltermlist.getTermAt(j).getTerm());
                 
                 

@@ -17,12 +17,12 @@ import java.util.Random;
  * @author Asus
  */
 public class Folds {
-     private List<Tweet> tweetList;
-    private int folds;
+    private List<Tweet> tweetList;
+    private int fold;
 
-    public Folds(int folds, List<Tweet> tweetList) {
+    public Folds(int fold, List<Tweet> tweetList) {
         this.tweetList = tweetList;
-        this.folds = folds;
+        this.fold = fold;
     }
     
     public List<Tweet> getTweetList()
@@ -48,8 +48,8 @@ public class Folds {
     
     public List<Tweet> getTrainingSet(int foldIteration)
     {
-        int begin = foldIteration * size() / folds;
-        int end = (foldIteration + 1) * size() / folds;
+        int begin = foldIteration * size() / fold;
+        int end = (foldIteration + 1) * size() / fold;
         List<Tweet> trainingSet = new ArrayList<>(tweetList.subList(0, begin));
         trainingSet.addAll(tweetList.subList(end, size()));
         return trainingSet;
@@ -57,14 +57,14 @@ public class Folds {
     
     public List<Tweet> getTestSet(int foldIteration)
     {
-        int begin = foldIteration * size() / folds;
-        int end = (foldIteration + 1) * size() / folds;
+        int begin = foldIteration * size() / fold;
+        int end = (foldIteration + 1) * size() / fold;
         return new ArrayList<>(tweetList.subList(begin, end));
     }
     
     public int getFolds()
     {
-        return folds;
+        return fold;
     }
     
     

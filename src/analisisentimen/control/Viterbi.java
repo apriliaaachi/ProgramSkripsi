@@ -62,8 +62,8 @@ public class Viterbi {
                 int sentenceLength = sentence.getWords().size();
                 int tagListLength = tagList.size();
                 
-                //System.out.println("isi sentence : " + " " + sentence.getWords()+" "+sentenceLength);              
-                //System.out.println("isi tag : " + " " + tagList+tagListLength);
+//                System.out.println("isi sentence : " + " " + sentence.getWords()+" "+sentenceLength);              
+//                System.out.println("isi tag : " + " " + tagList+tagListLength);
 
                 Double[][] viterbiTable = new Double[tagListLength][sentenceLength];
 
