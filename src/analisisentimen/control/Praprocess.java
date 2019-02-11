@@ -32,9 +32,7 @@ public class Praprocess {
 
 	
     public Praprocess() {
-	//Corpus corpus = new Corpus();
         listToken = new TermList();
-	//corpus.readStopWord();
     }
 
     public void setTokenList(TermList tokenList) {
@@ -46,12 +44,13 @@ public class Praprocess {
     }
     
     public void PraWithoutPOSTag(Tweet tweetList) throws IOException {
-         
-        String[] r = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
-        String[] u = removeUniqueCharacter(r);
+        String[] p = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
+        String[] u = removeUniqueCharacter(p);
         String[] n = dictionaryFormalize(u);
-        String[] s = stemming(n);
-
+        String[] s = stemming1(n);
+        
+        cetak(n);
+        
 	listTokenCurrent = new TermList();
 
         for(int i=0; i<s.length; i++){
@@ -74,54 +73,28 @@ public class Praprocess {
         String[] p = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
         String[] u = removeUniqueCharacter(p);
         String[] n = dictionaryFormalize(u);       
-        viterbi.prepareCountViterbi(n); 
+        viterbi.prepareCountViterbi(n);
         viterbi.posTagger();
+        String[] s = stemming2(viterbi.getListWord());
         
-        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
-        System.out.println("vibertiPath        : " + viterbi.getListTag());
-        System.out.println("\n");
+//        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
+//        System.out.println("vibertiPath        : " + viterbi.getListTag());
+//        System.out.println("\n");
         
-        Stemming stem = new Stemming();
-        String[] st = new String[viterbi.getListWord().size()];
-        int i,j,k;
-        
-        for (i=0; i<viterbi.getListWord().size(); i++){
-            
-            st[i] = stem.Stem(viterbi.getListWord().get(i).toString());
-            //System.out.println(st[i]);
-        }
-        
-        String[] tag = new String[viterbi.getListTag().size()+10]; //???
-        
-        for(j=0; j<viterbi.getListTag().size(); j++){
-            tag[j] = stem.Stem(viterbi.getListTag().get(j).toString());
-            //System.out.println(tag[j]);
-            
-        }
-        
-        
-        String[] combine = new String[st.length];
-        for (k=0; k<st.length; k++){
-            combine[k] = st[k] + "/" + tag[k];
-            System.out.println(combine[k]);
-        }
-
-
 	listTokenCurrent = new TermList();
 
-        for(int l=0; l<combine.length; l++){
-            if(combine[l].length()>1) {
-		if((combine[l].contains("NN")&&!combine[l].contains("NNP"))||
-                   combine[l].contains("RB")||
-                   combine[l].contains("NEG")||
-                   combine[l].contains("VB")||
-                   combine[l].contains("JJ")) {
-                    
-                    //combine[l] = combine[l];
-                    listTokenCurrent.addTerm(new Term(combine[l]));
-                    Term tkn = listToken.checkTerm(combine[l]);
+        for(int i=0; i<s.length; i++){
+            if(s[i].length()>1) {
+		if((s[i].contains("NN")&&!s[i].contains("NNP"))||
+                   s[i].contains("RB")||
+                   s[i].contains("NEG")||
+                   s[i].contains("VB")||
+                   s[i].contains("JJ")) {
+
+                    listTokenCurrent.addTerm(new Term(s[i]));
+                    Term tkn = listToken.checkTerm(s[i]);
                     if(tkn==null) {
-			listToken.addTerm(new Term(combine[l]));
+			listToken.addTerm(new Term(s[i]));
                     }
 		}
             }
@@ -134,8 +107,7 @@ public class Praprocess {
           List<Integer> temp = new ArrayList<Integer>();
           int index;
           
-          int i=0;
-          for(i=0; i<list.size(); i++){
+          for(int i=0; i<list.size(); i++){
               if(list.get(i).contains("#")||
                  list.get(i).contains("@")||
                  list.get(i).contains("http")||
@@ -149,8 +121,7 @@ public class Praprocess {
 
           } 
             
-        int k;
-        for(k=temp.size()-1;k>=0;k--){
+        for(int k=temp.size()-1;k>=0;k--){
             index = temp.get(k);
             list.remove(index);
         }
@@ -185,16 +156,33 @@ public class Praprocess {
         return result.replaceAll(P, "");
     }
 
-    public String[] stemming (String[] token){
+    public String[] stemming1 (String[] token) throws IOException{
         Stemming stem = new Stemming();
         
-        String hasilStem = "";
-        String[] resultS;
+        String st = "";
+        String[] result;
         for(int i=0; i<token.length; i++){
-            hasilStem += stem.Stem(token[i])+ "\n";
+            st += stem.kataDasar(token[i])+ "\n";
         }
-        resultS = hasilStem.split("\n");
-        return resultS;
+        result = st.split("\n");
+        return result;
+
+    }
+    
+    public String[] stemming2 (List<Word> token){
+        Stemming stem = new Stemming();
+        
+        String[] st = new String[token.size()];
+        String[] result = new String[st.length];
+        
+        for (int i=0; i<token.size(); i++){
+            
+            st[i] = stem.kataDasar(token.get(i).toString());
+            result[i] = st[i] + "/" + token.get(i);
+            //System.out.println(combine[i]);
+        }
+        
+        return result;
     }
     
     public boolean findStopWord(String str) {
@@ -222,7 +210,15 @@ public class Praprocess {
 	return listToken;
     }
     
-    
+    public void cetak(String[] token){
+        String result = "";
+        
+        for(int i=0; i<token.length; i++){
+            result += token[i]+ " ";
+        }
+        
+        System.out.println(result);
+    }
     
         
 }

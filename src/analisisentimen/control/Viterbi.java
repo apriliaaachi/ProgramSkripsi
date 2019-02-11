@@ -27,6 +27,7 @@ public class Viterbi {
     List<Word> word = new ArrayList<Word>();
     
     public void posTagger() {
+        
         hmmProb.prepareCountHolderMaps();
         List<Tag> tagList = convertKeySetToList(hmmProb);
 

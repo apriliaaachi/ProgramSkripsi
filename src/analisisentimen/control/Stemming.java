@@ -15,7 +15,7 @@ public class Stemming {
     }
     
     //proses stem
-    public String Stem(String kata){
+    public String kataDasar(String kata){
         if(DocumentReader.getIndexAlphabet().contains(getFirstChart(kata))){
             //System.out.println(kata);
             if (!stringMatcher(kata, DocumentReader.getKamusKDid().get(getFirstChart(kata)))){

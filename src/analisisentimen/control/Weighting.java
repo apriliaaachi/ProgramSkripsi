@@ -23,12 +23,10 @@ import java.util.stream.DoubleStream;
  * @author Asus
  */
 public class Weighting {
-    private List<Tweet> tweetList;
-    private DocumentReader dr;
+    private final List<Tweet> tweetList;
     private TermList globaltermlist;
     private double[][] resultOfWeighting;
-    Praprocess praprocess = new Praprocess();
-    
+    private Praprocess praprocess = new Praprocess();
     
     
     public Weighting(List<Tweet> trainingSet) throws IOException{
@@ -180,7 +178,7 @@ public class Weighting {
                 n++;
             }
         }
-//        return n;
+        
         return n;
     }
     

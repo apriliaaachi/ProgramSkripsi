@@ -25,13 +25,13 @@ public final class Evaluator {
         for (int i = 0; i < mnbc.classifyFull().length; i++) {
             //System.out.println(mnbc.classifyFull()[i]);
             if(mnbc.classifyFull()[i] == 0) {
-                if(mnbc.classifyFull()[i] == mnbc.getTweetList().get(i).getClassSentiment()) {
+                if(mnbc.classifyFull()[i] == mnbc.getTestingSet().get(i).getClassSentiment()) {
                     TN++;
                 } else {
                     FN++;
                 }
             } else if(mnbc.classifyFull()[i] == 1) {
-                if(mnbc.classifyFull()[i] == mnbc.getTweetList().get(i).getClassSentiment()) {
+                if(mnbc.classifyFull()[i] == mnbc.getTestingSet().get(i).getClassSentiment()) {
                     TP++;
                 } else {
                     FP++;

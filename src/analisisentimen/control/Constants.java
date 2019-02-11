@@ -27,7 +27,9 @@ public class Constants {
     
     public static final String BAHASA_BAKU_TIDAK_BAKU = "data/bakutidakbaku.txt";
     
-    public static final String STEMMING = "data/kamusKDid/";
+    public static final String STEMMING = "data/kata_dasar.txt";
+    
+    public static final String STEMMINGS = "data/kamusKDid/";
     
     public static final String VITERBI_PATH_OUTPUT_FILE = "viterbi_path_output_file.txt";
 

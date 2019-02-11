@@ -207,7 +207,7 @@ public class DocumentReader {
     
     public static void initKamusKDid() {
         // init Kamus
-        String pathKamusKDid = Constants.STEMMING;
+        String pathKamusKDid = Constants.STEMMINGS;
         File FileFolder = new File(pathKamusKDid);
         List<String> Files = new ArrayList<String>(listFiles(FileFolder));
         Map<Character, String[]> tmpKamusKDid = new LinkedHashMap<Character, String[]>();
@@ -295,7 +295,7 @@ public class DocumentReader {
     }
     
     public List<String> readStopWord() {
-        List<String>lststopword = new ArrayList<String>();
+        List<String>listStopword = new ArrayList<String>();
 		
         try {
 
@@ -305,7 +305,7 @@ public class DocumentReader {
             while((s = in.readLine()) != null){
                 sb.append(s);
             }
-            lststopword.addAll(Arrays.asList(sb.toString().split(";")));
+            listStopword.addAll(Arrays.asList(sb.toString().split(";")));
 
 	} catch(FileNotFoundException ex) {
             
@@ -316,7 +316,7 @@ public class DocumentReader {
             System.out.println("IOexception"); 
 	}
         
-        return lststopword;
+        return listStopword;
     }
     
 

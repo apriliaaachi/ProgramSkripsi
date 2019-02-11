@@ -19,29 +19,29 @@ import java.util.List;
  * @author Asus
  */
 public class MNBClassifier {
-    private List<Tweet> tweetList;
+    private List<Tweet> testingSet;
     private DocumentReader dr;
     private TermList globaltermlist;
     private double[][] hasilPembobotan;
     private Praprocess praproses = new Praprocess();
     private double[] priorProb;
     private double[][] conditionalProb;
-    private Weighting bobotan;
+    private Weighting weight;
     
 
-    public MNBClassifier(List<Tweet> testingSet, double[] priorProbability, double[][] conditionalProbability,Weighting bobot) {
-        tweetList = testingSet;
+    public MNBClassifier(List<Tweet> testingSetC, double[] priorProbability, double[][] conditionalProbability,Weighting weighting) {
+        testingSet = testingSetC;
         priorProb = priorProbability;
         conditionalProb = conditionalProbability;
-        bobotan = bobot;
+        weight = weighting;
     }
 
 
     public void prepareToClassifyWithPOS(){
         try{
             
-            for(int i=0; i< tweetList.size();i++) {
-                Tweet tweet = tweetList.get(i);
+            for(int i=0; i< testingSet.size();i++) {
+                Tweet tweet = testingSet.get(i);
                 
                 praproses.PraWithPOSTag(tweet);
 
@@ -59,8 +59,8 @@ public class MNBClassifier {
     public void prepareToClassify(){
         try{
             
-            for(int i=0; i< tweetList.size();i++) {
-                Tweet tweet = tweetList.get(i);
+            for(int i=0; i< testingSet.size();i++) {
+                Tweet tweet = testingSet.get(i);
                 
                 praproses.PraWithoutPOSTag(tweet);
 
@@ -77,15 +77,15 @@ public class MNBClassifier {
     
     public int[] classifyFull(){
         //mnbProb = new MNBProbabilistik(bobotan);
-        double data[][] = new double[tweetList.size()][priorProb.length];    
+        double data[][] = new double[testingSet.size()][priorProb.length];    
         double result;
 
-        for (int i = 0; i < tweetList.size(); i++) {
-            for (int j = 0; j < tweetList.get(i).getTermList().getTotalTerm(); j++) {
+        for (int i = 0; i < testingSet.size(); i++) {
+            for (int j = 0; j < testingSet.get(i).getTermList().getTotalTerm(); j++) {
             
                 for (int k = 0; k < priorProb.length; k++) {
-                    result = Math.log10(priorProb[k]) + tweetList.get(i).getTermList().getTotalTerm() *
-                            (numberOfConditionalProb(tweetList.get(i).getTermList().getTermAt(j).getTerm(), k));
+                    result = Math.log10(priorProb[k]) + testingSet.get(i).getTermList().getTotalTerm() *
+                            (numberOfConditionalProb(testingSet.get(i).getTermList().getTermAt(j).getTerm(), k));
                     data[i][k] = result;
                 }
             }
@@ -99,7 +99,7 @@ public class MNBClassifier {
         double result=0;
 
         for (int k = 0; k < conditionalProb[0].length; k++) {
-            if(term.equals(bobotan.getGlobalTermList().getTermAt(k).getTerm())){
+            if(term.equals(weight.getGlobalTermList().getTermAt(k).getTerm())){
                 result += Math.log10(conditionalProb[i][k]);
                     
             }
@@ -127,8 +127,8 @@ public class MNBClassifier {
         return outClass;
     }
     
-    public List<Tweet> getTweetList(){
-        return tweetList;
+    public List<Tweet> getTestingSet(){
+        return testingSet;
     }
     
     
