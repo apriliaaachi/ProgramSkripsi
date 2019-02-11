@@ -186,6 +186,25 @@ public class Corpus {
         indexAlphabet = tmpIndexAlphabet;
     }
     
+    public List<String> readKamusKataDasar() throws FileNotFoundException, IOException {
+
+        List<String> kataDasar = new ArrayList<String>();
+        File file = new File(Constants.STEMMING);
+        
+        if(file != null){
+            BufferedReader in = null;
+
+            in = new BufferedReader(new FileReader(file));
+            
+            String s = null;
+            while((s = in.readLine()) != null){
+                kataDasar.add(s);
+            }
+        }
+        
+        return kataDasar;
+    }
+    
     // list all Files found in folder
     private static ArrayList<String> listFiles(final File pathFolder) {
         // * Retrieve all files inside a Folder

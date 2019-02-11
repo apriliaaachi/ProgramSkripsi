@@ -35,10 +35,6 @@ public class DocumentReader {
     public DocumentReader(String filePath){
         this.filePath = filePath;
     }
-
-    DocumentReader() {
-        
-    }
     
     public void readTweetSet() throws FileNotFoundException, IOException {     
         tweetList = new ArrayList<>();

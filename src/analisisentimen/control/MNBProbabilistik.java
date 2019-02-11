@@ -19,10 +19,10 @@ import java.util.stream.DoubleStream;
 public class MNBProbabilistik {
     private double[] prior;
     private double[][] conditional;
-    private Weighting bobotTerm;
+    private Weighting weightTerm;
     
-    public MNBProbabilistik(Weighting bobot) {
-        bobotTerm = bobot;
+    public MNBProbabilistik(Weighting weight) {
+        weightTerm = weight;
         
     }
 
@@ -32,13 +32,13 @@ public class MNBProbabilistik {
         classes[0] = 0;
         classes[1] = 1;
         double[] prior = new double[classes.length];
-        int numberOfData = bobotTerm.getTweetList().size();
-        double hasil = 0;
+        int numberOfData = weightTerm.getTweetList().size();
+        double result = 0;
         
         for (int i = 0; i < classes.length; i++) {
             
-            hasil = (double)(bobotTerm.numberOfDataWithClass(classes[i]) + 1) / (numberOfData + classes.length);
-            prior[i] = hasil; 
+            result = (double)(weightTerm.numberOfDataWithClass(classes[i]) + 1) / (numberOfData + classes.length);
+            prior[i] = result; 
                                 
         }
         
@@ -52,7 +52,7 @@ public class MNBProbabilistik {
         classes[0] = 0;
         classes[1] = 1;
   
-        int totalTerm = bobotTerm.getGlobalTermList().getTotalTerm();
+        int totalTerm = weightTerm.getGlobalTermList().getTotalTerm();
         conditional = new double[classes.length][totalTerm];
         
         
@@ -60,8 +60,8 @@ public class MNBProbabilistik {
             
             for (int j = 0; j < totalTerm ; j++) {
 
-                double hasil = (bobotTerm.numberOfWeightWithClassInData(i, bobotTerm.getGlobalTermList().getTermAt(j))+1)/((bobotTerm.numberOfAllWeightWithClass(i)) + totalTerm);
-                conditional[i][j] = hasil;
+                double result = (weightTerm.numberOfWeightWithClassInData(i, weightTerm.getGlobalTermList().getTermAt(j))+1)/((weightTerm.numberOfAllWeightWithClass(i)) + totalTerm);
+                conditional[i][j] = result;
 
             }
                                   

@@ -26,8 +26,8 @@ public class Weighting {
     private List<Tweet> tweetList;
     private DocumentReader dr;
     private TermList globaltermlist;
-    private double[][] hasilPembobotan;
-    Praprocess praproses = new Praprocess();
+    private double[][] resultOfWeighting;
+    Praprocess praprocess = new Praprocess();
     
     
     
@@ -42,12 +42,12 @@ public class Weighting {
             for(int i=0; i< tweetList.size();i++) {
                 Tweet tweet = tweetList.get(i);
                 
-                praproses.PraWithoutPOSTag(tweet);
+                praprocess.PraWithoutPOSTag(tweet);
 
-                tweet.setTermlist(praproses.getCurrentTokenList());
+                tweet.setTermlist(praprocess.getCurrentTokenList());
 
             }
-            globaltermlist = praproses.getTokenList();
+            globaltermlist = praprocess.getTokenList();
             System.out.println(globaltermlist);
             
 
@@ -64,12 +64,12 @@ public class Weighting {
             for(int i=0; i< tweetList.size();i++) {
                 Tweet tweet = tweetList.get(i);
                 
-                praproses.PraWithPOSTag(tweet);
+                praprocess.PraWithPOSTag(tweet);
 
-                tweet.setTermlist(praproses.getCurrentTokenList());
+                tweet.setTermlist(praprocess.getCurrentTokenList());
 
             }
-            globaltermlist = praproses.getTokenList();
+            globaltermlist = praprocess.getTokenList();
             System.out.println(globaltermlist);
             
 
@@ -97,13 +97,13 @@ public class Weighting {
     
     public void doWeighting(){
 
-        hasilPembobotan = new double[globaltermlist.getTotalTerm()][tweetList.size()];
+        resultOfWeighting = new double[globaltermlist.getTotalTerm()][tweetList.size()];
         for(int i=0; i<tweetList.size(); i++){
             String sdocs[] = tweetList.get(i).getTermList().toStringArray(); 
 //            System.out.println("Data" + "ke :" + " " +i);
 //            System.out.println(twList.get(i).getContentTweet() + " : " + Arrays.toString(twList.get(i).getTermList().toStringArray()));
-            for(int j=0; j<hasilPembobotan.length; j++){
-                hasilPembobotan[j][i] = tf(sdocs, globaltermlist.getTermAt(j).getTerm()) * 
+            for(int j=0; j<resultOfWeighting.length; j++){
+                resultOfWeighting[j][i] = tf(sdocs, globaltermlist.getTermAt(j).getTerm()) * 
                         idf(tweetList, globaltermlist.getTermAt(j).getTerm());
                 
                 
@@ -128,13 +128,13 @@ public class Weighting {
     
     public void doWeightingPOS(){
 
-        hasilPembobotan = new double[globaltermlist.getTotalTerm()][tweetList.size()];
+        resultOfWeighting = new double[globaltermlist.getTotalTerm()][tweetList.size()];
         for(int i=0; i<tweetList.size(); i++){
             String sTweet[] = tweetList.get(i).getTermList().toStringArray(); 
 //            System.out.println("Data" + "ke :" + " " +i);
 //            System.out.println(twList.get(i).getContentTweet() + " : " + Arrays.toString(twList.get(i).getTermList().toStringArray()));
-            for(int j=0; j<hasilPembobotan.length; j++){
-                hasilPembobotan[j][i] = tfPOS(sTweet, globaltermlist.getTermAt(j).getTerm()) * 
+            for(int j=0; j<resultOfWeighting.length; j++){
+                resultOfWeighting[j][i] = tfPOS(sTweet, globaltermlist.getTermAt(j).getTerm()) * 
                         idf(tweetList, globaltermlist.getTermAt(j).getTerm());
                 
                 
@@ -157,12 +157,12 @@ public class Weighting {
 //            }
     }
     
-    public double[][] getHasilPembobotan(){
-        return hasilPembobotan;
+    public double[][] getResultOfWeighting(){
+        return resultOfWeighting;
     }
     
-    public double[][] getHasilTransposeBobot(){
-        return transpose(getHasilPembobotan());
+    public double[][] getResultOfTransposeBobot(){
+        return transpose(getResultOfWeighting());
     }
     
     public List<Tweet> getTweetList(){
@@ -257,8 +257,8 @@ public class Weighting {
     
     public double numberOfAllWeightWithClass(int classes){
         
-        double[][] data = new double[getHasilTransposeBobot().length][getHasilTransposeBobot()[0].length];
-        data = getHasilTransposeBobot();
+        double[][] data = new double[getResultOfTransposeBobot().length][getResultOfTransposeBobot()[0].length];
+        data = getResultOfTransposeBobot();
         double numberOfWeightWithClass = 0;
 
         for(int i=0; i<data.length; i++){
@@ -274,8 +274,8 @@ public class Weighting {
     }
     
     public double numberOfWeightWithClassInData(int classes, Term term) {
-        double[][] data = new double[getHasilTransposeBobot().length][getHasilTransposeBobot()[0].length];
-        data = getHasilTransposeBobot();
+        double[][] data = new double[getResultOfTransposeBobot().length][getResultOfTransposeBobot()[0].length];
+        data = getResultOfTransposeBobot();
         double numberOfWeightWithClassInData = 0;
         
         for (int i = 0; i < data.length; i++) {

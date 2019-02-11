@@ -152,7 +152,6 @@
 1 Banyaknya biaya yg dikeluarkan pada pembangunan LRT dipalembang sebanding dengan kemegahan dan kekokohan dari LRT tersebut #lrtpalembangpunyokito
 1 "Tranportasi anti macet adalah lrt, lrt sangat membantu masyarakat dipalembang #lrtpalembangpunyokito"
 1 #lrtpalembangpunyokito lrt bisa mengurangi kemacetan terutama di jembatan ampera. Warga Palembang yang tidak suka kemacetan sangat direkomendasikan menggunakan moda transportasi ini
-1 LRT memudahkan mobilitas warga Palembang namun waktu tempuh masih belum bisa dihemat karena kecepatannya kurang #LRTPalembangPunyoKito
 1 "Kalau di dalam LRT itu ada colokan listrik di masing-masing tempat duduk pasti lebih seru, bisa main laptop nih dalam perjalanan. #lrtpalembangpunyokito (28)"
 1 "kalo naik LRT Palembang, dari kejauhan jempatan Ampera tercinta terlihat nan indah saat LRT melangsungkan perjalanan. #lrtpalembangpunyokito (22)"
 1 Kalo mau ngerasain naik kereta api di udara yuk buruan naik LRT adem lagi pokoknya seru. #lrtpalembangpunyokito (18)
@@ -412,3 +411,4 @@
 0 "Kereta LRT tiba-tiba mogok saat tengah beroperasi di tengah lintas Stasiun Jakabaring, Palembang, Sumatera Selatan, pada Minggu (12/8) sore."
 0 "Wajar aja masyarakat masih doyan naik kendaraan pribadi. Sudah mogok-mogokan. Loket tutup tiba-tiba. Orang ngantri sampai pintu masuk. orang dikejer waktu! Apaan cepet sampai? Malah bikin orang telat kemana-mama. Cacat! #lrtpalembang #lrt"
 0 Sebelum ini sepertinya belum ada sosialiasi bagi penumpang tentang keadaan emergency. #payonaiklrt #lrtpunyokito
+0 LRT memudahkan mobilitas warga Palembang namun waktu tempuh masih belum bisa dihemat karena kecepatannya kurang #LRTPalembangPunyoKito
