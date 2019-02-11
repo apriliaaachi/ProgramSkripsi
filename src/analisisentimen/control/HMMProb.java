@@ -70,21 +70,21 @@ public class HMMProb {
     
     public void prepareCountHolderMaps() {
 
-        Corpus corpus = new Corpus();
+        DocumentReader dr = new DocumentReader();
 
-        corpus = corpus.createDataTrainObject();
+        dr = dr.createDataTrainObject();
 
-        tagMap = corpus.getTagMap();
+        tagMap = dr.getTagMap();
 
-        createTagsBigramMap(corpus);
+        createTagsBigramMap(dr);
 
-        createWordTagBigramMap(corpus);
+        createWordTagBigramMap(dr);
 
     }
 
-    private void createTagsBigramMap(Corpus corpus) {
+    private void createTagsBigramMap(DocumentReader dr) {
 
-        for (Sentence sentence : corpus.getSentenceList()) {
+        for (Sentence sentence : dr.getSentenceList()) {
 
             for (int i = 0; i < sentence.getTags().size() - 1; i++) {
 
@@ -107,9 +107,9 @@ public class HMMProb {
 //        "C(ti-1, ti) holder map is created.."
     }
 
-    private void createWordTagBigramMap(Corpus corpus) {
+    private void createWordTagBigramMap(DocumentReader dr) {
 
-        for (Sentence sentence : corpus.getSentenceList()) {
+        for (Sentence sentence : dr.getSentenceList()) {
 
             for (int i = 0; i < sentence.getWords().size(); i++) {
 

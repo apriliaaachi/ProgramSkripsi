@@ -19,8 +19,8 @@ public class StemmingNaziefAdriani {
     public String KataDasar(String kata) throws IOException {
         String akarkata = null;
         String kata_asli = kata;
-        Corpus corpus = new Corpus();
-        List<String> kata_dasar = corpus.readKamusKataDasar();
+        DocumentReader dr = new DocumentReader();
+        List<String> kata_dasar = dr.readKamusKataDasar();
         boolean syarat = false;
         for (int i = 0; i < kata_dasar.size(); i++) {
 
@@ -57,8 +57,8 @@ public class StemmingNaziefAdriani {
 
     public boolean kata_dasar(String kata) throws IOException {
         boolean syarat = false;
-        Corpus corpus = new Corpus();
-        List<String> kata_dasar = corpus.readKamusKataDasar();
+        DocumentReader dr = new DocumentReader();
+        List<String> kata_dasar = dr.readKamusKataDasar();
         for (int i = 0; i < kata_dasar.size(); i++) {
 
             if (kata_dasar.get(i).toLowerCase().trim().equals(kata.toLowerCase())) {
@@ -98,8 +98,8 @@ public class StemmingNaziefAdriani {
         }
 
         //3a.jika kata ditemukan dalam kamus maka algoritma berhenti
-        Corpus corpus = new Corpus();
-        List<String> kata_dasar = corpus.readKamusKataDasar();
+        DocumentReader dr = new DocumentReader();
+        List<String> kata_dasar = dr.readKamusKataDasar();
 
         if (kata_dasar.contains(bersikan)) {
             akarkata = bersikan;

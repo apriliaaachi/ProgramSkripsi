@@ -163,8 +163,8 @@ public class Praprocess {
     
     public String[] dictionaryFormalize(String[] token) throws IOException {
         
-        Corpus corpus = new Corpus();
-        String[][] kamusFormal = corpus.readKamusFormal();
+        DocumentReader dr = new DocumentReader();
+        String[][] kamusFormal = dr.readKamusFormal();
         
         for(int i=0;i<token.length;i++){
             for(int j=0;j<kamusFormal.length;j++){
@@ -199,9 +199,9 @@ public class Praprocess {
     
     public boolean findStopWord(String str) {
         List<String>listStopword = new ArrayList<String>();
-        Corpus corpus = new Corpus();
+        DocumentReader dr = new DocumentReader();
         
-        listStopword = corpus.readStopWord();
+        listStopword = dr.readStopWord();
         
         boolean ada=false;
         for(int i=0; i<listStopword.size(); i++) {

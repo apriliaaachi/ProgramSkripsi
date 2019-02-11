@@ -11,14 +11,14 @@ package analisisentimen.control;
  */
 public class Stemming {
     public Stemming(){
-        Corpus.initKamusKDid();
+        DocumentReader.initKamusKDid();
     }
     
     //proses stem
     public String Stem(String kata){
-        if(Corpus.getIndexAlphabet().contains(getFirstChart(kata))){
+        if(DocumentReader.getIndexAlphabet().contains(getFirstChart(kata))){
             //System.out.println(kata);
-            if (!stringMatcher(kata, Corpus.getKamusKDid().get(getFirstChart(kata)))){
+            if (!stringMatcher(kata, DocumentReader.getKamusKDid().get(getFirstChart(kata)))){
 //                System.out.println(kata+" masuk ke proses stemming");
                 return this.Hps_derivation_prefixes(this.Hps_derivation_suffixes(this.Hps_inflection_Suffixes(kata)));
             }
@@ -57,13 +57,13 @@ public class Stemming {
         String Hasil2="";
         if (kata.endsWith("i")||kata.endsWith("an")||kata.endsWith("kan")){
             Hasil= kata.replaceAll("(i|an|kan)$","");
-            if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))){
+            if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))){
 //                System.out.println("Hasil: "+Hasil);
                 return Hasil;
             }
             if (kata.endsWith("k")){
                 Hasil2 = kata.replaceAll("(k)$", "");
-                if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))){
+                if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))){
 //                    System.out.println("Hasil2: "+Hasil2);
                     return Hasil2;
                 }
@@ -82,18 +82,18 @@ public class Stemming {
         String Hasil2 = "";
         if (kata.startsWith("di")||kata.startsWith("ke")||kata.startsWith("se")){
             Hasil = kata.replaceAll("^(di|ke|se)", "");
-            if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil))))return Hasil;
+            if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil))))return Hasil;
             Hasil2 = Hps_derivation_suffixes(Hasil);
-            if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+            if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
             if (kata.startsWith("diper")){
                 Hasil = kata.replaceAll("^(diper)", "");
-                if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                 Hasil2 = Hps_derivation_suffixes(Hasil);
-                if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 Hasil = kata.replaceAll("^(diper)", "r"); //luluh "r"
-                if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                 Hasil2 = Hps_derivation_suffixes(Hasil);
-                if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
             }
         }
         if (kata.startsWith("te")||kata.startsWith("me")||kata.startsWith("be")||kata.startsWith("pe")){
@@ -101,15 +101,15 @@ public class Stemming {
                 if (kata.startsWith("terr")) return der_prefixes;
                 if (kata.startsWith("ter")){
                      Hasil = kata.replaceAll("^(ter)", "");
-                     if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                     if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                      Hasil2 = Hps_derivation_suffixes(Hasil);
-                     if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                     if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("te")){
                     Hasil = kata.replaceAll("^(te)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
             }
             if (kata.startsWith("me")){
@@ -117,71 +117,71 @@ public class Stemming {
                         kata.startsWith("menge")||kata.startsWith("mengo")||kata.startsWith("mengk")
                         ||kata.startsWith("mengg")||kata.startsWith("mengh")||kata.startsWith("mengq")){
                     Hasil = kata.replaceAll("^(meng)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     Hasil = kata.replaceAll("^(meng)", "k");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("meny")){
                     Hasil = kata.replaceAll("^(meny)", "s");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("mem")){
                     if (kata.startsWith("memb")||kata.startsWith("memf")||kata.startsWith("memp")
                             ||kata.startsWith("memv")){
                         Hasil = kata.replaceAll("^(mem)", "");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                         Hasil = kata.replaceAll("^(mem)", "p");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                         if (kata.startsWith("memper")){
                             Hasil = kata.replaceAll("^(memper)", "");
-                            if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                            if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                             Hasil2 = Hps_derivation_suffixes(Hasil);
-                            if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                            if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                             Hasil = kata.replaceAll("^(memper)", "r");
-                            if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                            if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                             Hasil2 = Hps_derivation_suffixes(Hasil);
-                            if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                            if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                         }
                     }
                     if (kata.startsWith("mema")||kata.startsWith("memi")||kata.startsWith("memu")
                             ||kata.startsWith("meme")||kata.startsWith("memo")){
                         Hasil = kata.replaceAll("^(mem)", "p");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     }
 		}
                 if (kata.startsWith("men")){
                     if (kata.startsWith("menc")||kata.startsWith("mend")||kata.startsWith("menj")
                             ||kata.startsWith("mens")||kata.startsWith("menz")){
                         Hasil = kata.replaceAll("^(men)", "");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     }
                     if (kata.startsWith("mena")||kata.startsWith("meni")||kata.startsWith("menu")
                             ||kata.startsWith("mene")||kata.startsWith("meno")){
                         Hasil = kata.replaceAll("^(men)", "t");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     }
                 }
                 if (kata.startsWith("me")){
                     Hasil = kata.replaceAll("^(me)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
             }
             if (kata.startsWith("be")){
@@ -189,28 +189,28 @@ public class Stemming {
                     if (kata.startsWith("bera")||kata.startsWith("beri")||kata.startsWith("beru")
                             ||kata.startsWith("bere")||kata.startsWith("bero")){
                         Hasil = kata.replaceAll("^(ber)", "");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                         Hasil = kata.replaceAll("^(ber)", "r");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     }
                     if (!(kata.startsWith("bera")||kata.startsWith("beri")||kata.startsWith("beru")
                             ||kata.startsWith("bere")||kata.startsWith("bero"))){
                         Hasil = kata.replaceAll("^(ber)", "");
-                        if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                        if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                         Hasil2 = Hps_derivation_suffixes(Hasil);
-                        if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                        if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     }
                     return der_prefixes;
                 }
                 if (kata.startsWith("bek")){
                     Hasil = kata.replaceAll("^(be)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
             }
             if (kata.startsWith("pe")){
@@ -218,74 +218,74 @@ public class Stemming {
                         ||kata.startsWith("penge")||kata.startsWith("pengo")||kata.startsWith("pengk")
                         ||kata.startsWith("pengg")||kata.startsWith("pengh")||kata.startsWith("pengq")){
                     Hasil = kata.replaceAll("^(peng)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     Hasil2 = Hps_derivation_suffixes(Hasil.substring(1));
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     Hasil = "k" + Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("peny")){
                     Hasil = kata.replaceAll("^(peny)", "s");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("pemb")||kata.startsWith("pemf")||kata.startsWith("pemp")||
                         kata.startsWith("pemv")||kata.startsWith("pemr")||kata.startsWith("pem")){
                     Hasil = kata.replaceAll("^(pem)", "");
                     if(Hasil.startsWith("belajar"))Hasil="ajar";
 
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     Hasil = kata.replaceAll("^(pem)", "p");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("penc")||kata.startsWith("pend")||kata.startsWith("penj")
                         ||kata.startsWith("pens")||kata.startsWith("penz")){
                     Hasil = kata.replaceAll("^(pen)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("pena")||kata.startsWith("peni")||kata.startsWith("penu")
                         ||kata.startsWith("pene")||kata.startsWith("peno")){
                     Hasil = kata.replaceAll("^(pen)", "t");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
 		}
                 if (kata.startsWith("per")){
                     Hasil = kata.replaceAll("^(per)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                     Hasil = kata.replaceAll("^(per)", "r");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
                 if (kata.startsWith("pe")){
                     Hasil = kata.replaceAll("^(pe)", "");
-                    if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                    if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                     Hasil2 = Hps_derivation_suffixes(Hasil);
-                    if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                    if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 }
             }
             if (kata.startsWith("memper")){
                 Hasil = kata.replaceAll("^(memper)", "");
-                if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                 Hasil2 = Hps_derivation_suffixes(Hasil);
-                if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
                 Hasil = kata.replaceAll("^(memper)", "r");
-                if (stringMatcher(Hasil, Corpus.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
+                if (stringMatcher(Hasil, DocumentReader.getKamusKDid().get(getFirstChart(Hasil)))) return Hasil;
                 Hasil2 = Hps_derivation_suffixes(Hasil);
-                if (stringMatcher(Hasil2, Corpus.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
+                if (stringMatcher(Hasil2, DocumentReader.getKamusKDid().get(getFirstChart(Hasil2)))) return Hasil2;
             }
 		}
         if (!(kata.startsWith("di")||kata.startsWith("ke")||kata.startsWith("se")||

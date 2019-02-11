@@ -6,7 +6,6 @@
 
 package analisisentimen.boundary;
 
-import analisisentimen.control.Corpus;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -706,10 +705,10 @@ public class MainForm extends javax.swing.JFrame {
 //        Proses Training Usecase ke-5        
         double trainingStartTime = System.currentTimeMillis();
         List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
-        Weighting bobot = new Weighting(trainingSet);
-        bobot.prepareCountWeight();
-        bobot.doWeighting();
-        MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
+        Weighting weight = new Weighting(trainingSet);
+        weight.prepareCountWeight();
+        weight.doWeighting();
+        MNBProbabilistik mnbp = new MNBProbabilistik(weight);
         priorProbability = mnbp.calculatePriorProbability();
         conditionalProbability = mnbp.calculateConditionalProbability();
         trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
@@ -717,7 +716,7 @@ public class MainForm extends javax.swing.JFrame {
 //        Proses Testing Usecase ke-6
         double testStartTime = System.currentTimeMillis();
         List<Tweet> testingSet = kFoldCV.getTestSet(fold);
-        MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
+        MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,weight);
         mnbc.prepareToClassify(); 
         Evaluator evaluator = new Evaluator(mnbc);
         testElapsedTime += System.currentTimeMillis() - testStartTime;
@@ -756,10 +755,10 @@ public class MainForm extends javax.swing.JFrame {
 //        Proses Training Usecase ke-2
         double trainingStartTime = System.currentTimeMillis();
         List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
-        Weighting bobot = new Weighting(trainingSet);
-        bobot.prepareCountWeightPOS();
-        bobot.doWeightingPOS();
-        MNBProbabilistik mnbp = new MNBProbabilistik(bobot);
+        Weighting weight = new Weighting(trainingSet);
+        weight.prepareCountWeightPOS();
+        weight.doWeightingPOS();
+        MNBProbabilistik mnbp = new MNBProbabilistik(weight);
         priorProbability = mnbp.calculatePriorProbability();
         conditionalProbability = mnbp.calculateConditionalProbability();
         trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
@@ -769,7 +768,7 @@ public class MainForm extends javax.swing.JFrame {
 //        Proses Testing Usecase ke-3
         double testStartTime = System.currentTimeMillis();
         List<Tweet> testingSet = kFoldCV.getTestSet(fold);
-        MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,bobot);
+        MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,weight);
         mnbc.prepareToClassifyWithPOS();
         testElapsedTime += System.currentTimeMillis() - testStartTime;
         Evaluator evaluator = new Evaluator(mnbc);
