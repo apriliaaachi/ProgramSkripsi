@@ -46,7 +46,7 @@ public class Weighting {
 
             }
             globaltermlist = praprocess.getTokenList();
-            System.out.println(globaltermlist);
+          
             
 
         }catch(FileNotFoundException ex){
@@ -68,7 +68,7 @@ public class Weighting {
 
             }
             globaltermlist = praprocess.getTokenList();
-            System.out.println(globaltermlist);
+            
             
 
         }catch(FileNotFoundException ex){
@@ -97,11 +97,12 @@ public class Weighting {
 
         resultOfWeighting = new double[globaltermlist.getTotalTerm()][tweetList.size()];
         for(int i=0; i<tweetList.size(); i++){
-            String sdocs[] = tweetList.get(i).getTermList().toStringArray(); 
+            String tweets[] = tweetList.get(i).getTermList().toStringArray(); 
+//            System.out.println(tweets.length);
 //            System.out.println("Data" + "ke :" + " " +i);
 //            System.out.println(twList.get(i).getContentTweet() + " : " + Arrays.toString(twList.get(i).getTermList().toStringArray()));
             for(int j=0; j<resultOfWeighting.length; j++){
-                resultOfWeighting[j][i] = tf(sdocs, globaltermlist.getTermAt(j).getTerm()) * 
+                resultOfWeighting[j][i] = tf(tweets, globaltermlist.getTermAt(j).getTerm()) * 
                         idf(tweetList, globaltermlist.getTermAt(j).getTerm());
                 
                 
@@ -141,7 +142,7 @@ public class Weighting {
 //             System.out.print(globaltermlist.getTermAt(j).getTerm() + ": ");
 //                System.out.print(tf(sdocs, globaltermlist.getTermAt(j).getTerm()) + " * " 
 //                        + idf(tweetList, globaltermlist.getTermAt(j).getTerm()) + " = ");
-//                System.out.println(hasilPembobotan[j][i]);
+//                System.out.println(resultOfWeighting[j][i]);
                 
                 
 //--------------------------------------------------------------------------
@@ -179,7 +180,7 @@ public class Weighting {
             }
         }
         
-        return n;
+        return n/tweet.length;
     }
     
     static double tfPOS(String[] tweet, String term){
@@ -195,9 +196,9 @@ public class Weighting {
         if(term.contains("JJ")){
             w = 5;            
         } else if(term.contains("RB")){
-            w = 4;
+            w = 3;
         } else if(term.contains("VB")){
-            w = 3;  
+            w = 4;  
         } else if(term.contains("NEG")){
             w = 2;  
         } else if(term.contains("NN")){

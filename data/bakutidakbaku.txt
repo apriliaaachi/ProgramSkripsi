@@ -46,7 +46,6 @@ apva apa
 aq saya
 aqu aku
 aquwh aku
-asap sesegera mungkin
 asbun asal bunyi
 aseek asyik
 aseekk asyik
@@ -405,7 +404,7 @@ hlm halaman
 hlng hilang
 hny hanya
 hnya hanya
-hoax isu bohong
+hoax bohong
 houm rumah
 hr hari
 hrs harus
@@ -460,7 +459,7 @@ jubir juru bicara
 jurdil jujur adil
 jutek galak
 jwb jawab
-k ke
+k ribu
 ka kakak
 kab kabupaten
 kabag kepala bagian
@@ -651,7 +650,6 @@ markus makelar kasus
 masukin masukkan
 mba mbak
 melu ikut
-mending lebih baik
 mepet dekat sekali
 mgkn mungkin
 mgu minggu
@@ -858,7 +856,6 @@ pilkada pemilihan kepala daerah
 pimpro pemimpin proyek
 pisan sangat
 pisgor pisang goreng
-pk penjahat kelamin
 pke pakai
 plg paling
 pm private message
@@ -1253,3 +1250,113 @@ Jago jaga
 Samo-samo sama-sama
 pucuk atas
 sepur kereta
+sopir supir
+cnth contoh
+ketdkberesan ketidakberesan
+proj proyek
+by oleh
+sehrsnya seharusnya
+pemb pembangunan
+t triliyunan
+m milyaran
+rkyt rakyat
+test uji
+drive jalan
+badgetnya anggarannya
+trilyun triliyun
+event acara
+sukaa suka
+bangettt banget
+biso bisa
+donggg dong
+kebanggan kebanggaan
+sd sampai-dengan
+cost biaya
+asalan sembarangan
+inihh ini
+malay malaysia
+wargo warga
+g tidak
+high tinggi
+melebur menyelesaikan
+antrian antrean
+rame ramai
+history sejarah
+masyrkt masyarakat
+flat standar
+transport transportasi
+kayaknya sepertinya
+banyakin memperbanyak
+yidak tidak
+bhw bahwa
+pdhal padahal
+buntung rugi
+denger dengar
+berkeiginan berkeinginan
+ngikuti mengikuti
+mubazier mubazir
+des desember
+/ per
+kmrin kemarin
+mubadzir mubazir
+butuhny butuh
+ny nya
+dibanggain dibanggakan
+ambrol ambruk
+kek seperti
+tenagh tengah
+salahin menyalahkan
+mmg memang
+akuinlah akuilah
+kesel kesal
+parahhh parah
+amat banget
+antusian antusias
+kirain mengira
+mantab mantap
+in ini
+ok oke
+pas saat
+lengang sunyi
+krna karena
+infra infrastruktur
+adrenali adrenalin
+dog dong
+value nilai
+addednya tambahnya
+sblmny sebelumnya
+menggunkan menggunakan
+ngefek berdampak
+entisipasi antisipasi
+aduuuh aduh
+insfrastruktr insfrastruktur
+kereen keren
+sekalii sekali
+apalgi apalagi
+terpjg terpanjang
+ngak tidak
+woooooww wow
+ngebosenin membosankan
+ngebangunnya membangunnya
+rusakkk rusak
+mengantri mengantre
+cm cuma
+adl adalah
+kesell kesal
+cba coba
+kayak seperti
+ngebawa membawa
+kaliny kalinya
+duhhh aduh
+punyo punya
+sm sama
+jan januari
+nyeleweng menyeleweng
+ngabisin menghabiskan
+triliunan triliyunan
+emak ibu
+pakit paket
+utangan perutangan
+buanget banget
+effisien efisien
+bak seperti

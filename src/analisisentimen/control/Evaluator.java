@@ -6,6 +6,8 @@
 package analisisentimen.control;
 
 import analisisentimen.entity.Tweet;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,21 +19,22 @@ public final class Evaluator {
     double fMeasure, precision, accuracy, recall;
     int TP, FP, TN, FN;
     
-    public Evaluator(MNBClassifier mnbc) {
+    
+    public Evaluator(int[] classify, MNBClassifier mnbc) {
         TP=0; FP=0; TN=0; FN=0;
         //System.out.println(mnbc.classifyFull());
         
         
-        for (int i = 0; i < mnbc.classifyFull().length; i++) {
-            //System.out.println(mnbc.classifyFull()[i]);
-            if(mnbc.classifyFull()[i] == 0) {
-                if(mnbc.classifyFull()[i] == mnbc.getTestingSet().get(i).getClassSentiment()) {
+        for (int i = 0; i < classify.length; i++) {
+
+            if(classify[i] == 0) {
+                if(classify[i] == mnbc.getTestingSet().get(i).getClassSentiment()) {
                     TN++;
                 } else {
                     FN++;
                 }
-            } else if(mnbc.classifyFull()[i] == 1) {
-                if(mnbc.classifyFull()[i] == mnbc.getTestingSet().get(i).getClassSentiment()) {
+            } else if(classify[i] == 1) {
+                if(classify[i] == mnbc.getTestingSet().get(i).getClassSentiment()) {
                     TP++;
                 } else {
                     FP++;
@@ -56,11 +59,12 @@ public final class Evaluator {
     
 
     private void precision(int TN, int FN, int TP, int FP) {
+       
         precision = (double)TP/(TP+FP);
     }
     
     public double getPrecision(){
-        return precision;
+        return round(precision, 4);
     }
 
     private void recall(int TN, int FN, int TP, int FP) {
@@ -68,7 +72,7 @@ public final class Evaluator {
     }
     
     public double getRecall(){
-        return recall;
+        return round(recall, 4);
     }
 
     private void fMeasure(int TN, int FN, int TP, int FP) {
@@ -76,7 +80,7 @@ public final class Evaluator {
     }
     
     public double getFMeasure(){
-        return fMeasure;
+        return round(fMeasure, 4);
     }
 
     private void accuracy(int TN, int FN, int TP, int FP) {
@@ -84,7 +88,7 @@ public final class Evaluator {
     }
     
     public double getAccuracy(){
-        return accuracy;
+        return round(accuracy, 4);
     }
     
     public int getFalsePositive(){
@@ -101,5 +105,12 @@ public final class Evaluator {
     
     public int getFalseNegative(){
         return FN;
+    }
+    
+    public double round(double value, int numberOfDigitsAfterDecimalPoint) {
+        BigDecimal bigDecimal = new BigDecimal(value);
+        bigDecimal = bigDecimal.setScale(numberOfDigitsAfterDecimalPoint,
+                BigDecimal.ROUND_HALF_UP);
+        return bigDecimal.doubleValue();
     }
 }

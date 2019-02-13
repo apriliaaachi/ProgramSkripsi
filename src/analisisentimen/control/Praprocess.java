@@ -49,7 +49,7 @@ public class Praprocess {
         String[] n = dictionaryFormalize(u);
         String[] s = stemming1(n);
         
-        cetak(n);
+        //cetak(n);
         
 	listTokenCurrent = new TermList();
 
@@ -75,7 +75,7 @@ public class Praprocess {
         String[] n = dictionaryFormalize(u);       
         viterbi.prepareCountViterbi(n);
         viterbi.posTagger();
-        String[] s = stemming2(viterbi.getListWord());
+        String[] s = stemming2(viterbi.getListWord(), viterbi.getListTag());
         
 //        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
 //        System.out.println("vibertiPath        : " + viterbi.getListTag());
@@ -113,6 +113,10 @@ public class Praprocess {
                  list.get(i).contains("http")||
                  list.get(i).contains("https")||
                  list.get(i).contains("www")||
+                 list.get(i).contains("cc")||
+                 list.get(i).contains("via")||
+                 list.get(i).contains("rt")||
+                 list.get(i).contains("cont")||
                  list.get(i).contains("com")) {
                   
                  temp.add(i);
@@ -152,7 +156,7 @@ public class Praprocess {
     public String removePunctuation(String tweet){
         // Filter Punctuation
         String result = tweet;
-        String P = "[!\"$%&'()*\\+,./;<=>?\\[\\]^~_\\`{|}…0987654321]";
+        String P = "[!\"$%&'()*\\+,.;:<=>?\\[\\]^~_\\`{|}…0987654321]";
         return result.replaceAll(P, "");
     }
 
@@ -169,7 +173,7 @@ public class Praprocess {
 
     }
     
-    public String[] stemming2 (List<Word> token){
+    public String[] stemming2 (List<Word> token, List<Tag> tag){
         Stemming stem = new Stemming();
         
         String[] st = new String[token.size()];
@@ -178,7 +182,7 @@ public class Praprocess {
         for (int i=0; i<token.size(); i++){
             
             st[i] = stem.kataDasar(token.get(i).toString());
-            result[i] = st[i] + "/" + token.get(i);
+            result[i] = st[i] + "/" + tag.get(i);
             //System.out.println(combine[i]);
         }
         

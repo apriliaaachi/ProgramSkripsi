@@ -286,6 +286,7 @@ public class DocumentReader {
             for(int j=0; j<kolom; j++) {
                 normalize[i][j]=dataRow[j];
                 //System.out.println(normalize[i][j]);
+                
 
             }
         }

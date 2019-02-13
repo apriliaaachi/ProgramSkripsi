@@ -65,6 +65,7 @@ public class MNBClassifier {
                 praproses.PraWithoutPOSTag(tweet);
 
                 tweet.setTermlist(praproses.getCurrentTokenList());
+                
 
             }
 

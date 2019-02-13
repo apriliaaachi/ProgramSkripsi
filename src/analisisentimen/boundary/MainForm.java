@@ -22,9 +22,12 @@ import analisisentimen.entity.Folds;
 import analisisentimen.control.Viterbi;
 import analisisentimen.control.Weighting;
 import analisisentimen.entity.Tweet;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 //import postaggermnb.control.Normalisasi;
 /**
@@ -39,9 +42,7 @@ public class MainForm extends javax.swing.JFrame {
     private static Folds kFoldCV;
     private List<Tweet> tweetList;
     private int fold;
-    private String contentTweet;
-    private int classSentiment;
-    private int outputClass;
+    
 //    private static DocumentReader tweet = new DocumentReader();
 
     /** Creates new form MainFrame */
@@ -194,7 +195,7 @@ public class MainForm extends javax.swing.JFrame {
                 precisionPActionPerformed(evt);
             }
         });
-        jPanel2.add(precisionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 55, 110, 31));
+        jPanel2.add(precisionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 55, 90, 31));
 
         jLabel6.setText("Recall");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 101, -1, 18));
@@ -207,31 +208,31 @@ public class MainForm extends javax.swing.JFrame {
 
         recallP.setEditable(false);
         recallP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(recallP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 95, 110, 31));
+        jPanel2.add(recallP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 95, 90, 31));
 
         accuracyP.setEditable(false);
         accuracyP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(accuracyP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 175, 110, 31));
+        jPanel2.add(accuracyP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 175, 90, 31));
 
         fMeasureP.setEditable(false);
         fMeasureP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.add(fMeasureP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 135, 110, 31));
+        jPanel2.add(fMeasureP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 135, 90, 31));
 
         recall.setEditable(false);
         recall.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         recall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         recall.setPreferredSize(new java.awt.Dimension(6, 26));
-        jPanel2.add(recall, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 95, 110, 31));
+        jPanel2.add(recall, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 95, 90, 31));
 
         fMeasure.setEditable(false);
         fMeasure.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         fMeasure.setPreferredSize(new java.awt.Dimension(6, 26));
-        jPanel2.add(fMeasure, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 135, 110, 31));
+        jPanel2.add(fMeasure, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 135, 90, 31));
 
         accuracy.setEditable(false);
         accuracy.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         accuracy.setPreferredSize(new java.awt.Dimension(6, 26));
-        jPanel2.add(accuracy, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 175, 110, 31));
+        jPanel2.add(accuracy, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 175, 90, 31));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("MNB");
@@ -239,7 +240,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("MNB (POS Tagging)");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
         jLabel16.setText("Precision");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
@@ -252,7 +253,7 @@ public class MainForm extends javax.swing.JFrame {
                 precisionActionPerformed(evt);
             }
         });
-        jPanel2.add(precision, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 55, 110, 31));
+        jPanel2.add(precision, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 55, 90, 31));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Evaluasi");
@@ -689,6 +690,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void mnbRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnbRBActionPerformed
                     // TODO add your handling code here:
+        foldCombo.setEnabled(true);
         prosesBtn.setEnabled(true);
     }//GEN-LAST:event_mnbRBActionPerformed
     
@@ -718,21 +720,24 @@ public class MainForm extends javax.swing.JFrame {
         List<Tweet> testingSet = kFoldCV.getTestSet(fold);
         MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,weight);
         mnbc.prepareToClassify(); 
-        Evaluator evaluator = new Evaluator(mnbc);
+        int[] classify = mnbc.classifyFull();
         testElapsedTime += System.currentTimeMillis() - testStartTime;
-                
+        Evaluator evaluator = new Evaluator(classify, mnbc);
+              
         System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
         System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
         System.out.println();
         
+        loadData(testingSet, classify);
+        
         trainExecTime.setText("" + trainingElapsedTime / 1000d);
         testExecTime.setText("" + testElapsedTime / 1000d);
-            
+         
         tp.setText("" + evaluator.getTruePositive());
         fp.setText("" + evaluator.getFalsePositive());
         tn.setText("" + evaluator.getTrueNegative());
         fn.setText("" + evaluator.getFalseNegative());
-            
+        
         precision.setText("" + evaluator.getPrecision());
         recall.setText("" + evaluator.getRecall());
         fMeasure.setText("" + evaluator.getFMeasure());
@@ -755,6 +760,7 @@ public class MainForm extends javax.swing.JFrame {
 //        Proses Training Usecase ke-2
         double trainingStartTime = System.currentTimeMillis();
         List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
+        
         Weighting weight = new Weighting(trainingSet);
         weight.prepareCountWeightPOS();
         weight.doWeightingPOS();
@@ -763,19 +769,22 @@ public class MainForm extends javax.swing.JFrame {
         conditionalProbability = mnbp.calculateConditionalProbability();
         trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
          
-         System.out.println("==========================================");
+//         System.out.println("=====================================");
         
 //        Proses Testing Usecase ke-3
         double testStartTime = System.currentTimeMillis();
         List<Tweet> testingSet = kFoldCV.getTestSet(fold);
         MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,weight);
         mnbc.prepareToClassifyWithPOS();
+        int[] classify = mnbc.classifyFull();
         testElapsedTime += System.currentTimeMillis() - testStartTime;
-        Evaluator evaluator = new Evaluator(mnbc);
+        Evaluator evaluator = new Evaluator(classify, mnbc);
                 
         System.out.format("Total time to train (in seconds): %s\n", trainingElapsedTime / 1000d);
         System.out.format("Total time to test (in seconds): %s\n", testElapsedTime / 1000d);
         System.out.println();
+        
+        loadData(testingSet, classify);
         
         trainPOSExecTime.setText("" + trainingElapsedTime / 1000d);
         testPOSExecTime.setText("" + testElapsedTime / 1000d);
@@ -784,26 +793,88 @@ public class MainForm extends javax.swing.JFrame {
         fpP.setText("" + evaluator.getFalsePositive());
         tnP.setText("" + evaluator.getTrueNegative());
         fnP.setText("" + evaluator.getFalseNegative());
-            
+        
         precisionP.setText("" + evaluator.getPrecision());
         recallP.setText("" + evaluator.getRecall());
         fMeasureP.setText("" + evaluator.getFMeasure());
         accuracyP.setText("" + evaluator.getAccuracy());    
+        
+        
             
     }
      
-    private void classification(String contentTweet, int classSentiment, int outputClass){
-        this.contentTweet = contentTweet;
-        this.classSentiment = classSentiment;
-        this.outputClass = outputClass;
+    public class Classification {
+        private String contentTweet;
+        private int classSentiment;
+        private int outputClass;
+        private int id;
+        
+        public Classification(int id, String contentTweet, int classSentiment, int outputClass){
+            this.id = id;
+            this.contentTweet = contentTweet;
+            this.classSentiment = classSentiment;
+            this.outputClass = outputClass;
+        }
+        
+        public int getId(){
+            return id;
+        }
+        
+        public String getContentTweet(){
+            return contentTweet;
+        }
+        
+        public int getClassSentiment(){
+            return classSentiment;
+        }
+        
+        public int getOutputClass(){
+            return outputClass;
+        }
+    }
+     
+    
+    
+    private void loadData(List<Tweet> data, int[] outClass){
+        List<Classification> data1 = new ArrayList<>();
+        
+        for (int i = 0; i < data.size(); i++) {
+            Classification classi = new Classification(i, data.get(i).getContentTweet(), data.get(i).getClassSentiment(), outClass[i]);
+            data1.add(classi);
+        }
+        
+        DefaultTableModel model = null;
+        if(mnbRB.isSelected()){
+            model = (DefaultTableModel) klasifikasiTable1.getModel();
+            
+        } else if(mnbPosRB.isSelected()) {
+            model = (DefaultTableModel) klasifikasiTable2.getModel();
+        }
+        
+        model.addColumn("Id");
+        model.addColumn("Content Tweet");
+        model.addColumn("Class Sentiment");
+        model.addColumn("Output Class");
+        
+        for (int j = 0; j < data1.size(); j++) {
+            Vector<Integer> id = new Vector<>(Arrays.asList(data1.get(j).getId()));
+            Vector<String> contentTweet = new Vector<>(Arrays.asList(data1.get(j).getContentTweet()));
+            Vector<Integer> classSentiment = new Vector<>(Arrays.asList(data1.get(j).getClassSentiment()));
+            Vector<Integer> outputClass = new Vector<>(Arrays.asList(data1.get(j).getOutputClass()));
+        
+            Vector<Object> row = new Vector<Object>();
+            row.addElement(id.get(0));
+            row.addElement(contentTweet.get(0));
+            row.addElement(classSentiment.get(0));
+            row.addElement(outputClass.get(0));
+            model.addRow(row);
+        }
+        
+        
     }
     
-//    public ArrayList resultOfClassification(){
-//        ArrayList<classification> list = new ArrayList<classification>;
-//    }
-//    
     private void precisionPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precisionPActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:)
     }//GEN-LAST:event_precisionPActionPerformed
 
     private void loadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBtnActionPerformed
@@ -837,19 +908,16 @@ public class MainForm extends javax.swing.JFrame {
 
         }
         
-        
         mnbRB.setEnabled(true);
         mnbPosRB.setEnabled(true);
-        foldCombo.setEnabled(true);
-
         
     }//GEN-LAST:event_loadBtnActionPerformed
 
     private void mnbPosRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnbPosRBActionPerformed
         // TODO add your handling code here:
+        foldCombo.setEnabled(true);
         prosesBtn.setEnabled(true);
-        
-        
+         
     }//GEN-LAST:event_mnbPosRBActionPerformed
 
     private void fpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fpActionPerformed
@@ -857,11 +925,10 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_fpActionPerformed
 
     private void prosesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesBtnActionPerformed
-        
-        
+ 
         if(mnbRB.isSelected()) {
             try {
-                //System.out.println(tweetList);
+                klasifikasiTable1.setModel(new DefaultTableModel());
                 doProsesWithoutPOSTag();
             } catch (IOException ex) {
                 Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
@@ -870,6 +937,7 @@ public class MainForm extends javax.swing.JFrame {
         } else if(mnbPosRB.isSelected()) {
             
             try {
+                klasifikasiTable2.setModel(new DefaultTableModel());
                 doProsesWithPOSTag();
             } catch (IOException ex) {
                 Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
