@@ -34,9 +34,9 @@ public class DocumentReader {
     
     private List<Sentence> sentenceList = new ArrayList<Sentence>();
     private Map<Tag, Integer> tagMap = new HashMap<Tag, Integer>();
-    private Map<Word, Map<Tag, Integer>> wordTagCountMap = new HashMap<Word, Map<Tag, Integer>>();
     
     private static Map<Character, String[]> KamusKDid;
+    private static List<Character> indexAlphabet;
 
     
     public DocumentReader(String filePath){
@@ -50,7 +50,7 @@ public class DocumentReader {
     public void readTweetSet() throws FileNotFoundException, IOException {     
         tweetList = new ArrayList<>();
         File file = new File(filePath);
-        System.out.println(filePath);
+        //System.out.println(filePath);
         
         
         if (file != null){
@@ -72,10 +72,7 @@ public class DocumentReader {
                 classSentiment = 0;
                 
             }
-//            for(int i=0; i< tweetList.size();i++) {
-//                System.out.println("index ke-" + i + ":" + tweetList.get(i).getClassSentiment() + " " + tweetList.get(i).getContentTweet());
-////                
-//            }
+
             in.close();
         }       
     }
@@ -86,10 +83,6 @@ public class DocumentReader {
     
     public List<Sentence> getSentenceList() {
         return sentenceList;
-    }
-    
-    public Map<Tag, Integer> getTagMap() {
-        return tagMap;
     }
 
     public void readTrainPOS(String fileName) {
@@ -152,7 +145,7 @@ public class DocumentReader {
         }
     }
 
-    public void createTagMap(String fileName) {
+    private void createTagMap(String fileName) {
 
         for (Sentence sentence : sentenceList) {
             for (Tag tag : sentence.getTags()) {
@@ -169,23 +162,6 @@ public class DocumentReader {
          
     }
 
-    public Tag retrieveMostFreqTagForWord(Word word) {
-
-        if (wordTagCountMap.containsKey(word)) {
-            Map<Tag, Integer> map = wordTagCountMap.get(word);
-            ValueComparator valueComparator = new ValueComparator(map);
-            TreeMap<Tag, Integer> treeMap = new TreeMap<Tag, Integer>(valueComparator);
-            treeMap.putAll(map);
-
-            return treeMap.firstKey();
-
-        } else {
-
-            return new Tag("NN");
-        }
-
-    }
-
     public DocumentReader createDataTrainObject() {
 
         DocumentReader trainData = new DocumentReader();
@@ -195,14 +171,8 @@ public class DocumentReader {
         return trainData;
     } 
     
-    public static Map<Character, String[]> getKamusKDid() {
-        return KamusKDid;
-    }
-    
-    private static List<Character> indexAlphabet;
-
-    public static List<Character> getIndexAlphabet() {
-        return indexAlphabet;
+    public Map<Tag, Integer> getTagMap() {
+        return tagMap;
     }
     
     public static void initKamusKDid() {
@@ -238,23 +208,12 @@ public class DocumentReader {
         indexAlphabet = tmpIndexAlphabet;
     }
     
-    public List<String> readKamusKataDasar() throws FileNotFoundException, IOException {
-
-        List<String> kataDasar = new ArrayList<String>();
-        File file = new File(Constants.STEMMING);
-        
-        if(file != null){
-            BufferedReader in = null;
-
-            in = new BufferedReader(new FileReader(file));
-            
-            String s = null;
-            while((s = in.readLine()) != null){
-                kataDasar.add(s);
-            }
-        }
-        
-        return kataDasar;
+    public static Map<Character, String[]> getKamusKDid() {
+        return KamusKDid;
+    }
+    
+    public static List<Character> getIndexAlphabet() {
+        return indexAlphabet;
     }
     
     // list all Files found in folder
@@ -285,14 +244,11 @@ public class DocumentReader {
             String dataRow [] = line.split(" ");
             for(int j=0; j<kolom; j++) {
                 normalize[i][j]=dataRow[j];
-                //System.out.println(normalize[i][j]);
-                
-
+                                
             }
         }
         
-        return normalize;
-        
+        return normalize;   
     }
     
     public List<String> readStopWord() {

@@ -42,6 +42,8 @@ public class MainForm extends javax.swing.JFrame {
     private static Folds kFoldCV;
     private List<Tweet> tweetList;
     private int fold;
+    private int limit=100;
+    private List<Tweet> listTweet;
     
 //    private static DocumentReader tweet = new DocumentReader();
 
@@ -52,6 +54,7 @@ public class MainForm extends javax.swing.JFrame {
         mnbRB.setEnabled(false);
         mnbPosRB.setEnabled(false);
         foldCombo.setEnabled(false);
+        limitCombo.setEnabled(false);
 
     }
 
@@ -95,6 +98,8 @@ public class MainForm extends javax.swing.JFrame {
         prosesBtn = new javax.swing.JButton();
         foldCombo = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        limitCombo = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -288,7 +293,18 @@ public class MainForm extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setText("Folds");
+        jLabel12.setText("Limit");
+
+        limitCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        limitCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "300", "400", "500" }));
+        limitCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limitComboActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setText("Folds");
 
         javax.swing.GroupLayout klasifikasiLayout = new javax.swing.GroupLayout(klasifikasi);
         klasifikasi.setLayout(klasifikasiLayout);
@@ -296,9 +312,7 @@ public class MainForm extends javax.swing.JFrame {
             klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(klasifikasiLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -306,7 +320,15 @@ public class MainForm extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(prosesBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(prosesBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(klasifikasiLayout.createSequentialGroup()
+                        .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
+                        .addGap(166, 166, 166)
+                        .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(limitCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         klasifikasiLayout.setVerticalGroup(
@@ -321,10 +343,14 @@ public class MainForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel12)
+                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGroup(klasifikasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(foldCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(limitCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(prosesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(jLabel4)
@@ -691,10 +717,11 @@ public class MainForm extends javax.swing.JFrame {
     private void mnbRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnbRBActionPerformed
                     // TODO add your handling code here:
         foldCombo.setEnabled(true);
+        limitCombo.setEnabled(true);
         prosesBtn.setEnabled(true);
     }//GEN-LAST:event_mnbRBActionPerformed
     
-    public void doProsesWithoutPOSTag () throws IOException {
+    private void doProsesWithoutPOSTag () throws IOException {
         double trainingElapsedTime = 0.0;
         double testElapsedTime = 0.0;
         double[] priorProbability;
@@ -706,21 +733,51 @@ public class MainForm extends javax.swing.JFrame {
          
 //        Proses Training Usecase ke-5        
         double trainingStartTime = System.currentTimeMillis();
-        List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
+        listTweet = kFoldCV.getListTweetLimit(limit, tweetList);
+        List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold, listTweet);
         Weighting weight = new Weighting(trainingSet);
         weight.prepareCountWeight();
         weight.doWeighting();
+        
         MNBProbabilistik mnbp = new MNBProbabilistik(weight);
         priorProbability = mnbp.calculatePriorProbability();
+        
+         for (int k = 0; k < priorProbability.length; k++) {
+             System.out.println(priorProbability[k] + " ");
+         }
+        
+        
         conditionalProbability = mnbp.calculateConditionalProbability();
+        System.out.println("Conditional Probability");
+         for (int i = 0; i < conditionalProbability.length; i++) {
+             for (int j = 0; j < conditionalProbability[0].length; j++) {
+                 System.out.println(conditionalProbability[i][j] + " ");
+             }
+             System.out.println("");
+         }
+
         trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
           
 //        Proses Testing Usecase ke-6
         double testStartTime = System.currentTimeMillis();
-        List<Tweet> testingSet = kFoldCV.getTestSet(fold);
+        List<Tweet> testingSet = kFoldCV.getTestSet(fold, listTweet);
         MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,weight);
         mnbc.prepareToClassify(); 
+                
         int[] classify = mnbc.classifyFull();
+        System.out.println("Hasil Klasifikasi");
+        for (int i = 0; i < mnbc.classifyFul().length; i++) {
+             for (int j = 0; j < mnbc.classifyFul()[i].length; j++) {
+                 System.out.print(mnbc.classifyFul()[i][j] + " ");
+             }
+             System.out.println("");
+         }
+         
+
+         for (int i = 0; i < classify.length; i++) {
+             System.out.println("Data Testing " + i + ": " + classify[i]);
+         }
+        
         testElapsedTime += System.currentTimeMillis() - testStartTime;
         Evaluator evaluator = new Evaluator(classify, mnbc);
               
@@ -745,7 +802,7 @@ public class MainForm extends javax.swing.JFrame {
    
     }
     
-     public void doProsesWithPOSTag () throws IOException {
+     private void doProsesWithPOSTag () throws IOException {
         
         double trainingElapsedTime = 0.0;
         double testElapsedTime = 0.0;
@@ -759,24 +816,51 @@ public class MainForm extends javax.swing.JFrame {
         
 //        Proses Training Usecase ke-2
         double trainingStartTime = System.currentTimeMillis();
-        List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold);
+        listTweet = kFoldCV.getListTweetLimit(limit, tweetList);
+        List<Tweet> trainingSet = kFoldCV.getTrainingSet(fold, listTweet);
         
         Weighting weight = new Weighting(trainingSet);
         weight.prepareCountWeightPOS();
         weight.doWeightingPOS();
+        
+        
         MNBProbabilistik mnbp = new MNBProbabilistik(weight);
         priorProbability = mnbp.calculatePriorProbability();
+         for (int k = 0; k < priorProbability.length; k++) {
+             System.out.println(priorProbability[k]);
+         }
+        
         conditionalProbability = mnbp.calculateConditionalProbability();
+         System.out.println("Conditional");
+         for (int i = 0; i < conditionalProbability.length; i++) {
+             for (int j = 0; j < conditionalProbability[0].length; j++) {
+                 System.out.println(conditionalProbability[i][j] + " ");
+             }
+             System.out.println("");
+         }
+        
         trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
          
 //         System.out.println("=====================================");
         
 //        Proses Testing Usecase ke-3
         double testStartTime = System.currentTimeMillis();
-        List<Tweet> testingSet = kFoldCV.getTestSet(fold);
+        List<Tweet> testingSet = kFoldCV.getTestSet(fold, listTweet);
         MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,weight);
         mnbc.prepareToClassifyWithPOS();
         int[] classify = mnbc.classifyFull();
+         System.out.println("Hasil Klasifikasi");
+         for (int i = 0; i < mnbc.classifyFul().length; i++) {
+             for (int j = 0; j < mnbc.classifyFul()[i].length; j++) {
+                 System.out.print(mnbc.classifyFul()[i][j] + " ");
+             }
+             System.out.println("");
+         }
+        
+         for (int i = 0; i < classify.length; i++) {
+             System.out.println("Data Testing " + i + ": " + classify[i]);
+         }
+        
         testElapsedTime += System.currentTimeMillis() - testStartTime;
         Evaluator evaluator = new Evaluator(classify, mnbc);
                 
@@ -803,46 +887,8 @@ public class MainForm extends javax.swing.JFrame {
             
     }
      
-    public class Classification {
-        private String contentTweet;
-        private int classSentiment;
-        private int outputClass;
-        private int id;
-        
-        public Classification(int id, String contentTweet, int classSentiment, int outputClass){
-            this.id = id;
-            this.contentTweet = contentTweet;
-            this.classSentiment = classSentiment;
-            this.outputClass = outputClass;
-        }
-        
-        public int getId(){
-            return id;
-        }
-        
-        public String getContentTweet(){
-            return contentTweet;
-        }
-        
-        public int getClassSentiment(){
-            return classSentiment;
-        }
-        
-        public int getOutputClass(){
-            return outputClass;
-        }
-    }
-     
-    
-    
     private void loadData(List<Tweet> data, int[] outClass){
-        List<Classification> data1 = new ArrayList<>();
-        
-        for (int i = 0; i < data.size(); i++) {
-            Classification classi = new Classification(i, data.get(i).getContentTweet(), data.get(i).getClassSentiment(), outClass[i]);
-            data1.add(classi);
-        }
-        
+
         DefaultTableModel model = null;
         if(mnbRB.isSelected()){
             model = (DefaultTableModel) klasifikasiTable1.getModel();
@@ -856,11 +902,11 @@ public class MainForm extends javax.swing.JFrame {
         model.addColumn("Class Sentiment");
         model.addColumn("Output Class");
         
-        for (int j = 0; j < data1.size(); j++) {
-            Vector<Integer> id = new Vector<>(Arrays.asList(data1.get(j).getId()));
-            Vector<String> contentTweet = new Vector<>(Arrays.asList(data1.get(j).getContentTweet()));
-            Vector<Integer> classSentiment = new Vector<>(Arrays.asList(data1.get(j).getClassSentiment()));
-            Vector<Integer> outputClass = new Vector<>(Arrays.asList(data1.get(j).getOutputClass()));
+        for (int j = 0; j < data.size(); j++) {
+            Vector<Integer> id = new Vector<>(Arrays.asList(j));
+            Vector<String> contentTweet = new Vector<>(Arrays.asList(data.get(j).getContentTweet()));
+            Vector<Integer> classSentiment = new Vector<>(Arrays.asList(data.get(j).getClassSentiment()));
+            Vector<Integer> outputClass = new Vector<>(Arrays.asList(outClass[j]));
         
             Vector<Object> row = new Vector<Object>();
             row.addElement(id.get(0));
@@ -885,6 +931,8 @@ public class MainForm extends javax.swing.JFrame {
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);
         chooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
+        chooser.setFileFilter(filter);
         
         if (chooser.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
             try{
@@ -892,17 +940,21 @@ public class MainForm extends javax.swing.JFrame {
                 nameFile.setText(selectedFile);
                 System.out.println("Selected File: " + selectedFile);
                 dr = new DocumentReader(selectedFile);
-                dr.readTweetSet();
+                try {
+                    dr.readTweetSet();
+                } catch (IOException ex) {
+                    Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 tweetList = dr.getTweetList();
                 
                 kFoldCV = new Folds(10, tweetList);
                 kFoldCV.shuffle(new Random(), tweetList);
+                
+                
        
             } catch (NullPointerException e) {
                     JOptionPane.showMessageDialog(null, "format file not .txt", "Failed", JOptionPane.ERROR_MESSAGE);
-            } catch (IOException ex) {
-                Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            }  
         } else {
                 System.out.println("Failed");
 
@@ -917,6 +969,7 @@ public class MainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         foldCombo.setEnabled(true);
         prosesBtn.setEnabled(true);
+        limitCombo.setEnabled(true);
          
     }//GEN-LAST:event_mnbPosRBActionPerformed
 
@@ -1022,6 +1075,27 @@ public class MainForm extends javax.swing.JFrame {
     private void testPOSExecTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testPOSExecTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_testPOSExecTimeActionPerformed
+
+    private void limitComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limitComboActionPerformed
+        // TODO add your handling code here:
+        
+        if(limitCombo.getSelectedItem() == "100"){
+            
+            limit = 100;
+        } else if(limitCombo.getSelectedItem() == "200"){
+            
+            limit=200;
+        } else if(limitCombo.getSelectedItem() == "300"){
+            
+            limit=300;
+        } else if(limitCombo.getSelectedItem() == "400"){
+            
+            limit=400;
+        } else if(limitCombo.getSelectedItem() == "500"){
+            
+            limit=500;
+        }
+    }//GEN-LAST:event_limitComboActionPerformed
     
     private void loadBobot(int hasilPembobotan[][]){
         int baris = hasilPembobotan.length;
@@ -1088,6 +1162,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1122,6 +1197,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel klasifikasi;
     private javax.swing.JTable klasifikasiTable1;
     private javax.swing.JTable klasifikasiTable2;
+    private javax.swing.JComboBox<String> limitCombo;
     private javax.swing.JButton loadBtn;
     private javax.swing.JRadioButton mnbPosRB;
     private javax.swing.JRadioButton mnbRB;

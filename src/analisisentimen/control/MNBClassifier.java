@@ -19,17 +19,17 @@ import java.util.List;
  * @author Asus
  */
 public class MNBClassifier {
-    private List<Tweet> testingSet;
+    private final List<Tweet> testingSet;
     private DocumentReader dr;
     private TermList globaltermlist;
     private double[][] hasilPembobotan;
-    private Praprocess praproses = new Praprocess();
-    private double[] priorProb;
-    private double[][] conditionalProb;
-    private Weighting weight;
+    private final Praprocess praproses = new Praprocess();
+    private final double[] priorProb;
+    private final double[][] conditionalProb;
+    private final Weighting weight;
     
 
-    public MNBClassifier(List<Tweet> testingSetC, double[] priorProbability, double[][] conditionalProbability,Weighting weighting) {
+    public MNBClassifier(List<Tweet> testingSetC, double[] priorProbability, double[][] conditionalProbability, Weighting weighting) {
         testingSet = testingSetC;
         priorProb = priorProbability;
         conditionalProb = conditionalProbability;
@@ -77,9 +77,10 @@ public class MNBClassifier {
     }
     
     public int[] classifyFull(){
-        //mnbProb = new MNBProbabilistik(bobotan);
+        
         double data[][] = new double[testingSet.size()][priorProb.length];    
         double result;
+        
 
         for (int i = 0; i < testingSet.size(); i++) {
             for (int j = 0; j < testingSet.get(i).getTermList().getTotalTerm(); j++) {
@@ -92,9 +93,30 @@ public class MNBClassifier {
             }
         }
         
+       
+        
         return argMax(data);
     }
     
+    public double[][] classifyFul(){
+        
+        double data[][] = new double[testingSet.size()][priorProb.length];    
+        double result;
+
+        for (int i = 0; i < testingSet.size(); i++) {
+            for (int j = 0; j < testingSet.get(i).getTermList().getTotalTerm(); j++) {
+            
+                for (int k = 0; k < priorProb.length; k++) {
+                    result = Math.log10(priorProb[k]) + testingSet.get(i).getTermList().getTotalTerm() *
+                            (numberOfConditionalProb(testingSet.get(i).getTermList().getTermAt(j).getTerm(), k));
+                    data[i][k] = result;
+                    
+                }
+            }
+        }
+        
+        return data;
+    }
     
     private double numberOfConditionalProb(String term, int i){
         double result=0;
@@ -132,17 +154,7 @@ public class MNBClassifier {
         return testingSet;
     }
     
-    
-//    public void cetak(){
-//        double[][] data = classifyFull();
-//        for (int i = 0; i < data.length; i++) {
-//            for (int j = 0; j < data[0].length; j++) {
-//                System.out.println(data[i][j]);
-//            }
-//            System.out.println();
-//        }
-//        
-//    }
+   
     
  
 }

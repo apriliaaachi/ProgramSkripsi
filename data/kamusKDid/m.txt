@@ -1572,8 +1572,6 @@ motoris
 motorisasi
 moyang
 mozaik
-mu
-mua
 muai
 muak
 muakadah
@@ -1823,7 +1821,6 @@ muruah
 murung
 murup
 murus
-mus
 musaadah
 musabab
 musabaqah

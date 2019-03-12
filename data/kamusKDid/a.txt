@@ -822,7 +822,6 @@ andal
 andalusit
 andam
 andan
-andang
 andapita
 andesit
 andewi
@@ -1346,7 +1345,6 @@ arya
 aryaduta
 arzak
 as
-asa
 asabat
 asabiah
 asad
@@ -1365,7 +1363,6 @@ asasi
 asbak
 asbes
 asbut
-ase
 aseksual
 asepsis
 aseptik
@@ -1471,7 +1468,6 @@ astronom
 astronomi
 astronomis
 astrosit
-asu
 asuh
 asumsi
 asumtif
@@ -1638,7 +1634,6 @@ awang
 awar
 awaracun
 awas
-awat
 awawarna
 awet
 awin

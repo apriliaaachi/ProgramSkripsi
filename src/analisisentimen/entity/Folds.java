@@ -35,31 +35,26 @@ public class Folds {
         Collections.shuffle(tweetList, random);
     }
     
-    public int size()
+    public List<Tweet> getTrainingSet(int foldIteration, List<Tweet> listTweet)
     {
-
-        return tweetList.size();
-    }
-    
-    public void addAll(Collection<? extends Tweet> c)
-    {
-        tweetList.addAll(c);
-    }
-    
-    public List<Tweet> getTrainingSet(int foldIteration)
-    {
-        int begin = foldIteration * size() / fold;
-        int end = (foldIteration + 1) * size() / fold;
-        List<Tweet> trainingSet = new ArrayList<>(tweetList.subList(0, begin));
-        trainingSet.addAll(tweetList.subList(end, size()));
+        int begin = foldIteration * listTweet.size() / fold;
+        int end = (foldIteration + 1) * listTweet.size() / fold;
+        List<Tweet> trainingSet = new ArrayList<>(listTweet.subList(0, begin));
+        trainingSet.addAll(listTweet.subList(end, listTweet.size()));
         return trainingSet;
     }
     
-    public List<Tweet> getTestSet(int foldIteration)
+    public List<Tweet> getListTweetLimit(int limit, List<Tweet> tweetList){
+        List<Tweet> listTweet = new ArrayList<>(tweetList.subList(0, limit));
+        
+        return listTweet;
+    }
+    
+    public List<Tweet> getTestSet(int foldIteration, List<Tweet> listTweet)
     {
-        int begin = foldIteration * size() / fold;
-        int end = (foldIteration + 1) * size() / fold;
-        return new ArrayList<>(tweetList.subList(begin, end));
+        int begin = foldIteration * listTweet.size() / fold;
+        int end = (foldIteration + 1) * listTweet.size() / fold;
+        return new ArrayList<>(listTweet.subList(begin, end));
     }
     
     public int getFolds()

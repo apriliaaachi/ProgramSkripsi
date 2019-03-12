@@ -86,7 +86,6 @@ pajuh
 pak
 pakai
 pakal
-pakan
 pakanira
 pakansi
 pakar
@@ -594,7 +593,6 @@ pastoral
 pastura
 pasu
 pasuel
-pasuk
 pasumandan
 pasung
 patah
@@ -1412,7 +1410,6 @@ pewat
 peyek
 peyorasi
 peyot
-pi
 piadah
 piagam
 piah

@@ -23,125 +23,78 @@ import java.util.stream.DoubleStream;
  * @author Asus
  */
 public class Weighting {
-    private final List<Tweet> tweetList;
+    private final List<Tweet> trainingSet;
     private TermList globaltermlist;
     private double[][] resultOfWeighting;
     private Praprocess praprocess = new Praprocess();
     
     
-    public Weighting(List<Tweet> trainingSet) throws IOException{
-        tweetList = trainingSet;
+    public Weighting(List<Tweet> trainingSetP) throws IOException{
+        trainingSet = trainingSetP;
     }
 
     public void prepareCountWeight() throws IOException {
-        
-        try{
-            
-            for(int i=0; i< tweetList.size();i++) {
-                Tweet tweet = tweetList.get(i);
+
+        for(int i=0; i< trainingSet.size();i++) {
+            Tweet tweet = trainingSet.get(i);
                 
-                praprocess.PraWithoutPOSTag(tweet);
+            praprocess.PraWithoutPOSTag(tweet);
 
-                tweet.setTermlist(praprocess.getCurrentTokenList());
+            tweet.setTermlist(praprocess.getCurrentTokenList());
 
-            }
-            globaltermlist = praprocess.getTokenList();
-          
-            
-
-        }catch(FileNotFoundException ex){
-            
-        }catch(IOException ex){
-            
         }
+        globaltermlist = praprocess.getTokenList();
+
     }
     
-    public void prepareCountWeightPOS() {
-        try{
-            
-            for(int i=0; i< tweetList.size();i++) {
-                Tweet tweet = tweetList.get(i);
+    public void prepareCountWeightPOS() throws IOException {
+
+        for(int i=0; i< trainingSet.size();i++) {
+            Tweet tweet = trainingSet.get(i);
                 
-                praprocess.PraWithPOSTag(tweet);
+            praprocess.PraWithPOSTag(tweet);
 
-                tweet.setTermlist(praprocess.getCurrentTokenList());
+            tweet.setTermlist(praprocess.getCurrentTokenList());
 
-            }
-            globaltermlist = praprocess.getTokenList();
-            
-            
-
-        }catch(FileNotFoundException ex){
-            
-        }catch(IOException ex){
-            
         }
+        globaltermlist = praprocess.getTokenList();
+
     }
     
     //    Transpose matriks double biasa
-    public double[][] transpose(double[][] data){
-        //System.out.println("--------------transpose----------------");
+    private double[][] transpose(double[][] data){
         double[][] transposedMatrix = new double[data[0].length][data.length];
         for(int rows = 0; rows < data.length; rows++){
             for(int cols = 0; cols < data[0].length; cols++){
                 transposedMatrix[cols][rows] = data[rows][cols];
             }
         }
-        for(double[] i:transposedMatrix){//2D arrays are arrays of arrays
-            //System.out.println(Arrays.toString(i));
-        }
+
         return transposedMatrix;
     }
     
     public void doWeighting(){
 
-        resultOfWeighting = new double[globaltermlist.getTotalTerm()][tweetList.size()];
-        for(int i=0; i<tweetList.size(); i++){
-            String tweets[] = tweetList.get(i).getTermList().toStringArray(); 
+        resultOfWeighting = new double[globaltermlist.getTotalTerm()][trainingSet.size()];
+        for(int i=0; i<trainingSet.size(); i++){
+            String tweets[] = trainingSet.get(i).getTermList().toStringArray(); 
+            //System.out.println("panjang= " + tweets.length);
 //            System.out.println(tweets.length);
 //            System.out.println("Data" + "ke :" + " " +i);
-//            System.out.println(twList.get(i).getContentTweet() + " : " + Arrays.toString(twList.get(i).getTermList().toStringArray()));
+//            System.out.println(trainingSet.get(i).getContentTweet() + " : " + Arrays.toString(trainingSet.get(i).getTermList().toStringArray()));
+            
             for(int j=0; j<resultOfWeighting.length; j++){
+                //System.out.println(tf(tweets, globaltermlist.getTermAt(j).getTerm()));
+                
                 resultOfWeighting[j][i] = tf(tweets, globaltermlist.getTermAt(j).getTerm()) * 
-                        idf(tweetList, globaltermlist.getTermAt(j).getTerm());
+                        idf(trainingSet, globaltermlist.getTermAt(j).getTerm());
                 
                 
 //                ------------------------Print out pembobotan-----------------------------
                 
-//             System.out.print(globaltermlist.getTermAt(j).getTerm() + ": ");
-//                System.out.print(tf(sdocs, globaltermlist.getTermAt(j).getTerm()) + " * " 
-//                        + idf(tweetList, globaltermlist.getTermAt(j).getTerm()) + " = ");
-//                System.out.println(hasilPembobotan[j][i]);
-                
-                
-//--------------------------------------------------------------------------
-
-            }
-//            System.out.print("\n");
-        }
-//        System.out.println("-------------Pembobotan selesai--------------");
-//            for(int i=0; i<globaltermlist.getTotalTerm(); i++){
-//                System.out.println(globaltermlist.getTermAt(i).getTerm());
-//            }
-    }
-    
-    public void doWeightingPOS(){
-
-        resultOfWeighting = new double[globaltermlist.getTotalTerm()][tweetList.size()];
-        for(int i=0; i<tweetList.size(); i++){
-            String sTweet[] = tweetList.get(i).getTermList().toStringArray(); 
-//            System.out.println("Data" + "ke :" + " " +i);
-//            System.out.println(twList.get(i).getContentTweet() + " : " + Arrays.toString(twList.get(i).getTermList().toStringArray()));
-            for(int j=0; j<resultOfWeighting.length; j++){
-                resultOfWeighting[j][i] = tfPOS(sTweet, globaltermlist.getTermAt(j).getTerm()) * 
-                        idf(tweetList, globaltermlist.getTermAt(j).getTerm());
-                
-                
-//                ------------------------Print out pembobotan-----------------------------
-                
-//             System.out.print(globaltermlist.getTermAt(j).getTerm() + ": ");
-//                System.out.print(tf(sdocs, globaltermlist.getTermAt(j).getTerm()) + " * " 
-//                        + idf(tweetList, globaltermlist.getTermAt(j).getTerm()) + " = ");
+//                System.out.print(globaltermlist.getTermAt(j).getTerm() + ": ");
+//                System.out.print(tf(tweets, globaltermlist.getTermAt(j).getTerm()) + " * " 
+//                        + idf(trainingSet, globaltermlist.getTermAt(j).getTerm()) + " = ");
 //                System.out.println(resultOfWeighting[j][i]);
                 
                 
@@ -150,10 +103,39 @@ public class Weighting {
             }
 //            System.out.print("\n");
         }
-//        System.out.println("-------------Pembobotan selesai--------------");
-//            for(int i=0; i<globaltermlist.getTotalTerm(); i++){
-//                System.out.println(globaltermlist.getTermAt(i).getTerm());
-//            }
+        System.out.println("-------------Pembobotan selesai--------------");
+            for(int i=0; i<globaltermlist.getTotalTerm(); i++){
+                System.out.println(globaltermlist.getTermAt(i).getTerm());
+            }
+    }
+    
+    public void doWeightingPOS(){
+
+        resultOfWeighting = new double[globaltermlist.getTotalTerm()][trainingSet.size()];
+        
+        for(int i=0; i<trainingSet.size(); i++){
+            String tweets[] = trainingSet.get(i).getTermList().toStringArray(); 
+            double value = 0;
+            
+            for (int k = 0; k < resultOfWeighting.length; k++) {
+                value += tfPOS(tweets, globaltermlist.getTermAt(k).getTerm());
+            }
+            
+            
+            for(int j=0; j<resultOfWeighting.length; j++){
+                
+                resultOfWeighting[j][i] = tfPOS(tweets, globaltermlist.getTermAt(j).getTerm())/value * 
+                        idf(trainingSet, globaltermlist.getTermAt(j).getTerm());
+                
+
+            }
+
+        }
+        System.out.println("-------------Pembobotan selesai--------------");
+            for(int i=0; i<globaltermlist.getTotalTerm(); i++){
+                System.out.println(globaltermlist.getTermAt(i).getTerm());
+            }
+        
     }
     
     public double[][] getResultOfWeighting(){
@@ -165,27 +147,36 @@ public class Weighting {
     }
     
     public List<Tweet> getTweetList(){
-        return tweetList;
+        return trainingSet;
     }
     
     public TermList getGlobalTermList(){
         return globaltermlist;
     }
     
-    static double tf(String[] tweet, String term){
+    private static double tf(String[] tweet, String term){
         double n = 0;
+        double tf;
         for(String s: tweet){
             if(s.equalsIgnoreCase(term)){
                 n++;
             }
         }
         
-        return n/tweet.length;
+        if(n>0){
+            tf = n/tweet.length;
+        } else {
+            tf = n;
+        }
+        
+        //System.out.println(tf + "/" + tweet.length + "=" + tf/tweet.length);
+        //return n/tweet.length;
+        return tf;
     }
     
-    static double tfPOS(String[] tweet, String term){
-        double n = 0; double total;
-        int w=0;
+    private static double tfPOS(String[] tweet, String term){
+        double n = 0; double tfPOS;
+        double w=0;
         double isi [] = new double[tweet.length];
         for(String s: tweet){
             if(s.equalsIgnoreCase(term)){
@@ -194,25 +185,22 @@ public class Weighting {
         }
         
         if(term.contains("JJ")){
-            w = 5;            
+            w = 4;            
         } else if(term.contains("RB")){
-            w = 3;
+            w = 1;
         } else if(term.contains("VB")){
-            w = 4;  
-        } else if(term.contains("NEG")){
+            w = 3;  
+        }  else if(term.contains("NN")){
             w = 2;  
-        } else if(term.contains("NN")){
-            w = 1;  
         }
         
-        total = n * w;
+        tfPOS = n * w;
         
-        return total;
+        return tfPOS;
     }
     
-    static double idf(List<Tweet> tweetList, String term){
-        double n = 0;
-//        System.out.println("n = "+listdoc.size());
+    private static double idf(List<Tweet> tweetList, String term){
+        double n = 0; double idf;
         for(int i=0; i<tweetList.size(); i++){
             for(int j=0; j<tweetList.get(i).getTermList().getTotalTerm(); j++){
                 String s = tweetList.get(i).getTermList().getTermAt(j).getTerm();
@@ -224,13 +212,14 @@ public class Weighting {
         }
 //        System.out.println("df = "+n);
 //        System.out.println("idf = "+Math.log10(2));
-        return Math.log10(tweetList.size()/n);
+        idf = Math.log10(tweetList.size()/n);
+        return idf;
     }
     
     public int numberOfDataWithClass(int classes) {
         int numberOfDataWithClass = 0;
-        for (int i = 0; i < tweetList.size(); i++) {
-            if(tweetList.get(i).getClassSentiment() == classes ) {
+        for (int i = 0; i < trainingSet.size(); i++) {
+            if(trainingSet.get(i).getClassSentiment() == classes ) {
                  numberOfDataWithClass++;   
             }
         }
@@ -242,11 +231,11 @@ public class Weighting {
         int numberOfTermWeightWithClass = 0;
         List<Integer> temp = new ArrayList<Integer>();
         
-        for (int i = 0; i < tweetList.size(); i++) {
+        for (int i = 0; i < trainingSet.size(); i++) {
             
-            if(tweetList.get(i).getClassSentiment() == classes ) {
+            if(trainingSet.get(i).getClassSentiment() == classes ) {
                 
-                numberOfTermWeightWithClass += tweetList.get(i).getTermList().getTotalTerm();
+                numberOfTermWeightWithClass += trainingSet.get(i).getTermList().getTotalTerm();
                 //System.out.println(twList.get(temp.get(j)).getTermList().getTotalTerm());
             }       
         }
@@ -261,7 +250,7 @@ public class Weighting {
         double numberOfWeightWithClass = 0;
 
         for(int i=0; i<data.length; i++){
-            if(tweetList.get(i).getClassSentiment() == classes ){
+            if(trainingSet.get(i).getClassSentiment() == classes ){
                 for(int j=0; j<data[0].length; j++){
                     
                     numberOfWeightWithClass += data[i][j];
@@ -278,7 +267,7 @@ public class Weighting {
         double numberOfWeightWithClassInData = 0;
         
         for (int i = 0; i < data.length; i++) {
-            if(tweetList.get(i).getClassSentiment() == classes ){
+            if(trainingSet.get(i).getClassSentiment() == classes ){
                 for(int j=0; j<data[0].length; j++){
                     if(getGlobalTermList().getTermAt(i).equals(term)){
                         numberOfWeightWithClassInData += data[i][j];

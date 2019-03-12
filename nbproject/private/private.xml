@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/MNBClassifier.java</file>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Constants.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Weighting.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/HMMProb.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Praprocess.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Viterbi.java</file>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Stemming.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Evaluator.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/boundary/MainForm.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/Folds.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/DocumentReader.java</file>
         </group>
     </open-files>

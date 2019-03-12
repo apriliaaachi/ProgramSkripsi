@@ -15,21 +15,10 @@ public class Tweet {
     private int classSentiment;
     
     
-    public Tweet(){
-        termList = new TermList();
-    }
-    
-    public Tweet(String contentTweet){
-        this.contentTweet = contentTweet;
-    }
     
     public Tweet(String contentTweet, int classSentiment){
         this.contentTweet = contentTweet;
         this.classSentiment = classSentiment;
-    }
-    
-    public void setContentTweet(String contentTweet){
-        this.contentTweet = contentTweet;
     }
     
     public String getContentTweet(){
@@ -42,10 +31,6 @@ public class Tweet {
     
     public TermList getTermList(){
         return termList;
-    }
-    
-    public void setClassSentiment(int classSentiment){
-        this.classSentiment = classSentiment;
     }
     
     public int getClassSentiment(){

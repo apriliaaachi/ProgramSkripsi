@@ -28,9 +28,8 @@ public class MNBProbabilistik {
 
     public double[] calculatePriorProbability(){
        
-        int classes[] = new int[2];
-        classes[0] = 0;
-        classes[1] = 1;
+        int classes[] = new int[]{0,1};
+        
         double[] prior = new double[classes.length];
         int numberOfData = weightTerm.getTweetList().size();
         double result = 0;

@@ -1,0 +1,503 @@
+permasalahan/NN, palembang/NNP, tak/NEG, terbendung/VB, lagi/RB
+saya/PRP, mahasiswa/NN, palembang/NNP, pak/NN, di/IN, sini/PR, sepi/JJ, yang/SC, naik/VB
+jika/SC, yang/SC, hendak/MD, naik/VB, atau/CC, turun/VB, tetapi/CC, tidak/NEG, sedang/MD, dalam/IN, kondisi/NN, terburu-buru/JJ, dan/CC, memilih/VB, berdiam/VB, maka/SC, antrean/NN, berbaris/VB, berada/VB, di/IN, sebelah/NN, kiri/NN, dengan/IN, maksud/NN, sisi/NN, sebelah/NN, kanan/NN, eskalator/NN, dibuat/VB, kosong/JJ
+kalau/SC, dari/IN, atas/IN, itu/PR, tinggi/JJ, sekali/RB, aku/PRP, takut/JJ, ketinggian/NN, mending/JJ, naik/VB, motor/NN, saja/RB, apalagi/CC, takut/JJ, kalau/SC, rel/NN, nya/PRP, ambruk/JJ, ke/IN, bawah/NN, aduh/UH, tidak/NEG, terbayang/VB
+semangat/NN, memajukan/VB, kota/NNP, empek-empek/NN, punya/VB, kita/PRP, dimulai/VB, dari/IN, sampai/IN, kereta/NN, bawah/NN, tanah/NN, bangga/JJ, punya/VB
+walaupun/NN, saya/PRP, belum/NEG, pernah/NN, naik/VB, palembang/NNP, tapi/CC, terlihat/VB, sangat/RB, menggiurkan/VB, untuk/IN, dicoba/VB, semoga/SC, aku/PRP, bisa/MD, merasakannya/VB
+saya/PRP, orang/NN, palembang/NNP, proyek/NN, adalah/VB, proyek/NN, yang/SC, mubazir/JJ, kurang/RB, manfaat/NN, nyata/JJ, nya/PRP, kereta/NN, sepi/JJ, dari/IN, penumpang/NN, orang/NN, palembang/NNP, butuh/VB, jembatan/NN, bukan/NEG, kereta/NN
+dengan/IN, tujuan/NN, meningkatkan/VB, ,transportasi/NN, perkotaan/NN, melalui/IN, percepatan/NN, waktu/NN, tempuh/NN, kurangi/NN, kemacetan/NN, meningkatkan/VB, keselamatan/NN, trans/NN, sumsel/NNP
+saya/PRP, orang/NN, palembang/NNP, memang/RB, benar/JJ, lagi/RB, merugi/VB, gubernur/NNP, terpilih/VB, periode/NN, sekarang/NN, masih/RB, bingung/JJ, untuk/IN, menutupi/VB, kerugian/NN, tersebut/PR, harusnya/MD, pemerintah/NN, sebelum/SC, bangun/VB, infrastruktur/NN, dibuat/VB, studi/NN, kelayakan/NN, yang/SC, dikatakan/VB, pak/NN, prabowo/NNP
+di/IN, indonesia/NNP, itu/PR, mendadak/RB, mogok/VB, sekitar/IN, kilometer/NND, menuju/VB, bandara/NN, sultan/NNP, mahmud/NNP, badaruddin/NNP, ii/NND, palembang/NNP, ketika/SC, diguyur/VB, hujan/NN, deras/JJ
+palembang/NNP, mogok/VB, lagi/RB, penumpang/NN, berjalan/VB, di/IN, atas/IN, rel/NN
+dampak/NN, buruk/JJ, yang/SC, ditimbulkan/VB, dari/IN, pembangunan/NN, ialah/VB, biayanya/NN, yang/SC, sangat/RB, mahal/NN, selain/CC, itu/PR, jalan/NN, kota/NNP, palembang/NNP, banyak/JJ, yang/SC, rusak/JJ, dikarenakan/VB, penanaman/NN, paku/NN, bumi/NN, untuk/IN, pondasi/NN, rel/NN
+palembang/NNP, lebih/RB, lambat/JJ
+masyarakat/NN, di/IN, kota/NNP, palembang/NNP, benar-benar/RB, memanfaatkan/VB, satu/CD, ini/PR, khususnya/JJ, mereka/PRP, yang/SC, akan/MD, dan/CC, dari/IN, bandara/NN, nyaman/JJ, wifi/FW, juga/RB
+dan/CC, kesadaran/NN, masyarakat/NN, akan/MD, pentingnya/NN, menggunakan/VB, moda/NN, umum/JJ, segera/RB, timbul/VB, dan/CC, infrastruktur/NN, yang/SC, dibangun/VB, tepat/RB, guna/SC
+sahabat/NNP, begitu/PR, modern/JJ, dan/CC, berkelas/JJ, fasilitas/NN, penunjang/NN, di/IN, stasiun/NN, yang/SC, ada/VB, di/IN, palembang/NNP, eskalator/NN, telah/MD, terpasang/VB, dan/CC, telah/MD, di/IN, operasikan/VB, membanggakan/VB, kan/RP
+kereta/NN, nyaman/JJ, sekali/RB, dari/IN, teman/NN, yang/SC, cerita/VB, katanya/VB, keretanya/NN, bersih/JJ, nyaman/JJ, semoga/SC, terus/RB, bisa/MD, dijaga/VB, bersama/IN, kebanggaan/NN, orang/NN, kita/PRP, semua/CD
+kemarin/NN, aku/PRP, sempat/MD, lihat/VB, ruang/NN, menyusui/NN, di/IN, stasiun/NN, bandara/NN, lihat/VB, di/IN, stasiun/NN, bumi/NN, sriwijaya/NNP, juga/RB, ada/VB
+bergerak/VB, terlalu/RB, lambat/JJ
+kereta/NN, ringan/JJ, atau/CC, light/FW, rail/FW, transit/FW, di/IN, palembang/NNP, yang/SC, merupakan/VB, moda/NN, massal/JJ, modern/JJ, di/IN, indonesia/NNP, saat/NN, ini/PR, sepi/JJ, penumpang/NN, antusiasme/NN, masyarakat/NN, menggunakan/VB, sebagai/IN, alat/NN, kurang/RB, dan/CC, terlihat/VB, hampir/RB, setiap/CD, hari/NN
+palembang/NNP, melaju/VB, mulus/JJ, di/IN, rel/NN
+mau/RB, bangun/VB, lagi/RB, itu/PR, bagus/JJ, kalau/SC, sesuai/RB, fungsi/NN, dan/CC, anggarannya/NN
+sama/JJ, nasib/NN, nya/PRP, dengan/IN, palembang/NNP, sepi/JJ, cuma/RB, sekedar/X, hiasan/NN, dan/CC, kebanggaan/NN, saja/RB
+ini/PR, sangat/RB, diminati/VB, ketika/SC, akhir/NN, pekan/NN, oleh/IN, masyarakat/NN, palembang/NNP, dan/CC, sekitarnya/NND, iya/X, ini/PR, seakan/SC, menjadi/VB, kereta/NN, wisata/FW, untuk/IN, para/DT, masyarakat/NN, yang/SC, penasaran/JJ
+aman/JJ, nyaman/JJ, dan/CC, bebas/JJ, macet/JJ, itulah/DT, kesan/NN, naik/VB
+palembang/NNP, tidak/NEG, berguna/VB, sekaligus/RB, merusak/VB, keanggunan/NN, jembatan/NN, ampera/NNP
+keberadaan/NN, di/IN, kota/NNP, palembang/NNP, memberi/VB, banyak/CD, manfaat/NN, terutama/JJ, di/IN, bidang/NN
+siapa/WP, bilang/VB, semua/CD, infrastruktur/NN, menguntungkan/VB, itu/PR, buktinya/NN, di/IN, palembang/NNP, rugi/JJ, belum/NEG, lagi/RB, jalan/NN, tol/NN, yang/SC, sepi/JJ, yang/SC, mau/MD, dijual/VB, tapi/CC, tidak/NEG, ada/VB, yang/SC, beli/VB, sampai/SC, sekarang/NN, negara/NNP, sudah/MD, rugi/JJ, berapa/WH
+selain/IN, kotak/NN, pk/NNP, juga/RB, punya/VB, emergency/NN, phone/NN, jadi/VB, kalian/PRP, tidak/NEG, perlu/MD, khawatir/JJ, berada/VB, di/IN
+pengalaman/NN, saya/PRP, yang/SC, tinggal/VB, di/IN, palembang/NNP, keretanya/NN, lambat/NN, nunggunya/VB, lama/JJ, terus/RB, daerah/NN, yang/SC, dijangkau/VB, juga/RB, sedikit/JJ, masyarakat/NN, juga/RB, kebanyakan/CD, lebih/RB, memilih/VB, naik/VB, ojol/FW, daerah/NN, yang/SC, dilewati/VB, juga/RB, jauh/JJ, dari/IN, perumahan/NN, jadi/VB, kalau/SC, mau/MD, pulang/VB, susah/JJ
+palembang/NNP, nasibmu/JJ, kini/RB, dulu/RB, dibanggakan/VB, sekarang/NN, ditinggalkan/VB, proyek/NN, menang/VB, mahal/JJ, saja/RB
+kota/NNP, palembang/NNP, adalah/VB, kota/NNP, nan/SC, cantik/JJ, apalagi/CC, setelah/SC, adanya/NN, jadi/VB, tambah/VB, cantik/JJ
+salah/JJ, satu/CD, yang/SC, menarik/JJ, ketika/SC, naik/VB, adalah/VB, bisa/MD, melihat/VB, masjid/NNP, agung/NNP, palembang/NNP, ini/PR
+pembangunan/NN, sumsel/NNP, ini/PR, dilaksanakan/VB, untuk/IN, melayani/VB, kebutuhan/NN, massal/JJ, untuk/IN, masyarakat/NN, di/IN, wilayah/NN, sumatera/NNP, selatan/NNP, dalam/IN, rangka/NN, mendukung/VB, perhelatan/NN, besar/JJ, asean/FW, games/FW, yang/SC, berpusat/VB, di/IN, dan/CC, palembang/NNP
+belum/NEG, bisa/MD, mengurangi/VB, kemacetan/NN, tapi/CC, sedikitnya/RB, mengurangi/VB, penyebaran/NN, polusi/NN, karena/CC, asap/NN, kendaraan/NN
+mungkin/MD, kita/PRP, terlalu/RB, takut/JJ, mencoba/VB, sesuatu/PRP, yang/SC, baru/JJ, tetapi/CC, ketika/SC, mencoba/VB, yang/SC, baru/JJ, naik/VB, palembang/NNP, wah/UH, tidak/NEG, takut/JJ, dong/RP, bahkan/RB, bikin/VB, ketagihan/JJ, karena/CC, benar/JJ, menyemangati/VB, penumpang/NN
+dengan/IN, situasi/NN, penumpang/NN, seperti/IN, ini/PR, selain/IN, tidak/NEG, memberikan/VB, manfaat/NN, terhadap/IN, masyarakat/NN, sumsel/NNP, sebentar/NN, lagi/RB, palembang/NNP, akan/MD, jadi/VB, non-performance/X, pinjaman/NN, karena/CC, itu/PR, dibikin/VB, pakai/VB, perutangan/NN, siapa/WH, yang/SC, akan/MD, bayar/VB, hutang/NN
+kurangnya/RB, kesiapan/NN, fasilitas/NN, pendukung/NN, mulai/VB, dari/IN, atm/X, hingga/CC, kerjasama/NN, untuk/IN, pengisian/NN, ulang/VB, uang/NN, elektronik/NN, kue/NN, di/IN, sejumlah/CD, stasiun/NN, membuat/VB, penggunaan/NN, kue/NN, tidak/NEG, lagi/RB, diwajibkan/VB
+khusus/JJ, kita/PRP, bangga/JJ, karena/CC, menggunakan/VB, trainset/NN, produk/NN, anak/NN, bangsa/NN, dari/IN
+tujuan/NN, di/IN, palembang/NNP, untuk/IN, antisipasi/NN, kemacetan/NN, dalam/IN, beberapa/CD, tahun/NN, kedepan/NN, membiasakan/VB, rakyat/NN, untuk/IN, menggunakan/VB, umum/JJ, yang/SC, nyaman/JJ, tepat/RB, waktu/NN, pada/IN, waktunya/NN, juga/RB, akan/MD, menguntungkan/VB, jalan/NN, tol/NN, awalnya/NN, sepi/JJ, tapi/CC, selanjutnya/RB, ramai/JJ, setelah/SC, familier/NN
+kalau/SC, di/IN, dalam/IN, itu/PR, ada/VB, colokan/NN, listrik/NN, di/IN, masing-masing/DT, tempat/NN, duduk/NN, pasti/RB, lebih/RB, seru/NN, bisa/MD, main/VB, laptop/NN, ini/PR, dalam/IN, perjalanan/NN
+menjadi/VB, kebanggaan/NN, masyarakat/NN, palembang/NNP
+palembang/NNP, adalah/VB, sebuah/NND, terobosan/NN, untuk/IN, masalah/NN, kemacetan/NN, di/IN, kota/NNP, palembang/NNP
+semenjak/SC, ada/VB, kemacetan/NN, di/IN, palembang/NNP, dapat/MD, teratasi/VB, dengan/IN, baik/JJ, terima/NN, kasih/NN, palembang/NNP
+palembang/NNP, adalah/VB, sebuah/NND, terobosan/NN, untuk/IN, masalah/NN, kemacetan/NN, di/IN, kota/NNP, palembang/NNP
+kasihan/NN, kereta/NN, di/IN, palembang/NNP, mogok/VB, penumpang/NN, harus/MD, jalan/NN, kaki/NN, menuju/VB, stasiun/NN, terdekat/JJ, semoga/SC, masalah/NN, yang/SC, sama/JJ, tidak/NEG, terjadi/VB, ketika/SC, asean/FW, games/FW, sudah/MD
+penurunan/NN, tarif/NN, diharapkan/VB, bisa/MD, menambah/VB, minat/NN, masyarakat/NN, khususnya/JJ, kalangan/NN, pelajar/NN, untuk/IN, memanfaatkan/VB, palembang/NNP
+jalannya/NN, pelan/JJ, tapi/CC, pasti/RB
+palembang/NNP, sejahtera/JJ, karena/CC, ekonomis/JJ
+bangga/JJ, jadi/VB, warga/NN, palembang/NNP, yang/SC, punya/VB
+sumsel/NNP, juga/RB, pak/NNP, kalau/SC, saya/PRP, lihat/VB, mayoritas/CD, petani/NN, karet/NN, disini/PR, juga/RB, sudah/MD, kecewa/JJ, sama/JJ, pemerintah/NN, sekarang/NN, pembangunan/NN, juga/RB, sepertinya/MD, tidak/NEG, terlalu/RB, berdampak/VB
+tadi/RB, siang/NN, sempat/MD, menjajal/VB, kendaraan/NN, anyar/JJ, yang/SC, ada/VB, di/IN, kota/NNP, palembang/NNP, yakni/VB, cukup/JJ, efektif/JJ, untuk/IN, perjalanan/NN
+palembang/NNP, mana/WH, suaranya/NN, indahnya/NN, progress/NN, jalur/NN, yang/SC, melintas/VB, diatas/VB, flyover/NN, simpang/NN, bandara/NN, palembang/NNP
+naik/VB, dari/IN, bandara/NN, smb/NN, ii/CD, palembang/NNP, ke/IN, pusat/NN, kota/NNP, selain/IN, tidak/NEG, kena/VB, macet/JJ, ongkosnya/NN, juga/RB, murah/JJ, cuma/RB, rupiah/NN, ribu/CD
+inilah/RP, dampak/NN, dari/IN, pembangunan/NN, yang/SC, hanya/RB, kerja/VB, tanpa/IN, kajian/NN, yang/SC, mendalam/VB, tentang/IN, untung/NN, ruginya/NN, suatu/CD, investasi/NN, azas/NN, manfaatnya/NN, untuk/IN, masyarakat/NN
+palembang/NNP, makin/RB, keren/NN, setelah/SC, resmi/JJ, diluncurkan/VB, aku/PRP, merasa/VB, hidup/VB, di/IN, kota/NNP, yang/SC, lebih/RB, besar/JJ
+palembang/NNP, siap/JJ, beroperasi/VB, saat/NN, asean/FW, games/FW
+wah/UH, beruntung/VB, sekali/RB, dengan/IN, adanya/NN, ongkos/NN, lebih/RB, hemat/JJ, menggunakan/VB, juga/RB, memiliki/VB, keuntungan/NN, lainnya/JJ, bagi/IN, mahasiswa/NN, khususnya/JJ, bisa/MD, memperkirakan/VB, waktu/NN, tempuh/NN, karena/CC, terhindari/VB, dari/IN, kemacetan/NN
+di/IN, mungkin/MD, belum/NEG, selesai/NN, tapi/CC, teman-teman/NN, di/IN, palembang/NNP, sudah/MD, bisa/MD, menikmati/VB, fasilitas/NN, dalam/IN, rangka/NN, memudahkan/VB, asean/FW, games/FW, ini/PR
+saya/PRP, sebagai/IN, orang/NN, palembang/NNP, tidak/NEG, merasa/VB, bangga/JJ, dengan/IN, karena/CC, kurang/RB, terlalu/RB, bermanfaat/VB, buat/IN, rakyat/NN, cuma/RB, buat/IN, gaya/NN, kira-kira/RB, saja/RB, waktu/NN, sea/FW, games/FW, kemarin/NN, sekarang/NN, sudah/MD, pada/IN, sepi/JJ, apalagi/CC, sering/RB, mogok/VB, dan/CC, juga/RB, jalan/NN, nya/PRP, lambat/JJ
+palembang/NNP, lambat/NN, iya/X
+kalau/SC, pakai/VB, jadi/VB, lebih/RB, cepat/JJ, dong/RP, tidak/NEG, perlu/MD, lama/JJ, lama/JJ
+menikmati/VB, infrastruktur/NN, yang/SC, dibangun/VB, oleh/IN, pemerintah/NN, pusat/NN, dan/CC, pemerintah/NN, sumatera/NNP, selatan/NNP, bernama/VB, light/FW, rail/FW, transit/FW, atau/CC, atau/CC, kereta/NN, di/IN, atas/IN, bangga/JJ, jadi/VB, orang/NN, sumsel/NNP
+dan/CC, palembang/NNP, merupakan/VB, salah/CD, satu/CD, kota/NNP, di/IN, indonesia/NNP, yang/SC, memiliki/VB, pastinya/RB, yang/SC, ada/VB, di/IN, palembang/NNP, bangga/JJ, iya/X, karena/CC, sebentar/NN, lagi/RB, bisa/MD, menggunakan/VB
+pembangunan/NN, light/FW, rail/FW, transit/FW, di/IN, kota/NNP, palembang/NNP, sebagai/IN, solusi/NN, mengatasi/VB, masalah/NN, di/IN, kota/NNP, palembang/NNP
+asean/FW, games/FW, sudah/MD, selesai/VB, palembang/NNP, masih/RB, tetap/RB, ramai/JJ, mendorong/VB, aktifitas/NN, ekonomi/NN, masyarakat/NN, palembang/NNP
+pergi/VB, kerja/VB, jadi/VB, semangat/NN, karena/CC, menggunakan/VB, baru/JJ, yang/SC, nyaman/JJ, tepat/RB, waktu/NN, tidak/NEG, macet/JJ, dan/CC, murah/JJ, bangga/JJ, sekali/RB, dengan/IN
+asean/FW, games/FW, tinggal/VB, menghitung/VB, hari/NN, sumsel/NNP, mogok/VB, lagi/RB
+palembang/NNP, nanti/SC, gilirannya/NN, sepi/JJ, juga/RB
+palembang/NNP, sudah/MD, beroperasi/VB, dan/CC, sebentar/NN, lagi/RB, jabodetabek/NNP, juni/NN, sudah/MD, dikirim/VB, keretanya/NN
+aku/PRP, suka/VB, naik/VB, seru/JJ, sekali/RB, sensasi/NN, nya/PRP, menegangkan/VB
+baru/JJ, beroperasi/VB, palembang/NNP, mogok/VB, menit/NN, aduh/UH, proyek/NN, pak/NNP, jokowi/NNP, rupiah/NN, triliun/CDP, baru/JJ, operasi/VB, kok/UH, sudah/MD, mogok/VB, produk/NN, imitasi/JJ, atau/CC, produk/NN, apa/WH, palembang/NNP, ini/PR
+palembang/NNP, lagi-lagi/RB, mogok/VB, penumpang/NN, ada/VB, yang/SC, marah/JJ, ada/VB, pula/RB, yang/SC, menangis/VB
+jangan/NEG, tanya/VB, berapa/WH, naik/VB, murah/JJ, sekali/RB, sungguh/RB, tarif/NN, yang/SC, ekonomis/JJ, tapi/CC, ngantrinya/NN, panjang/JJ, benar/JJ, bikin/VB, bosan/JJ, menunggu/VB
+seandainya/SC, lintasan/NN, bisa/MD, ditambah/VB, pasti/RB, akan/MD, lebih/RB, baik/JJ, lagi/RB
+itu/PR, menambah/VB, lowongan/NN, kerja/NN, bagi/IN, siapapun/CD, yang/SC, bisa/MD, menyetir/VB, kendaraan/NN, seperti/IN, kereta/NN, api/NN, ini/PR, seperti/IN, masinis/NN, dong/RP
+harga/NN, tiket/NN, yang/SC, terjangkau/VB, menjadikan/VB, yang/SC, banyak/CD, digunakan/VB, masyarakat/NN
+palembang/NNP, mogok/VB, kereta/NN, baru/JJ, kenapa/WH, bisa/MD, mogok/VB, ini/PR, bukan/NEG, proyek/NN, era/NN, jokowi/NNP, kah/RP
+yang/SC, agak/RB, menjengkelkan/VB, dari/IN, proyek/NN, palembang/NNP, ini/PR, pembangunannya/NN, mendorong/VB, penghancuran/NN, pasar/NNP, cinde/NNP, yang/SC, dinyatakan/VB, sebagai/IN, bangunan/NN, cagar/NN, budaya/NN, padahal/IN, palembang/NNP, tidak/NEG, berperan/VB, sebagai/IN, operator/NN, lvc/FW, land/FW, nilai/NN, capture/FW, untung/NN, rugi/JJ, ditambah/VB, kehilangan/NN, aset/NN
+buktinya/NN, mogok/VB, hari/NN, kemarin/NN, saya/PRP, turun/VB, lagi/RB, setelah/SC, mogok/VB, ternyata/VB, tidak/NEG, dipengaruhi/VB, mesin/NN, ada/VB, elekrifikasi/NN, yang/SC, masalah/NN, catat/NN, itu/PR, jadi/VB, benar/JJ, ucapanku/NN, bulan/NN, juni/NN, palembang/NNP, akan/MD, bermasalah/VB
+yang/SC, diresmikan/VB, dan/CC, yang/SC, dibanggakan/VB, jokowi/NNP, porak/JJ, poranda/JJ, dilanda/VB, angin/NN, puting/NN, beliung/NN
+meski/SC, sudah/MD, biasa/JJ, melihat/VB, dan/CC, menggunakannya/VB, saat/NN, di/IN, luar/NN, negeri/NN, tapi/CC, sangat/RB, bangga/JJ, kini/RB, punya/VB, di/IN, negeri/NN, sendiri/NN, -/-, palembang/NNP, dioperasikan/VB, terbatas/VB, jelang/VB, asean/FW, games/FW
+wajar/JJ, saja/RB, masyarakat/NN, masih/RB, suka/VB, naik/VB, kendaraan/NN, pribadi/JJ, sudah/MD, mogok-mogokan/JJ, loket/NN, tutup/VB, tiba-tiba/RB, orang/NN, mengantre/VB, sampai/SC, pintu/NN, masuk/NN, orang/NN, dikejar/VB, waktu/NN, apa/WH, cepat/JJ, sampai/SC, bahkan/RB, bikin/VB, orang/NN, terlambat/JJ, kemana-mana/WH, cacat/JJ
+mantap/JJ, sumsel/NNP, mendunia/VB, dengan/IN, transportasi/NN, modern/JJ
+naik/VB, ini/PR, sangat/RB, membantu/VB, bagi/IN, orang/NN, yang/SC, dari/IN, bandara/NN, sehingga/SC, tidak/NEG, perlu/MD, taksi/NN, yang/SC, harga/NN, nya/PRP, super/FW, duper/FW, mahal/JJ, sekali/RB
+mencoba/VB, hari/NN, ini/PR, di/IN, palembang/NNP, bangga/JJ, dengan/IN, kemajuan/NN, kota/NNP, ini/PR
+pembangunan/NN, di/IN, palembang/NNP, kalinya/NND, terwujud/VB, dan/CC, berjalan/VB, di/IN, indonesia/NNP, semoga/SC, berjalan/VB, sukses/JJ, dan/CC, lancar/NN
+sejak/SC, ada/VB, aku/PRP, tidak/NEG, kena/VB, macet/JJ, lagi/RB
+akses/NN, yang/SC, langsung/RB, terhubung/VB, ke/IN, bandara/NN, sangat/RB, mempermudah/VB, masyarakat/NN, karena/CC, terhindar/VB, dari/IN, kemacetan/NN, kota/NNP
+semenjak/SC, ada/VB, di/IN, palembang/NNP, saya/PRP, jadi/VB, mudah/JJ, kalau/SC, mau/MD, pergi/VB, ke/IN, bandara/NN, selain/IN, memudahkan/VB, juga/RB, memudahkan/VB, mata/NN, akan/MD, pemandangan/NN, indah/JJ, kota/NNP, palembang/NNP
+menimbulkan/VB, pengangguran/NN, bagi/IN, para/DT, supir/NN, angkot/NN
+kalau/SC, mau/MD, merasakan/VB, naik/VB, kereta/NN, api/NN, naik/VB, saja/RB, sama/JJ, menyenangkan/VB
+di/IN, palembang/NNP, itu/PR, belum/NEG, berguna/VB, ibarat/NN, kamu/PRP, juga/RB, yang/SC, masih/RB, belum/NEG, berguna/VB, bagi/IN, dia/PRP
+secara/IN, kota/NNP, palembang/NNP, belum/NEG, dan/CC, tidak/NEG, sebesar/JJ, medan/NNP, atau/CC, pasarnya/NN, jelas/JJ, belum/NEG, cukup/JJ, untuk/IN, bikin/VB, ini/PR, optimal/JJ, secara/IN, finansial/NN, dan/CC, operasional/NN, pemerintah/NN, seharusnya/RB, mengurangkan/VB, proyek/NN, impulsif/JJ, begini/PR, nyata/JJ, infrastruktur/NN, terbengkalai/VB, bekas/JJ, olimpiade/NN, kan/RP, sudah/MD, banyak/CD
+memang/RB, sepi/JJ, palembang/NNP, ini/PR, rumah/NN, saya/PRP, yang/SC, dekat/JJ, dari/IN, stasiun/NN, nya/PRP, saja/RB, belum/NEG, pernah/NN, naik/VB
+saya/PRP, saat/NN, ke/IN, palembang/NNP, mencoba/VB, sunyi/JJ, sepi/JJ, pengguna/NN, itu/PR, barang/NN, dibangun/VB, sepertinya/MD, bukan/NEG, karena/CC, butuh/VB, tapi/CC, karena/CC, citra/NN
+baru/JJ, dan/CC, mogok/VB, lagi-lagi/RB, palembang/NNP, mogok/VB, kini/RB, hampir/RB, jam/NN
+aku/PRP, mau/MD, sekali/RB, bantu/NN, pemerintah/NN, kalau/SC, publiknya/NN, senyaman/JJ, ini/PR
+di/IN, buat/VB, untuk/IN, memudahkan/VB, masyarakat/NN, supaya/SC, tidak/NEG, macet/JJ, ayo/UH, dong/RP, manfaatkan/NN, untuk/IN, mengurangi/VB, kemacetan/NN, palembang/NNP
+di/IN, palembang/NNP, mogok/VB, dari/IN, pada/IN, mempermasalahkan/VB, infrastruktur/NN, nya/PRP, lebih/RB, baik/JJ, fokus/NN, pada/IN, sop/NN, emergency/FW, response/FW, melihat/VB, banyaknya/CD, orang/NN, berjalan/VB, sepanjang/RB, rel/NN, itu/PR, sangat/RB, berbahaya/VB, jelas/JJ, sekali/RB, terlihat/VB, bahwa/SC, sop/NN, emergency/FW, response/FW, tak/NEG, berjalan/VB, sesuai/JJ, aturan/NN, atau/CC, belum/NEG, dibuat/VB, sop/NN, nya/PRP
+
+
+
+naik/VB, katanya/VB, enak/NN, kereta/NN, nya/PRP, bersih/JJ, dan/CC, cepat/JJ, juga/RB
+sosialisasi/NN, terhadap/IN, masyarakat/NN, umum/JJ, untuk/IN, meningkatkan/VB, kesadaran/NN, diri/NN, dalam/IN, memanfaatkan/VB, publik/NN, itu/PR, perlu/MD, ditingkatkan/VB
+sama/JJ, halnya/NNG, warga/NN, palembang/NNP, yang/SC, menggerutu/VB, tidak/NEG, butuh/VB, buat/VB, apa/WH, dibangun/VB, monorail/NN, yang/SC, butuh/VB, mega/NN, dana/NN, kini/RB, jalan/NN, bahkan/RB, umum/JJ, bergelombang/VB, harga/NN, tiket/NN, mahal/JJ, dan/CC, lihat/VB, sekarang/NN, tidak/NEG, berpenumpang/VB, dan/CC, rugi/JJ, hanya/RB, untuk/IN, pamor/NN, asean/FW, games/FW, rakyat/NN, tersandera/JJ
+di/IN, palembang/NNP, sangat/RB, terbantu/VB, dengan/IN, adanya/NN
+dapat/MD, menjadi/VB, daya/NN, tarik/NN, bagi/IN, wisatawan/FW
+pendapatan/NN, miliaran/NN, perbulan/NN, pun/RP, rasanya/NN, sulit/JJ, tercapai/VB, sebagai/IN, orang/NN, palembang/NNP, saya/PRP, melihat/VB, sendiri/NN, bagaimana/WP, sepinya/NN, minat/NN, orang/NN, palembang/NNP, naik/VB
+palembang/NNP, pernah/NN, diterjang/VB, angin/NN, puting/NN, beliung/NN, dan/CC, pun/RP, sempat/MD, mengalami/VB, kerusakan/NN, yang/SC, menyebabkan/VB, penumpang/NN, merasa/VB, ketakutan/NN
+mode/NN, nyaman/JJ, palembang/NNP, bidik/NN, generasi/NN, milenial/NN
+tapi/CC, saya/PRP, pikir/VB, di/IN, palembang/NNP, ini/PR, cukup/JJ, oke/NN, untuk/IN, yang/SC
+saya/PRP, saja/RB, yang/SC, di/IN, palembang/NNP, tidak/NEG, pernah/NN, naik/VB, palembang/NNP, belum/NEG, membutuhkan/VB, kalau/SC, jalan/NN, layang/NN, lebih/RB, di/IN, butuh/VB, kan/RP, akhir/NN, nya/JJ, apa/WH, yang/SC, di/IN, bilang/VB, pak/NNP, prabowo/NN, benar/JJ, semua/CD, di/IN, palembang/NNP, hanya/RB, mubazir/JJ, kan/RP, uang/NN, rakyat/NN
+kalau/SC, ingin/VB, cepat/JJ, sampai/SC, tujuan/NN, lebih/RB, baik/JJ, tidak/NEG, perlu/MD, naik/VB, lama/JJ, menunggu/VB, kereta/NN, nya/PRP, sampai/SC
+saya/PRP, tinggal/VB, di/IN, palembang/NNP, sampai/SC, sekarang/NN, saya/PRP, belum/NEG, pernah/NN, naik/VB, bukan/NEG, cuma/VB, saya/PRP, saya/PRP, rasa/NN, kebanyakan/CD, masyarakat/NN, lebih/RB, suka/VB, kendaraan/NN, pribadi/JJ, ini/PR, belum/NEG, terlalu/RB, diminati/VB, masyarakat/NN, untuk/IN
+wah/UH, sangat/RB, membantu/VB, kita/PRP, sebagai/IN, sarana/NN, yang/SC, murah/JJ
+stasiun/NN, belum/NEG, semuanya/JJ, tapi/CC, saya/PRP, sebagai/IN, warga/NN, palembang/NNP, sudah/MD, merasakan/VB, dampak/NN, yang/SC, positif/NN, karena/CC, jalanan/NN, sudah/RB, tidak/NEG, macet/JJ, terus/RB, tarif/NN, online/NN, pun/RP, standar/NN, tidak/NEG, tiba/VB, melonjak/VB, karena/CC, kemacetan/NN
+pengguna/NN, palembang/NNP, tembus/NN, juta/CDP, penumpang/NN
+naik/VB, lebih/RB, nyaman/JJ, daripada/SC, naik/VB, angkot/NN, walaupun/CC, harganya/NN, lebih/RB, mahal/JJ
+aku/PRP, suka/VB, naik/VB, rasanya/NN, asyik/NN
+palembang/NNP, mogok/VB, menit/NN, alasan/NN, sengaja/NN, diberhentikan/VB, soalnya/NN, ada/VB, kendala/NN, iya/X, memang/RB, tidak/NEG, mogok/VB, tapi/CC, kan/RP, ada/VB, masalah/NN, iya/X, akuilah/NN, bahkan/RB, ketawa/SC, dikata/VB, menit/NN, didalem/VB, yang/SC, tidak/NEG, bergerak/VB, enak/NN, apa/WH, ditahan/VB, masuk/VB, manggarai/NN, menit/NN, saja/RB, kesal/NN
+palembang/NNP, mulai/VB, krisis/NN, listrik/NN, semoga/SC, bukan/NEG, dampak/NN, megaproyek/NN, ironis/NN, kota/NNP, lumbung/NN, energi/NN, defisit/NN, listrik/NN
+palembang/NNP, mah/NN, sepi/JJ, penumpang/NN, reguler/NN, saja/RB, berharap/VB, dari/IN, bandara/NN, saja/RB, itu/PR, pun/RP, sepi/JJ, tahu/VB, sendiri/NN, bandara/NN, smb/NN, ii/CD, itu/PR, kecil/JJ, aktivitasnya/NN, tidak/NEG, ramai/JJ, angkot/NN, saja/RB, disini/PR, tak/NEG, seberapa/CDI, grabgojek/NN, yang/SC, ramai/JJ, tapi/CC, lumayanlah/NN, buat/VB, sejarah/NN, warisan/NN
+naik/VB, bisa/MD, melihat/VB, keindahan/NN, kota/NNP, palembang/NNP, tanpa/IN, harus/MD, merasakan/VB, terik/NN, panas/JJ, matahari/NN
+selain/IN, tidak/NEG, lelah/VB, di/IN, jalan/NN, bisa/MD, menikmati/VB, pemandangan/NN, kota/NNP, palembang/NNP, dari/IN, sumsel/NNP, ini/PR, ternyata/VB, merupakan/VB, satu-satunya/CDP, dan/CC, di/IN, dunia/NN, yang/SC, melintas/VB, diatas/VB, sungai/NN
+hadirnya/NN, di/IN, kota/NNP, palembang/NNP, diyakini/NN, membawa/VB, hal/NN, positif/NN, bagi/IN, orang/NN, kita/PRP
+lama/JJ, sekali/RB, menunggu/VB, berangkat/VB, bosan/JJ, menunggu/VB, nya/PRP
+palembang/NNP, adalah/VB, satu/CD, kurang/RB, cermatnya/JJ, pemerintahan/NN, saat/NN, ini/PR, dalam/IN, membangun/VB, infrastruktur/NN, biaya/NN, miliaran/NN, perbulan/NN, revenue/NN, cuma/RB, miliaran/NN, saat/NN, memang/RB, dengan/IN, semboyan/NN, kerja/VB, kerja/VB, kerja/VB, tapi/CC, tidak/NEG, ada/VB, mikir/NN
+naik/VB, menghabiskan/VB, uang/NN, menunggu/VB, lama/JJ, lagi/RB
+mau/MD, menikmati/VB, kota/NNP, palembang/NNP, dari/IN, ketinggian/NN, naik/VB, saja/RB
+eloknya/NN, yang/SC, menjalar/VB, ular/NN, membelah/VB, kota/NNP, palembang/NNP, dari/IN, hulu/NN, ke/IN, hilir/VB
+dan/CC, akhirnya/RB, palembang/NNP, pun/RP, rugi/JJ
+kendaraan/NN, yang/SC, saat/NN, buat/VB, mahasiswa/NN, apalagi/CC, kalau/SC, bukan/NEG, ini/PR, top/NN, sekali/RB, lah/NN, pokoknya/NN
+itu/PR, teknologi/NN, mahal/JJ, pendapatan/NN, transit/FW, publik/NN, dari/IN, tiket/NN, itu/PR, tentunya/NN, rendah/JJ, nyc/NN, cuma/RB, apalagi/CC, kota/NNP, seperti/IN, palembang/NNP, yang/SC, jumlah/NN, penduduk/NN, kepadatannya/NN, belum/NEG, memadai/VB, tidak/NEG, perlu/MD, pura/NN, kaget/NNP, kalau/SC, operasional/NN, bikin/VB, rugi/JJ, iya/X
+daripada/SC, membangun/VB, lebih/RB, baik/JJ, uangnya/NN, dialihkan/NN, membuka/VB, jalan-jalan/NN, baru/JJ, membangun/VB, jalan/NN, layang/NN, atau/CC, jalan/NN, tol/NN, dalam/IN, kota/NNP, halnya/NNG, di/IN, karena/CC, hal/NN, itu/PR, lebih/RB, efektif/JJ, jika/SC, alasannya/NN, untuk/IN, menyelesaikan/VB, kemacetan/NN
+palembang/NNP, sepi/JJ, proyek/NN, cuma/RB, berguna/NN, saat/NN, asean/FW, games/FW, setelah/SC, itu/PR, biasa/JJ, saja/RB, apa/WH, mungkin/MD, setelah/SC, ini/PR, jadi/VB, kereta/NN, wisata/FW
+palembang/NNP, sepi/JJ, kali/NN, iya/X, sekarang/NN
+terbayang/VB, kan/RP, sekarang/NN, kalau/SC, pulang/VB, dari/IN, jalan-jalan/NN, tidak/NEG, bingung/JJ, lagi/RB, mau/MD, naik/VB, apa/WH
+banyak/CD, orang/NN, datang/VB, ke/IN, stasiun/NN, bumi/NN, sriwijaya/NNP, menuju/VB, ke/IN, bandara/NN, dan/CC, kembali/RB, lagi/RB, hanya/RB, untuk/IN, menjajal/VB, palembang/NNP, yang/SC, sedang/MD, ramai/JJ, diperbincangkan/VB
+masalahnya/NN, proyek/NN, infrastruktur/NN, yang/SC, dibangun/VB, setelah/SC, jadi/VB, pun/RP, akan/MD, terus/RB, jadi/VB, beban/NN, karena/CC, subsidi/NN, yang/SC, ada/VB, palembang/NNP, jalan/NN, tol/NN, yang/SC, sepi/JJ
+kehadiran/NN, palembang/NNP, tak/NEG, sebatas/RB, menyambut/VB, asean/FW, games/FW
+palembang/NNP, diburu/VB, kontingen/NN, jepang/JJ, untuk/IN, berswafoto/NN
+palembang/NNP, proyek/NN, rupiah/NN, triliunan/NN, yang/SC, mogok/VB, kali/NN, seminggu/JJ, apa/WH, penyebabnya/NN, ternyata/VB, mesinnya/VB, diimpor/VB, dari/IN, china/NN, jadi/VB, teringat/IN, bus/NN, yang/SC, dulu/RB, sering/RB, terbakar/IN, coba/NN, berani/JJ, audit/NN
+palembang/NNP, yang/SC, diresmikan/VB, jokowi/NNP, saat/NN, asean/FW, games/FW, kemarin/NN, tadi/RB, sore/NN, rusak/JJ, di/IN, terpa/VB, angin/NN
+salah/CD, satu/CD, karya/NN, anak/NN, bangsa/NN, menuju/VB, peradaban/NN, dunia/NN
+seram/NN, kalau/SC, naik/VB, tinggi/JJ, sekali/RB, naik/VB, kereta/NN, biasa/JJ, saja/RB
+di/IN, palembang/NNP, ini/PR, dibangun/VB, hanya/RB, untuk/IN, asean/FW, games/FW, yang/SC, dipaksakan/VB, biaya/NN, jauh/JJ, lbh/NN, besar/JJ, daripada/IN, manfaat/NN, orang/NN, kita/PRP, yang/SC, pakai/VB, ini/PR, adalah/VB, yang/SC, sekedar/X, penasaran/JJ, ingin/VB, coba/NN, masih/RB, jauh/JJ, dari/IN, status/NN, sebagai/IN, moda/NN, sehari/SC, sebenarnya/RB, palembang/NNP, lebih/RB, butuh/VB
+saya/PRP, warga/NN, palembang/NNP, tiap/NN, hari/NN, sepi/JJ, penumpang/NN, cuma/RB, buat/VB, wisata/FW, saja/RB, kalau/SC, weekend/NN
+terima/NN, kasih/NN, kepada/IN, yang/SC, sudah/MD, merencanakan/VB, pembuatan/NN, ini/PR, karena/CC, bermanfaaat/VB
+infrastruktur/NN, secara/IN, jumlah/NN, memang/RB, banyak/CD, tapi/CC, secara/IN, fungsi/NN, manfaat/NN, bahkan/RB, minus/NN, palembang/NNP, tol/NN, becakayu/NN, tol/NN, trans/NN, jawa/NN, yang/SC, sepi/JJ, bahkan/RB, membebani/VB, bumn/NN, dan/CC, negara/NNP, jadi/VB, bahkan/RB, tidak/NEG
+berhasil/RB, membuat/VB, kota/NNP, palembang/NNP, mengalami/VB, sedikit/JJ, kemajuan/NN, yang/SC, pesat/JJ
+kota/NNP, palembang/NNP, membangun/VB, fasilitas/NN, agar/SC, menjadi/VB, lancar/JJ, ini/PR, mungkin/MD, adalah/VB, sebuah/NND, kebanggaan/NN, tersendiri/JJ, bagi/IN, masyarakat/NN, palembang/NNP, namun/CC, masih/RB, banyak/CD, yang/SC, perlu/MD, di/IN, meningkatkan/VB, salah/CD, satu/CD, nya/PRP, penghijauan/NN, di/IN, bawah/NN, perlintasan/NN, rel/NN
+palembang/NNP, mogok/VB, lagi/RB, para/DT, penumpang/NN, terpaksa/DT, dievakuasi/VB, dengan/IN, berjalan/VB, kaki/NN, insiden/NN, mogok/VB, sebanyak/CDI, kali/NN, itu/PR, terbilang/VB, kontradiktif/NN, sebab/NN, saat/NN, uji/VB, coba/NN, tidak/NEG, ditemukan/VB, adanya/NN, masalah/NN
+pembangunan/NN, di/IN, palembang/NNP, triliunan/NNP, apa/WH, manfaat/NN, untuk/IN, warga/NN, palembang/NNP, malahan/NN, semakin/RB, macet/JJ, proyek/NN, jokowi/NNP, ini/PR, dipaksakan/VB
+sukses/JJ, uji/VB, coba/NN, tadi/RB, malam/NN, di/IN, palembang/NNP, sebagai/IN, wujud/NN, kota/NNP, palembang/NNP, ikut/VB, mensukseskan/VB, asean/FW, games/FW, palembang/NNP
+sistem/NN, di/IN, palembang/NNP, belum/NEG, secanggih/JJ, di/IN, malaysia/NNPP
+lintasan/NN, yang/SC, paling/RB, menarik/JJ, ialah/VB, pada/IN, zona/NN, ampera/NNP, karena/CC, kita/PRP, dapat/MD, melihat/VB, jembatan/NN, ampera/NNP, secara/IN, tampak/VB, atas/IN
+wah/UH, baru/JJ, tahu/VB, ternyata/VB, di/IN, ada/VB, kotak/NN, pk/NN, nya/PRP, keren/NN, seperti/IN, begini/PR, masih/RB, memikirkan/VB, kesehatan/NN, para/DT, penumpangnya/NN, wah/UH, tidak/NEG, rugi/JJ, sekali/RB, kalau/SC, naik/VB
+palembang/NNP, mendapat/VB, respons/NN, positif/NN, masyarakat/NN, download/NN, tvone/NN, connect/NN, untuk/IN, update/NN, berita/NN, harian/NN, anda/NN
+palembang/NNP, juga/RB, tidak/NEG, terlalu/RB, berguna/VB, jalanan/NN, masih/RB, saja/RB, macet/JJ
+ternyata/VB, walaupun/CC, asean/FW, games/FW, sudah/MD, berlalu/VB, masih/RB, cukup/JJ, diminati/VB, soal/NN, nya/PRP, lumayan/JJ, ramai/JJ, tadi/RB
+ini/PR, yang/SC, sepi/JJ, itu/PR, iya/X, yang/SC, rugi/JJ, tiap/NN, bulan/NN, miliaran/NN
+hujan/NN, deras/JJ, guyur/NN, kota/NNP, palembang/NNP, si/RP, ular/NN, besi/JJ, mogokￂﾠ/NN, lewat/NN
+naik/VB, asyik/NN, dan/CC, seru/JJ, akan/MD, lebih/RB, asyik/JJ, lagi/RB, jika/SC, kereta/NN, nya/PRP, di/IN, perbanyak/NN, jadi/VB, penumpang/NN, tidak/NEG, perlu/MD, menunggu/VB, lama/JJ
+di/IN, palembang/NNP, menghabiskan/VB, dana/NN, lumayan/JJ, besar/JJ, sedikit/JJ, manfaat/NN, nya/PRP, untuk/IN, rakyat/NN, ketika/SC, asean/FW, games/FW, sudah/MD, selesai/VB
+sarana/NN, hiburan/NN, baru/JJ, masyarakat/NN, sumsel/NNP
+ternyata/VB, di/IN, palembang/NNP, sangat/RB, bermanfaat/VB, bermanfaat/VB, untuk/IN, ketika/SC, turun/VB, hujan/NN
+enak/NN, naik/VB, angkot/NN, saja/RB, tidak/NEG, lama/JJ, menunggu/VB, sampainya/JJ
+warga/NN, sumsel/NNP, patut/NN, takjub/NEG, dengan/IN, progres/NN, pembangunan/NN, sampai/SC, hari/NN, ini/PR, terimakasih/VB, atas/IN, kerja/VB, kerasnya/NN, dalam/IN, membangun/VB, sumsel/NNP
+palembang/NNP, buatan/NN, dalam/IN, negeri/NN, yang/SC, terkena/VB, hujan/NN, sedikit/JJ, langsung/RB, mogok/VB, beda/NN, dengan/IN, buatan/NN, jepang/NN
+buktinya/NN, di/IN, kota/NNP, palembang/NNP, juga/RB, turut/VB, sepi/JJ, mungkin/MD, sudah/MD, kode/NN, alam/NN, entahlah/NN
+saya/PRP, orang/NN, palembang/NNP, jalan/NN, tol/NN, dan/CC, tidak/NEG, bermanfaat/VB, langsung/RB, ekonomi/NN, faktanya/NN, permasalahan/NN, utama/JJ, infrastruktur/NN, tidak/NEG, pernah/NN, selesai/VB, seperti/IN, jalan/NN, lintas/NN, sumatera/NNP, jalan/NN, antar/NN, kabupaten/NN, dan/CC, kota/NNP, semrawut/NN, tidk/NEG, ada/VB, perluasan/NN, macet/JJ
+dibangun/VB, bukan/NEG, memecah/VB, kemacetan/NN, justru/NN, menambah/VB, kemacetan/NN, karena/CC, kurangnya/NN, kesadaran/NN, masyarakat/NN, untuk/IN, menggunakan/VB, moda/NN, umum/JJ
+petugas/NN, terlihat/VB, masih/RB, sedikit/JJ, sehingga/SC, dari/IN, segi/RB, kinerja/NN, pelayanan/NN, belum/NEG, maksimal/NN
+betul/NN, sudah/MD, bisa/MD, dimanfaatkan/VB, untuk/IN, nanti/SC, pun/RP, dengan/IN, di/IN, sedang/MD, proses/NN, penyelesaian/NN, dan/CC, akan/MD, segera/RB, menyusul/VB, pengoperasiannya/NN, ayo/UH, naik/VB, umum/JJ
+sudah/MD, saya/PRP, bilang/VB, palembang/NNP, itu/PR, tidak/NEG, butuh/VB, tapi/CC, yang/SC, di/IN, butuhkan/NN, adalah/VB, jalan/NN, layang/NN, untuk/IN, mengurangi/VB, kemacetan/NN
+ayo/UH, teman/NN, teman/NN, kita/PRP, naik/VB, nyaman/JJ, dingin/NN, terhindar/JJ, dari/IN, macet/JJ, dan/CC, bisa/MD, lihat/VB, pemandangan/NN, kota/NNP, palembang/NNP
+stasiun/NN, yang/SC, dulu/RB, dibanggakan/VB, mulyono/NN, hancur/RB, disapu/VB, puting/NN, beliung/NN, palembang/NNP, kalau/SC, sudah/MD, begini/PR, kesombongan/NN, apalagi/CC, yang/SC, kamu/PRP, banggakan/NN
+keren/NN, ini/PR, lihat/VB, dengan/IN, mata/NN, kepala/NN, sendiri/NN, kota/NNP, orang/NN, kita/PRP, semua/CD, di/IN, palembang/NNP, lagi/RB, on/FW, progres/NN, nya/PRP
+proyek/NN, sepi/JJ, aktivitas/NN
+palembang/NNP, salah/CD, satu/CD, karya/NN, anak/NN, bangsa/NN, yang/SC, kan/RP, menuju/VB, ke/IN, peradaban/NN, dunia/NN
+semenjak/SC, ada/VB, ini/PR, jadi/VB, lebih/RB, membantu/VB, apalagi/CC, yang/SC, dari/IN, bandara/NN, tidak/NEG, perlu/MD, naik/VB, taksi/NN, bisa/MD, naik/VB, saja/RB, bisa/MD, lebih/RB, hemat/NN, ongkos/NN, dan/CC, terhindar/VB, macet/JJ
+di/IN, palembang/NNP, juga/RB, sepi/JJ, peminat/NN, cuma/RB, minggu/NN, ramai/JJ, jadi/VB, kereta/NN, wisata/FW, biaya/NN, operasional/NN, miliaran/NN, pemasukan/NN, miliaran/NN, saja/RB, tidak/NEG, yakin/JJ
+bisa/MD, mengurangi/VB, kemacetan/NN, terutama/JJ, di/IN, jembatan/NN, ampera/NNP, warga/NN, palembang/NNP, yang/SC, tidak/NEG, suka/VB, kemacetan/NN, sangat/RB, direkomendasikan/VB, menggunakan/VB, moda/NN, ini/PR
+ada/VB, lagi/RB, pembangunan/NN, infrastruktur/NN, pemerintah/NN, yang/SC, dinilai/VB, kurang/RB, terlalu/RB, berdampak/VB, positif/NN, misalkan/NN, kereta/NN, palembang/NNP, yang/SC, konon/NN, katanya/VB, lebih/RB, besar/JJ, pasak/NN, dari/IN, pada/IN, tiang/NN
+kalau/SC, mikir/NN, di/IN, dalam/IN, itu/PR, apa/WH, saja/RB, akan/MD, jadi/VB, baik/JJ, sebab/NN, tenang/JJ, nya/PRP, saat/NN, berada/VB, didalamnya/VB, itu/PR, bikin/VB, otak/NN, mikirnya/NN, lancar/JJ, begitu/PR
+infrastruktur/NN, mubazir/JJ, sepi/JJ, penumpang/NN
+baru/JJ, diresmikan/VB, jokowi/NNP, palembang/NNP, sudah/MD, mogok/VB, penumpang/NN, ngamuk/NN, menyalahkan/VB, pemerintah/NN, padahal/IN, mau/MD, jadi/VB, andalan/NN, buat/VB, kampanye/NN, pilpres/NN
+ini/PR, sangat/RB, memudahkan/VB, saya/PRP, saya/PRP, tidak/NEG, perlu/MD, lagi/RB, merasakan/VB, kemacetan/NN
+yang/SC, mogok/VB, sudah/MD, menghabiskan/VB, uang/NN, triliunan/NNP, tapi/CC, yang/SC, disalahin/VB, orang/NN, kampung/NN, yang/SC, dibilang/VB, tidak/NEG, beradab/VB
+pembangunan/NN, light/FW, rail/FW, transit/FW, di/IN, kota/NNP, palembang/NNP, sebagai/IN, solusi/NN, mengatasi/VB, masalah/NN, di/IN, kota/NNP, palembang/NNP
+masyarakat/NN, yang/SC, ingin/VB, menonton/VB, tidak/NEG, perlu/MD, khawatir/JJ, karena/CC, sumsel/NNP, yang/SC, panjang/JJ, jalurnya/NN, kamu/PRP, akan/MD, menghantarkan/VB, penonton/NN, dari/IN, bandara/NN, smb/NN, ii/CD, menuju/VB, kawasan/NN, jakabaring/NN, city/NN, sumsel/NNP, akan/MD, beroperasi/VB, selama/IN, jam/NN, setiap/CD, hari/NN
+ada/VB, ac/NN, dan/CC, wifi/FW, gratis/NN, nyaman/JJ, sekali/RB, kan/RP, teman-teman/NN
+naik/VB, lama/JJ, untuk/IN, sampai/SC, ke/IN, tujuan/NN, lebih/RB, baik/JJ, naik/VB, motor/NN, saja/RB
+belum/NEG, pernah/NN, mencoba/VB, ingin/VB, sekali/RB, mencoba/VB, naik/VB, katanya/VB, asyik/NN
+naik/VB, enak/NN, bisa/MD, lihat/VB, kota/NNP, palembang/NNP, dari/IN, atas/IN, ada/VB, ac/NN, lagi/RB
+sedikit/JJ, gambaran/NN, keadaan/NN, palembang/NNP, tidak/NEG, seindah/NN, yang/SC, dibayangkan/VB, harus/MD, lebih/RB, banyak/CD, perbaikan/NN
+di/IN, palembang/NNP, kurang/RB, berfaedah/VB, penumpang/NN, gerbong/NN, cuma/RB, orang/NN, bahkan/RB, kadang/NN, kosong/JJ, masyarakat/NN, palembang/NNP, sebetulnya/NN, butuh/VB, jembatan/NN, untuk/IN, mengurangi/VB, kemacetan/NN, bukan/NEG, proyek/NN
+selain/IN, itu/PR, daya/NN, saing/NN, palembang/NNP, meningkat/VB, sebagai/IN, kota/NNP, yang/SC, bebas/JJ, dari/IN, kemacetan/NN, karena/CC, publik/NN, semakin/RB, baik/JJ
+beberapa/CD, tahun/NN, terakhir/JJ, penggunaan/NN, umum/JJ, sangat/RB, meningkat/VB, apalagi/CC, darat/IN, semenjak/SC, adanya/NN, sanggat/RB, memudahkan/VB, warga/NN, palembang/NNP, untuk/IN, menggunakan/VB, publik/NN
+palembang/NNP, masih/RB, sepi/JJ, peminat/NN
+moda/NN, light/FW, rail/FW, transit/FW, di/IN, palembang/NNP, kembali/RB, bermasalah/VB, semenjak/SC, proses/NN, uji/VB, coba/NN, ular/NN, besi/JJ, ini/PR, sudah/MD, tiga/CDP, kali/NN, mogok/VB
+makin/RB, tidak/NEG, sabar/NN, mau/MD, mencoba/VB, kereta/NN, di/IN, atas/IN, anti/JJ, panas/JJ, dan/CC, berisik/VB
+palembang/NNP, merugi/VB, listrik/NN, menunggak/VB, pernyataan/NN, gubernur/NN, sumsel/NNP, yang/SC, menolak/VB, bayar/VB
+keberadaan/NN, moda/NN, kereta/NN, api/NN, listrik/NN, ringan/JJ, atau/CC, yang/SC, ada/VB, di/IN, kota/NNP, palembang/NNP, merupakan/VB, aset/NN, yang/SC, tidak/NEG, ternilai/VB
+dengan/IN, adanya/NN, di/IN, palembang/NNP, lebih/RB, memudahkan/VB, kita/PRP, untuk/IN, bepergian/NN, tanpa/IN, khawatir/JJ, macet/JJ, apalagi/CC, untuk/IN, waktu/NN, mendatang/VB, penumpang/NN, bisa/MD, membayar/VB, dengan/IN, uang/NN, elektronik/NN
+memang/RB, benar/JJ, sih/NN, palembang/NNP, sepi/JJ
+palembang/NNP, sudah/MD, mogok/VB, kali/NN, ini/PR, proyek/NN, pusat/NN, uang/NN, apbn/NN, jadi/VB, teringat/IN, dahulu/JJ, ada/VB, proyek/NN, bus/NN, trans/NN, asal/NN, china/NN, sebesar/JJ, triliun/CDP, di/IN, dki/NN, yang/SC, mangkrak/NN, bapak/NN, dan/CC, kpk/NN, siap/JJ, siap/JJ, kalau/SC, tidak/NEG, sekarang/NN, bagaimana/WP, jika/SC, diperintahkan/VB, untuk/IN, kerja/VB, nyata/JJ, juga/RB
+palembang/NNP, penuhnya/NN, tidak/NEG, sebanding/NN, sama/JJ, krlnya/NN, kota/NNP
+palembang/NNP, yang/SC, dibangun/VB, untuk/IN, mendukung/VB, asean/FW, games/FW, masih/RB, belum/NEG, dimanfaatkan/VB, secara/IN, optimal/JJ
+akhir/NN, nya/PRP, palembang/NNP, punya/VB, mari/VB, sukses/JJ, kan/RP, asean/FW, games/FW, dan/CC, dukung/NN, presiden/NN, jokowi/NNP, untuk/IN, pembangunan/NN, di/IN, daerah/NN, lain/JJ, nya/PRP, lancar/JJ, memakai/VB, produk/NN, bahan/NN, dalam/IN, negeri/NN, bangga/JJ, dan/CC, buatan/NN, indonesia/NNP, dan/CC, jokowi/NNP, salam/NN, sukses/JJ
+benar/JJ, sekali/RB, saya/PRP, orang/NN, palembang/NNP, dan/CC, salah/CD, satu/CD, yang/SC, membuat/VB, sepi/JJ, iyalah/NN, jarak/NN, tempuh/NN, naik/VB, sama/JJ, naik/VB, mobil/NN, cepatan/JJ, sampai/RB, naik/VB, mobil/NN
+suka/VB, sekali/RB, ada/VB, tapi/CC, kalau/SC, bisa/MD, diperbanyak/VB, dong/RP
+dibangun/VB, dengan/IN, konsep/NN, konstruksi/NN, jalur/NN, layang/NN, sumsel/NNP, menjadi/VB, yang/SC, kali/NN, dibangun/VB, dioperasikan/VB, di/IN, indonesia/NNP, selain/IN, menjadi/VB, catatan/NN, sejarah/NN, baru/JJ, bagi/IN, pengembangan/NN, perkeretaapian/NN, indonesia/NNP, sumsel/NNP, ini/PR, merupakan/VB, karya/NN, putra-putri/NN, indonesia/NNP
+palembang/NNP, adalah/VB, suatu/CD, kemajuan/NN, yang/SC, patut/NN, diacungi/NN, jempol/NN, stasiun/NN, yang/SC, nyaman/JJ, kereta/NN, yang/SC, safety/NN, adalah/VB, keunggulan/NN, yang/SC, dimiliki/VB, selain/IN, mendukung/VB, mobilitas/NN, asean/FW, games/FW, yang/SC, sempat/MD, digelar/VB, di/IN, palembang/NNP, semoga/SC, bisa/MD, terus/RB, berkembang/VB, dapat/MD, menambah/VB, rute/NN, yang/SC, lebih/RB, beragam/VB
+tak/NEG, perlu/MD, berpikir/VB, mau/MD, membuat/VB, infrastruktur/NN, apa/WH, pikir/NN, saja/RB, infrastruktur/NN, yang/SC, menjanjikan/VB, kehidupan/NN, kedepannya/NN, faedahnya/NN, dari/IN, keberhasilan/NN, terbangunnya/NN, infrastruktur/NN, palembang/NNP
+capek/NN, menunggu/VB, angkot/NN, dari/IN, rumah/NN, langsung/RB, saja/RB, ke/IN, stasiun/NN, lebih/RB, adem/FW, itu/PR
+terbukti/NN, masyarakat/NN, palembang/NNP, pada/IN, trauma/NN, naik/VB
+wow/UH, adrenalin/FW, di/IN, uji/VB, sangat/RB, naik/VB, ini/PR, deg/NN, degkan/NN, apalagi/CC, penumpangnya/NN, sangat/RB, ramai/JJ
+naik/VB, makan/VB, waktu/NN, lama/JJ, untuk/IN, sampai/SC, ke/IN, tujuan/NN, tidak/NEG, efektif/JJ
+kota/NNP, palembang/NNP, adalah/VB, kota/NNP, di/IN, indonesia/NNP, satu-satunya/NN, yang/SC, berhasil/RB, mengoperasikan/VB, light/FW, rail/FW, transit/FW, satu-satunya/NN, yang/SC, bisa/MD, menyeberangi/VB, sungai/NN, terpanjang/JJ, di/IN, sumatera/NNP, yaitu/SC, sungai/NN, musi/NN, jalur/NN, rel/NN, bersebelahan/VB, dengan/IN, jembatan/NN, ampera/NNP, keren/NN, sekali/RB, kan/RP
+warga/NN, palembang/NNP, kurang/RB, minat/NN, naik/VB
+tapi/CC, apalah/NN, daya/NN, sudah/MD, dibangun/VB, semoga/SC, kedepan/NN, pemerintah/NN, mau/MD, mengoptimalkan/VB, otaknya/NN, ketika/SC, membuat/VB, kebijakan/NN
+percuma/NN, pembangunan/NN, proyek/NN, yang/SC, menghabiskan/VB, uang/NN, negara/NNP, triliunan/NN, rupiah/NN, kalau/SC, tidak/NEG, dimanfaatkan/VB
+palembang/NNP, mogok/VB, penumpang/NN, jalan/NN, di/IN, atas/IN, rel/NN, layang/NN
+keren/NN, benar/JJ, ini/PR, stasiun/NN, palembang/NNP
+di/IN, palembang/NNP, sudah/MD, operasi/VB, dari/IN, asean/FW, games/FW, lalu/JJ, lebih/RB, dulu/RB, dari/IN, tapi/CC, selalu/RB, sepi/JJ, jadwalnya/NN, saja/RB, menit/NN, sekali/RB, dan/CC, kereta/NN, terakhir/JJ, cuma/RB, sampai/SC, jam/NN
+bisa/MD, jadi/VB, sebuah/NND, ikon/NN, baru/JJ, kota/NNP, palembang/NNP, yang/SC, memiliki/VB, dampak/NN, positif/NN, bagi/IN, masyarakatnya/NN
+mending/JJ, naik/VB, angkot/NN, daripada/SC, naik/VB, karena/CC, pakai/VB, angkot/NN, lebih/RB, cepat/JJ, sampai/SC
+palembang/NNP, sepi/JJ, kali/NN, iya/X, sekarang/NN
+naik/VB, sangat/RB, menyenangkan/VB, karena/CC, kita/PRP, bisa/MD, melihat/VB, pemandangan/NN, kota/NNP, palembang/NNP, dari/IN, atas/IN
+gara-gara/NN, hujan/NN, lebat/NN, kereta/NN, light/FW, rail/FW, transit/FW, di/IN, palembang/NNP, mogok/VB, untuk/IN, kali/NN, saat/NN, mulai/VB, dioperasikan/VB, bagi/IN, masyarakat/NN, umum/JJ
+sangat/RB, mengasyikan/VB, semoga/SC, ada/VB, mobil/NN, angkutan/NN, yang/SC, membawa/VB, kita/PRP, menuju/VB, stasiun/NN, terdekat/JJ, sehingga/SC, tidak/NEG, bingung/JJ, ke/IN, sana/PRL, nya/PRP
+ini/PR, sangat/RB, membantu/VB, masyarakat/NN, untuk/IN, bepergian/NN, jika/SC, ingin/VB, menghindari/VB, kemacetan/NN
+keren/NN, habis/NN, trainset/NN, besok/JJ, lewat/NN, palembang/NNP, mencoba/VB, ini/PR
+inilah/RP, penampakan/NN, palembang/NNP, hari/NN, ini/PR, wara/NN, wiri/FW, mengitari/VB, kota/NNP, semua/CD, fasilitas/NN, telah/MD, selesai/VB, semoga/SC, nantinya/NNG, tamu/NN, maupun/CC, asean/FW, games/FW, yang/SC, datang/VB, ke/IN, palembang/NNP, merasakan/VB, pelayanan/NN, yang/SC, baik/JJ, nyaman/JJ
+menjajal/VB, palembang/NNP, siang/NN, tadi/RB, dari/IN, stasiun/NN, bumi/NN, sriwijaya/NNP, sampai/SC, stasiun/NN, jakabaring/NN, konstruksi/NN, ini/PR, hampir/RB, persen/NN, berbahan/NN, lokal/NN, kita/PRP, membangun/VB, peradaban/NN, baru/JJ, budaya/NN, baru/JJ, menggunakan/VB, massal/JJ, yang/SC, aman/JJ, dan/CC, nyaman/JJ, budaya/NN, tepat/RB, waktu/NN, budaya/NN, antre/IN
+indonesia/NNP, hadir/NN, di/IN, kota/NNP, palembang/NNP, dan/CC, akan/MD, mengurangi/VB, kepadatan/NN, jalan/NN, di/IN, palembang/NNP
+menaiki/VB, bagi/IN, pemula/NN, sensasinya/NN, belum/NEG, begitu/PR, bagus/JJ, karena/CC, perasaan/NN, takut/JJ, dan/CC, menegangkan/VB, kerap/NN, kali/NN, dirasakan/NN
+antusiasme/NN, kawula/NN, muda/JJ, palembang/NNP, yang/SC, sangat/RB, senang/JJ, menggunakan/VB, sebagai/IN, new/NN, lifestyle/NN, dan/CC, semakin/RB, digemari/VB, karena/CC, nyaman/JJ, modern/JJ, terjangkau/VB, dan/CC, handal/RB
+naik/VB, sangat/RB, nyaman/JJ, bersih/VB, dan/CC, aman/JJ
+ini/PR, efek/NN, sepi/JJ, atau/CC, bagaimana/WP, iya/X, tapi/CC, orang/NN, yang/SC, lagi/RB, dengarkan/IN, ipod/NN, di/IN, barisan/NN, pojok/NN, kedengeran/NN, lagunya/RB, sampai/SC, barisan/NN, tengah/NN
+di/IN, palembang/NNP, mogok/VB, lagi/RB, ini/PR, yang/SC, kedua/CDO, kali/NN, sebelumnya/NNG, di/IN, karena/CC, kan/RP, hujan/NN, sekarang/NN, tidak/NEG, ada/VB, apa/WH, tapi/CC, bisa/MD, mogok/VB
+rute/NN, perjalanan/NN, kalau/SC, naik/VB, itu/PR, terbatas/VB, sehingga/SC, membuat/VB, tujuan/NN, penumpang/NN, sulit/JJ, terpenuhi/JJ, dan/CC, berakibat/VB, masyarakat/NN, palembang/NNP, hanya/RB, berkeinginan/VB, mencoba/VB, menaiki/VB, saja/RB
+akhirnya/RB, palembang/NNP, punya/VB, dong/RP, seneng/NN, sekali/RB, kapan/NN, kapan/NN, mau/MD, mencoba/VB
+ini/PR, dampak/NN, positif/NN, palembang/NNP, untuk/IN, ekonomi/NN, daerah/NN
+dengan/IN, adanya/NN, palembang/NNP, tidak/NEG, kalah/NN, dengan/IN, negara-negara/NNP, lain/JJ
+keren/NN, masa/NN, kini/RB
+sering/RB, mogok/VB, operasional/NN, palembang/NNP, akan/MD, ditutup/VB, hingga/CC, november/NN
+nyaris/NN, susah/JJ, mencari/VB, nilai/NN, tambahnya/VB, loh/NN, dan/CC, kereta/NN, bandara/NN, ini/PR, kemungkinan/NN, rugi/JJ, kalau/SC, palembang/NNP, sudah/MD, gembar/NN, gembor/NN, rugi/JJ
+palembang/NNP, sudah/MD, lumayan/JJ, banyak/CD, membantu/VB, apalagi/CC, buat/VB, yang/SC, malas/NN, pakai/VB, kendaraan/NN, seperti/IN, aku/PRP, murah/JJ, dan/CC, cukup/JJ, efisien/NN, tapi/CC, untuk/IN, jam/NN, operasi/VB, nya/PRP, masih/RB, terbatas/VB, dari/IN, pagi/NN, sampai/SC, sore/NN
+light/FW, rail/FW, transit/FW, kini/RB, menjadi/VB, andalan/NN, bagi/IN, masyarakat/NN, palembang/NNP
+dapat/MD, membantu/VB, masyarakat/NN, palembang/NNP, menghindari/VB, kemacetan/NN, jika/SC, ingin/VB, ke/IN, bandara/NN
+pembangunan/NN, infrastruktur/NN, tidak/NEG, tepat/RB, sasaran/NN, palembang/NNP, sedikit/JJ, penduduk/NN, tapi/CC, dibangun/VB, alhasil/NN, cuma/RB, jadi/VB, tourist/NN, attractions/NN
+sebelum/NN, ini/PR, belum/NEG, ada/VB, sosialiasi/NN, bagi/IN, penumpang/NN, tentang/IN, keadaan/NN, emergency/FW
+meski/SC, bayar/VB, masyarakat/NN, palembang/NNP, tetap/RB, antusias/IN, naik/VB, hingga/CC, berdesakan/NN, tak/NEG, sedikit/JJ, pula/RB, penumpang/NN, yang/SC, hanya/RB, penasaran/JJ, ingin/VB, merasakan/VB, sensasi/NN, naik/VB, palembang/NNP, sejak/SC, dioperasikan/VB, per/NN, juli/NN
+alternatif/NN, untuk/IN, mengurangi/VB, kemacetan/NN, di/IN, palembang/NNP
+naik/VB, pulang/VB, pergi/VB, mending/JJ, naik/VB, sepeda/NN, kalau/SC, turun/VB, ujungnya/VB, masih/RB, naik/VB, lagi/RB, uangnya/NN, bisa/MD, buat/VB, makan/VB, satu/CD, kali/NN
+tol/NN, sepi/JJ, palembang/NNP, sepi/JJ, kereta/NN, bandara/NN, sepi/JJ, menunjukan/VB, bahwa/SC, infrastruktur/NN, yang/SC, dibangun/VB, jokowi/NNP, belum/NEG, terlalu/RB, dibutuhkan/VB, rakyat/NN, alias/NN, tak/NEG, tepat/RB, guna/SC, dan/CC, tak/NEG, tepat/RB
+palembang/NNP, menghabiskan/VB, dana/NN, banyak/CD, tapi/CC, sepi/JJ
+mogok/VB, untuk/IN, yang/SC, ketiga/CDO, kalinya/NND, dana/NN, triliunan/NN, yang/SC, sudah/MD, digelontorkan/VB, untuk/IN, membangun/VB, palembang/NNP, sia-sia/NN, infrastruktur/NN, yang/SC, baru/JJ, saja/RB, diresmikan/VB, sudah/MD, beberapa/CD, kali/NN, mengalami/VB
+sebulan/NN, lagi/RB, palembang/NNP, mendadak/RB, menginternasional/NN, umumnya/JJ, di/IN, indonesia/NNP, segera/RB, datang/VB, dan/CC, uji/VB, coba/NN, lanjut/VB, warga/NN, palembang/NNP, jayalah/NN, sumsel/NNP, kedepan/NN
+informasi/NN, terbaru/JJ, dan/CC, hari/NN, ini/PR, di/IN, palembang/NNP, mogok/VB, kembali/RB, tidak/NEG, ada/VB, hujan/NN, padahal/IN, yang/SC, di/IN, banggakan/NN, sama/JJ, warga/NN, sumsel/NNP, menguras/VB, uang/NN, lumayan/JJ, besar/JJ, triliunan/NN, sedikit/JJ, manfaat/NN, buat/VB, rakyat/NN, sumsel/NNP, semoga/SC, ketika/SC, para/DT, atlet/NN, luar/NN, negeri/NN, menggunakan/VB, tidak/NEG, terjadi/VB, lagi/RB, hal/NN, ini/PR
+kalau/SC, moda/JJ, sudah/MD, menjadi/VB, kebutuhan/NN, kebiasaan/NN, dan/CC, new/NN, lifestyle/NN, buat/VB, warga/NN, palembang/NNP, karena/CC, aman/JJ, cepat/JJ, murah/JJ, modern/JJ, nyaman/JJ, dan/CC, handal/RB
+kehadiran/NN, kereta/NN, akan/MD, meningkat/VB, city/NN, branding/NN, atau/CC, citra/NN, kota/NNP, yang/SC, sebelumnya/RB, telah/MD, ada/VB, jembatan/NN, ampera/NNP, sungai/NN, musi/NN, kota/NNP, asean/FW, games/FW, pempek/NN, dan/CC, kini/RB, publik/NN, modern/JJ, atau/CC
+jadikan/NN, palembang/NNP, kota/NNP, termodern/JJ, di/IN, indonesia/NNP, budi/NN, karya/NN, pembangunan/NN, palembang/NNP, sesuai/JJ, harapan/NN
+gara-gara/NN, pernah/NN, mogok/VB, saat/NN, membawa/VB, penumpang/NN, jadi/VB, banyak/CD, masyarakat/NN, yang/SC, takut/JJ, untuk/IN, naik/VB, lagi/RB
+palembang/NNP, banyak/CD, dikritik/VB, karena/CC, waktu/NN, tempuh/NN, yang/SC, dinilai/VB, lamban/NN
+walaupun/CC, tidak/NEG, banyak/CD, kali/NN, tapi/CC, cukup/JJ, ramai/JJ, yang/SC, naik/VB, palembang/NNP, moda/NN, ini/PR, lumayan/JJ, diminati/VB, terutama/JJ, pagi/NN, pengguna/NN, yang/SC, baru/JJ, turun/VB, dari/IN, bandara/NN
+akan/MD, memberikan/VB, dampak/NN, positif/NN, untuk/IN, kemajuan/NN, kota/NNP, palembang/NNP, menjadikan/VB, palembang/NNP, menjadi/VB, kota/NNP, modern/JJ
+naik/VB, sepertinya/MD, lebih/RB, mending/JJ, daripada/SC, naik/VB, taksi/NN, bandara/JJ
+palembang/NNP, itu/PR, sepi/JJ, karena/CC, bukan/NEG, daerah/NN, metropolitan/NN, jadi/VB, tidak/NEG, butuh/VB, juga/RB, mereka/PRP
+kalau/SC, mau/MD, merasakan/VB, naik/VB, kereta/NN, api/NN, di/IN, udara/NN, ayo/UH, buruan/NN, naik/VB, adem/FW, lagi/RB, pokoknya/NN, seru/JJ
+banyaknya/CD, biaya/NN, yang/SC, dikeluarkan/VB, pada/IN, pembangunan/NN, di/IN, palembang/NNP, sebanding/NN, dengan/IN, kemegahan/NN, dan/CC, kekokohan/NN, dari/IN, tersebut/PR
+perkiraan/NN, saya/PRP, juga/RB, begitu/VB, dan/CC, terbukti/NN, kalau/SC, palembang/NNP, sepi/JJ
+palembang/NNP, dianggap/NN, sepi/JJ
+palembang/NNP, yang/SC, diresmikan/VB, jokowi/NNP, sekarang/NN, sepi/JJ
+naik/VB, harus/MD, antre/NN, lama/JJ, sehingga/SC, memakan/VB, banyak/CD, waktu/NN, kalau/SC, mau/MD, buru-buru/NN, tidak/NEG, direkomendasikan/VB, naik/VB
+yang/SC, di/IN, palembang/NNP, rusak/JJ, saja/RB, itu/PR, kasihan/NN, rakyat/NN, di/IN, kasih/NN, fasilitas/NN, sembarangan/JJ, siapa/WH, itu/PR, yang/SC, gunting/VB, pitanya/NN
+palembang/NNP, sepi/JJ, peminat/NN, penerbangan/NN, sepi/JJ, penumpang/NN, tol/NN, laut/NN, tidak/NEG, maksimal/NN, tlg/NN, evaluasi/NN, kerja/VB
+masyarakat/NN, sangat/RB, antusias/IN, menggunakan/VB, hari/NN, ini/PR, terlihat/VB, dari/IN, padatnya/IN, penumpang/NN
+wah/UH, kerennya/NN, di/IN, palembang/NNP, yang/SC, sudah/MD, beroperasi/VB, sejak/SC, agustus/NN, ini/PR, buatan/NN, anak/NN, negeri/NN, teman-teman/NN, keren/NN, kan/RP
+banyak/CD, infrastruktur/NN, kebanggaan/NN, presiden/NN, jokowi/NNP, terbukti/JJ, sepi/JJ, pengguna/NN, merugi/PRP, dan/CC, cenderung/NN, mubazir/JJ
+sarana/NN, yang/SC, nyaman/JJ, dan/CC, sangat/RB, memudahkan/VB, dengan/IN, adanya/NN, dapat/MD, mengurangi/VB, kemacetan/NN
+kalau/SC, ibu/NNP, sudah/MD, bilang/VB, hati-hati/RB, mending/JJ, didengar/VB, seram/NN, palembang/NNP, mogok/VB, penumpang/NN, terjebak/JJ, hampir/RB, jam/NN, bahkan/RB, ada/VB, yang/SC, pingsan/NN, dikarenakan/VB, lampu/NN, dan/CC, ac/NN, mati/NN, sehingga/SC, banyak/CD, dari/IN, penumpang/NN, yang/SC, nekat/JJ, keluar/VB, dan/CC, berjalan/VB, sepanjang/RB, kamu/PRP, buat/VB, cebong/NN, yang/SC, kemarin/NN, bilang/VB, bohong/NN, karena/CC, paket/NN, habis/NN
+dilihat/VB, dari/IN, udara/NN, jalur/NN, palembang/NNP, yang/SC, meliuk-liuk/VB, membuat/VB, penampakan/NN, kota/NNP, palembang/NNP, semakin/RB, indah/JJ, dan/CC, megah/NN
+apa/WH, solusi/NN, dari/IN, tol/NN, yang/SC, sepi/JJ, yang/SC, bernasib/VB, buruk/JJ, entah/RB, nantinya/NNG, kereta/NN, api/NN, bandara/NN, pun/RP, yang/SC, ternyata/VB, bukan/NEG, menjadi/VB, mode/NN, favorit/JJ, untuk/IN, sampai/SC, ke/IN, bandara/NN, kesalahan/NN, perencanaan/NN, secara/IN, makro/JJ, karena/CC, pembangunan/NN, obesesif/NN, ataukah/IN, ketidaknyamanan/NN, ataukah/IN, tinggi/JJ, biaya/NN, menjadi/VB, penyebabnya/NN
+akan/MD, jadi/VB, ikon/NN, kota/NNP, palembang/NNP
+menurut/VB, saya/PRP, di/IN, sumsel/NNP, ibarat/NN, anak/NN, sampai-dengan/JJ, sudah/MD, dikasih/VB, mobil/NN, belum/NEG, waktunya/NN
+nya/PRP, masih/RB, sedikit/JJ, sekali/RB, jadi/VB, harus/MD, menunggu/VB, lama/JJ, kalau/SC, begitu/PR, kan/RP, mending/JJ, naik/VB, motor/NN, atau/CC, mobil/NN, sendiri/NN, sulit/JJ, untuk/IN, tepat/RB, waktu/NN, kalau/SC, naik/VB
+kemajuan/NN, teknologi/NN, dalam/IN, dapat/MD, membuat/VB, kota/NNP, palembang/NNP, menjadi/VB, berkembang/VB
+hari/NN, ini/PR, kembali/RB, dibuka/VB, untuk/IN, umum/JJ, dengan/IN, pengaturan/NN, jumlah/NN, penumpang/NN, dan/CC, antusiasme/NN, masyarakat/NN, palembang/NNP, untuk/IN, menggunakan/VB, sumsel/NNP, ini/PR, sangat/RB, besar/JJ, ayo/UH, beralih/VB, gunakan/VB, ini/PR, sebagai/IN, sarana/NN, yang/SC, kekinian/NN, mudah/JJ, tepat/RB, waktu/NN, nyaman/JJ, tentunya/NN
+belum/NEG, genap/NN, satu/CD, bulan/NN, uji/VB, operasi/VB, palembang/NNP, sudah/MD, tiga/CDP, kali/NN, mogok/VB, memprihatinkannya/VB, lagi/RB, kereta/NN, ini/PR, mogok/VB, saat/NN, sedang/MD, membawa/VB, ratusan/CDC, penumpang/NN
+kontingen/NN, jepang/NN, kagumi/NNP, palembang/NNP
+berhasil/RB, membuat/VB, kota/NNP, palembang/NNP, mengalami/VB, sedikit/JJ, kemajuan/NN, yang/SC, pesat/JJ
+yang/SC, menaiki/VB, palembang/NNP, bukan/NEG, cuma/VB, golongan/NN, orang/NN, kaya/JJ, golongan/NN, orang/NN, biasa/JJ, sajapun/RB, bisa/MD, naik/VB, karena/CC, ini/PR, benar/JJ, bermanfaat/VB, bagi/IN, siapapun/CD, yang/SC, ingin/VB, mencobanya/VB
+namun/CC, ada/VB, sisi/NN, negatif/JJ, dari/IN, yaitu/SC, banyaknya/CD, mobil/NN, yang/SC, berhenti/VB, di/IN, stasiun/NN, keberangkatan/NN, yang/SC, mengakibatkan/VB, kemacetan/NN, dititik/VB, itu/PR
+palembang/NNP, merugi/PRP, hanya/RB, milyar/NN, perbulan/NN, karena/CC, masih/RB, sepi/JJ
+palembang/NNP, diharapkan/VB, akan/MD, meningkatkan/VB, mutu/NN, pelayanan/NN, perkotaan/NN, dan/CC, menjadi/VB, moda/NN, yang/SC, ramah/JJ, lingkungan/NN
+palembang/NNP, siap/JJ, beroperasi/VB, warganet/NN, terkesima/JJ
+di/IN, palembang/NNP, sepi/JJ, perencanaan/NN, tidak/NEG, matang/VB, ibarat/NN, belum/NEG, ngantuk/NN, disuruh/NN, tidur/VB
+memudahkan/VB, mobilitas/NN, warga/NN, palembang/NNP, namun/CC, waktu/NN, tempuh/NN, masih/RB, belum/NEG, bisa/MD, dihemat/VB, karena/CC, kecepatannya/NN, kurang/RB
+naik/VB, berbeda/JJ, dengan/IN, naik/VB, kereta/NN, biasa/JJ, di/IN, palembang/NNP, lebih/RB, menarik/JJ, karena/CC, bisa/MD, melihat/VB, kota/NNP, palembang/NNP, dari/IN, atas/IN
+dengan/IN, adanya/NN, ini/PR, memudahkan/VB, perjalanan/NN, bandara/NN, menuju/VB, jakabaring/NN, dan/CC, sebaliknya/SC
+pegawai/NN, nya/PRP, ramah/JJ, ramah/JJ, dan/CC, baik/JJ, suka/VB, saya/PRP
+tidak/NEG, sabar/NN, nikmati/NNP, membelah/VB, kota/NNP, palembang/NNP
+sarana/NN, prasarana/NN, harus/MD, ditingkatkan/VB, lagi/RB, agar/IN, masyarakat/NN, mau/MD, menggunakan/VB, ini/PR
+sumsel/NNP, provinsi/NN, satu-satunya/NN, yang/SC, memiliki/VB, masa/NN, meskipun/CC, jakarta/NNP, sudah/MD, mulai/VB, duluan/NN, tetap/RB, sumsel/NNP, yang/SC, bisa/MD, sukses/JJ, pembangunannya/NN
+uji/VB, jalan/NN, palembang/NNP, enak/NN, nyaman/JJ, adem/FW, tidak/NEG, kencang/NN, gratis/NN, tidak/NEG, kalah/NN, sama/JJ, shinkanzen/NN, jepang/NN
+di/IN, palembang/NNP, mogok/VB, sejumlah/CD, penumpang/NN, kecewa/JJ, dan/CC, trauma/NN, informasi/NN, menarik/JJ, lainnya/NNG, bisa/MD, anda/NN, dapatkan/MD, hanya/RB, di/IN, tvone/NN, connect/NN
+nikmati/NNP, umum/JJ, di/IN, kota/NNP, palembang/NNP, yang/SC, menjadi/VB, salah/CD, satu/CD, solusi/NN, menghindari/VB, kemacetan/NN, jalan/NN
+naik/VB, kereta/NN, terus/RB, bayar/VB, memang/RB, murah/JJ, sih/NN, tapi/CC, ujung-ujungnya/VB, masih/RB, bayar/VB, lagi/RB, kalau/SC, belum/NEG, sampai/SC, tujuan/NN, yang/SC, diinginkan/VB, pergi/VB, saja/RB, jalan/NN, kaki/NN, atau/CC, klik/NN, gojek/NN, tidak/NEG, desak-desakan/NN, ataupun/CC, tidak/NEG, perlu/MD, menunggu/VB, antrean/NN
+untuk/IN, kali/NN, mencoba/VB, naik/VB, palembang/NNP, lumayan/JJ, nyaman/JJ, dan/CC, simpel/NN, menurutku/VB, alat/NN, semacam/NN, ini/PR, harus/MD, diperbanyak/VB, di/IN, kota/NNP, rutenya/NN, juga/RB, harus/MD, diperluas/VB, kalau/SC, sudah/MD, begitu/PR, ku/NN, yakin/JJ, banyak/CD, warga/NN, yang/SC, memilih/VB, naik/VB, umum/JJ, karena/CC, nyaman/JJ, tidak/NEG, capek/NN, dan/CC, tidak/NEG, kena/VB, macet/JJ, apalagi/CC, kalau/SC, harga/NN, tiketnya/NN, terjangkau/VB
+kesal/NN, lama/JJ, sekali/RB, menunggu/VB
+waktu/NN, operasi/VB, yang/SC, ditambah/VB, memudahkan/VB, masyarakat/NN, untuk/IN, menggunakan/VB, sebagai/IN, di/IN, malam/NN, hari/NN
+dalam/IN, waktu/NN, jangka/NN, pendek/JJ, palembang/NNP, akan/MD, digunakan/VB, pada/IN, gelaran/NN, asean/FW, games/FW, orang-orang/NN, dari/IN, negara/NNP, lain/JJ, pun/RP, akan/MD, tahu/VB, kalau/SC, indonesia/NNP, juga/RB, memiliki/VB, yang/SC, nyaman/JJ, dan/CC, modern/JJ
+pengalaman/NN, naik/VB, sangat/RB, menyenangkan/VB, karena/CC, bisa/MD, dibilang/VB, ancmb/NN, aman/JJ, nyaman/JJ, cepat/JJ, murah/JJ, dan/CC, bangga/JJ, kenapa/WH, bisa/MD, dibilang/VB, aman/JJ, karena/CC, selain/IN, didalem/VB, nya/PRP, dijaga/VB, sama/JJ, security/IN, tapi/CC, juga/RB, dilengkapi/VB
+naik/VB, biasa/JJ, saja/RB, tidak/NEG, ada/VB, serunya/NN
+adanya/NN, di/IN, palembang/NNP, membuat/VB, masyarakat/NN, yang/SC, berpergian/VB, menjadi/VB, mudah/JJ, dan/CC, cepat/JJ, untuk/IN, mencapai/VB, lokasi/NN, tujuan/NN, terimakasih/NN, palembang/NNP
+rute/NN, perjalanan/NN, kalau/SC, naik/VB, itu/PR, terbatas/VB, sehingga/SC, membuat/VB, tujuan/NN, penumpang/NN, sulit/JJ, terpenuhi/JJ, dan/CC, berakibat/VB, masyarakat/NN, palembang/NNP, hanya/RB, berkeinginan/VB, mencoba/VB, menaiki/VB, saja/RB
+salah/CD, satu/CD, efek/NN, positif/NN, asean/FW, games/FW, di/IN, palembang/NNP, yuk/NNP, ramai/JJ, sukseskan/NN, asean/FW, games/FW
+ingin/VB, angkutan/NN, yang/SC, aman/JJ, nyaman/JJ, bersih/VB, cepat/JJ, dan/CC, murah/JJ, di/IN, palembang/NNP, light/FW, railway/NN, transit/FW, solusinya/NN, mari/VB, budayakan/NN, naik/VB, angkutan/NN, umum/JJ
+ini/PR, sudah/MD, pasti/RB, gagal/JJ, tapi/CC, masih/RB, di/IN, buat/VB
+palembang/NNP, sering/RB, terlambat/VB, dari/IN, jadwal/NN, dan/CC, kecepatan/NN, sangat/RB, lambat/JJ
+panjangnya/NN, saat/NN, menunggu/VB, antrean/NN, pembelian/NN, tiket/NN, menyebabkan/VB, pelanggan/NN, kecewa/JJ, dan/CC, berakibat/VB, pelanggaran/NN, yang/SC, menaiki/VB, semakin/RB, sedikit/JJ
+sumsel/NNP, wujudkan/NN, ekonomi/NN, baru/JJ, melalui/IN
+palembang/NNP, mogok/VB, lagi/RB, light/FW, rail/FW, transit/FW, atau/CC, palembang/NNP, kembali/RB, mogok/VB, operasional/NN, moda/NN, penunjang/NN, pelaksanaan/NN, asean/FW, games/FW, itu/PR, kembali/RB, menemui/VB, kendala/NN, hingga/CC, memaksa/VB, penumpang/NN, harus/MD, berjalan/VB, kaki/NN, melalui/IN, walkway/NN, sejauh/NN, kilometer/NN
+di/IN, indonesia/NNP, bagaimana/WP, tidak/NEG, keren/NN, coba/NN, tidak/NEG, sabar/NN, sekali/RB, kan/RP, ingin/VB, mencoba/VB, naiknya/VB
+kenapa/WH, harus/MD, malu/NN, menampar/VB, muka/NN, sendiri/NN, ketika/SC, membangun/VB, meresmikan/VB, asyik/NN, berfoto/NN, pakai/VB, helm/NN, proyek/NN, mengerahkan/VB, buzzer/NN, ketika/SC, mogok/VB, semuanya/NN, bungkam/NN
+alami/NN, gangguan/NN, palembang/NNP, yang/SC, baru/JJ, diresmikan/VB, mogok/VB, lagi/RB
+sepi/JJ, penumpang/NN, pasca/NN, perhelatan/NN, asean/FW, games/FW, di/IN, palembang/NNP
+aku/PRP, tidak/NEG, suka/VB, menunggunya/VB, lama/JJ, terus/RB, tidak/NEG, ada/VB, diskon/VB, bagi/IN, anak/NN, sekolahan/NN, diluar/VB, negeri/NN
+palembang/NNP, rugi/JJ, pendapatan/NN, cuma/RB, miliaran/NN
+kereta/NN, api/NN, cepat/JJ, tidak/NEG, ada/VB, manfaat/NN, menambah/VB, hutang/NN, besar/JJ, beban/NN, besar/JJ, lihat/VB, palembang/NNP, yang/SC, dibanggakan/VB, biaya/NN, besar/JJ, kualitas/NN, infrastruktur/NN, kurang/RB, bagus/IN, rugi/JJ
+stasiun/NN, palembang/NNP, resmi/JJ, beroperasi/VB, fasilitas/NN, lengkap/NN, eskalator/NN, dan/CC, lift/NN
+aku/PRP, orang/NN, sumsel/NNP, itu/PR, kurang/RB, berguna/VB, tetap/RB, saja/RB, jalanan/NN, macet/JJ, rata-rata/NN, orang/NN, palembang/NNP, juga/RB, tidak/NEG, menggunakan/VB, sebagai/IN, pengganti/NN, kendaraan/NN, pribadi/JJ, paling-paling/NN, cuma/RB, mencoba/VB, naik/VB, sekali/RB, dua/CDP
+palembang/NNP, listriknya/NN, milyaran/CDC, sementara/CC, tidak/NEG, terlalu/RB, berguna/VB
+walaupun/CC, di/IN, kampung/NN, saya/PRP, belum/NEG, kenal/NN, yang/SC, namanya/NNG, tapi/CC, ikut/VB, senang/NN, lihat/VB, warga/NN, palembang/NNP, menikmatinya/VB
+yes/NNP, sudah/MD, ada/VB, dan/CC, yang/SC, mau/MD, datang/VB, nonton/NN, di/IN, palembang/NNP, bisa/MD, lebih/RB, nyaman/JJ, tidak/NEG, kena/VB, macet/JJ
+sepertinya/MD, tidak/NEG, berguna/VB, coba/NN, memperbanyak/VB, jembatan/NN, saja/RB, musi/NN
+kalau/SC, naik/VB, palembang/NNP, dari/IN, kejauhan/NN, jembatan/NN, ampera/NNP, tercinta/JJ, terlihat/IN, nan/SC, indah/JJ, saat/NN, melangsungkan/VB, perjalanan/NN
+tidak/NEG, ada/VB, manfaat/NN
+biaya/NN, pembuatan/NN, hampir/RB, triliunan/CDP, biaya/NN, operasional/NN, sebulan/NN, miliaran/NN, pemasukan/NN, sebulan/NN, miliaran/NN, itu/PR, memang/RB, belum/NEG, dibutuhkan/VB, di/IN, palembang/NNP, biaya/NN, subsidi/NN, setahun/SC, miliaran/NN
+stasiun/NN, palembang/NNP, durability/NN, nya/PRP, ada/VB, hujan/NN, langsung/RB, ambruk/JJ, proyek/NN
+setelah/SC, selesai/VB, digunakan/VB, untuk/IN, asean/FW, games/FW, palembang/NNP, diperuntukkan/VB, sebagai/IN, angkutan/NN, umum/JJ, masyarakat/NN
+keuntungan/NN, naik/VB, sendiri/NN, selain/IN, bebas/JJ, macet/JJ, nyaman/JJ, yang/SC, pasti/RB, murah/JJ, saja/RB, kecuali/SC, kalau/SC, dari/IN, dan/CC, mau/MD, ke/IN, bandara/NN, bayarnya/NN
+akhirnya/RB, untuk/IN, kali/NN, mencoba/VB, rasanya/NN, haru/NN, dan/CC, bangga/JJ
+di/IN, palembang/NNP, melihat/VB, jalur/NN, terlihat/NN, sedikit/JJ, merusak/VB, estetika/NN, kota/NNP
+kali/NN, naik/VB, palembang/NNP, tidak/NEG, terjadi/VB, guncangan/SC, akibat/NN, pengereman/NN, semua/CD, terasa/NN, nyaman/JJ, meskipun/CC, dalam/IN, keadaan/NN, berdiri/NN
+ketika/SC, ada/VB, temuan/NN, silahkan/NN, dilaporkan/VB, katanya/VB, ketika/SC, dilaporkan/VB, tapi/CC, tidak/NEG, ada/VB, tanggapan/NN
+palembang/NNP, memang/RB, sepi/JJ, peminat/NN, masih/RB, banyak/CD, warga/NN, yang/SC, pakai/VB, kendaraan/NN, pribadi/JJ
+sebagai/IN, kota/NNP, penyelenggara/NN, acara/NN, besar/JJ, seperti/IN, asean/FW, games/FW, sudah/MD, sepantasnya/IN, palembang/NNP, diberi/VB, jika/SC, tak/NEG, diberi/VB, apa/WH, dampaknya/NNG, dari/IN, bandara/NN, terpaksa/NN, para/DT, atlet/NN, akan/MD, diangkut/VB, dengan/IN, bus/NN, menembus/VB, pusat/NN, kota/NNP, palembang/NNP, yang/SC, macet/JJ, setiap/CD, pagi/NN, dan/CC, maghrib/NN, solusi/NN, memecah/VB, kebuntuan/NN, tersebut/PR
+sebagian/CDI, infrastruktur/NN, cuma/RB, proyek/NN, mercu/VB, suar/NN, iya/X, bang/NN, palembang/NNP, tidak/NEG, diukur/VB, pengembalian/NN, utangnya/NN, mampu/MD, apa/WH, tidak/NEG
+buktinya/NN, di/IN, kota/NNP, palembang/NNP, juga/RB, turut/VB, sepi/JJ, mungkin/MD, sudah/MD, kode/NN, alam/NN
+makin/RB, kesini/NN, infrastruktur/NN, makin/RB, baik/JJ, dan/CC, merata/VB, kaya/JJ, kemarin/NN, ke/IN, palembang/NNP, aku/PRP, mencoba/VB, naik/VB, nyaman/JJ, dan/CC, murceeeee/NN
+saya/PRP, tinggal/VB, di/IN, palembang/NNP, sepi/JJ, orang/NN, pakai/VB, sepeda/NN, motor/NN, untuk/IN, yang/SC, efisien/NN, apalagi/CC, sudah/MD, banyak/CD, gojek/NN, atau/CC, grab/NN, itu/PR, lebih/RB, praktis/NN
+palembang/NNP, adalah/VB, kota/NNP, yang/SC, akan/MD, mengoperasikan/VB, moda/NN, berbasis/VB, rel/NN, dalam/IN, kota/NNP, di/IN, luar/NN, dan/CC, kota/NNP, yang/SC, akan/MD, mengoperasikan/VB, di/IN, indonesia/NNP, pada/IN, mei/NN, ini/PR, palembang/NNP, beroperasi/VB
+dari/IN, segi/RB, fasilitas/NN, di/IN, dalam/IN, nya/PRP, sudah/MD, bersih/VB, tinggal/VB, rakyat/NN, palembang/NNP, harus/MD, jaga/VB, kebersihan/NN, kita/PRP, jangan/NEG, jadi/VB, orang/NN, yang/SC, suka/VB, merusak/VB, fasilitas/NN, umum/JJ
+menjadi/VB, ikon/NN, kota/NNP, palembang/NNP, yang/SC, bersanding/VB, dengan/IN, ikon/NN, kota/NNP, palembang/NNP, yang/SC, sudah/MD, kita/PRP, kenal/NN, yaitu/SC, ampera/NNP
+sering/RB, mogok/VB, palembang/NNP, akan/MD, dievaluasi/VB, menyeluruh/JJ, perlu/MD, di/IN, audit/NN, ini/PR, barang/NN, masih/RB, baru/JJ, baru/JJ, operasional/NN, jangan/NEG, sampai/SC, seperti/IN, bus/NN, trans/NN, dulu/RB, yang/SC, sering/RB, terbakar/VB, padahal/IN, masih/RB, baru/JJ
+kehadiran/NN, di/IN, metropolis/NN, palembang/NNP, mengirim/VB, banyak/CD, manfaat/NN, teristimewa/JJ, di/IN, aspek/NN, pengangkutan/NN
+tiket/NN, digratiskan/VB, selama/IN, asean/FW, games/FW
+ayo/UH, naik/VB, moda/JJ, yang/SC, sangat/RB, nyaman/JJ, dan/CC, murah/JJ, sekaligus/RB, mendukung/VB, program/NN, pemerintah/NN, untuk/IN, mengurangi/VB, kemacetan/NN
+naik/VB, apapun/NN, seru/JJ, kecuali/SC, naik/VB, sebab/IN, dampak/NN, setelah/SC, menaiki/VB, bisa/MD, saja/RB, trauma/JJ, karena/CC, dirasa/NN, begitu/PR, memicu/VB, adrenalin/FW
+di/IN, palembang/NNP, infrastruktur/NN, yang/SC, dibanggakan/VB, pemerintah/NN, boleh/MD, lihat/VB, kondisinya/NN, penumpang/NN, selalu/RB, sedikit/JJ, uang/NN, habis/NN, triliunan/NNP, tapi/CC, manfaat/NN, kurang/RB, dirasa/VB, di/IN, sini/PR, butuh/VB, jembatan/NN, bukan/NEG, apbn/NN, keluar/VB, untuk/IN, suatu/CD, yang/SC, kurang/RB, berfaedah/VB
+tidak/NEG, ada/VB, manfaat/NN, nya/PRP, ada/VB, di/IN, palembang/NNP, saya/PRP, orang/NN, palembang/NNP, sekali/RB, pun/RP, saya/PRP, belum/NEG, naik/VB, itu/PR, karena/CC, rute/NN, dan/CC, stasiun/NN, nya/PRP, jauh/JJ, sangat/RB, di/IN, sayang/NN, kan/RP, sekali/RB, mubazir/JJ, kan/RP, uang/NN, rakyat/NN, coba/NN, kalau/SC, di/IN, bangun/VB, jembatan/NN, layang/NN, itu/PR, akan/MD, lebih/RB, baik/JJ, mengurangi/VB
+disebut/VB, boros/NN, palembang/NNP, ternyata/VB, lebih/RB, murah/JJ, dari/IN, malaysia/NNPP, dan/CC, filipina/NN
+palembang/NNP, mogok/VB, penumpang/NN, jalan/NN, kaki/NN
+selepas/NN, asean/FW, games/FW, palembang/NNP, tidak/NEG, beroperasi/VB, lagi/RB, ada/VB, yang/SC, punya/VB, informasi/NN
+palembang/NNP, siap/JJ, untuk/IN, menyambut/VB, hari/NN, menuju/VB, asean/FW, games/FW
+diminati/VB, masyarakat/NN, selain/IN, lancar/JJ, mempercantik/VB, kota/NNP, palembang/NNP
+infrasruktur/NN, yang/SC, megah/VB, ternyata/VB, bisa/MD, buat/VB, bangga/JJ, warganya/NN
+selain/IN, transmusi/NN, akhir/NN, akhir/NN, ini/PR, hadirnya/NN, moda/NN, baru/JJ, sebenernya/IN, memudahkan/VB, mobilisasi/NN, masyarakat/NN, apalagi/CC, banyaknya/CD, ibu-ibu/NN, yang/SC, membawa/VB, anaknya/NN, camping/NN, diatas/VB, karena/CC, merasa/VB, jadi/VB, hiburan/NN, baru/JJ
+akan/MD, lebih/RB, baik/JJ, jika/SC, kereta/NN, diperbanyak/VB, dan/CC, lintasan/NN, nya/PRP, juga/RB, di/IN, perpanjang/NN
+palembang/NNP, mogok/VB, melulu/VB, tidak/NEG, manfaat/NN, tapi/CC, yang/SC, pentingkan/NN, bisa/MD, jadi/VB, bahan/NN, kampanye/NN
+naik/VB, itu/PR, ibarat/NN, dua/CDP, sendal/NN, yang/SC, selalu/RB, terpakai/JJ, ini/PR, kalau/SC, kemana-mana/WH, untuk/IN, ngantor/NN, naik/VB, ke/IN, mall/NN, naik/VB, pulang/VB, dari/IN, rumah/NN, teman/NN, pun/RP, naik/VB, lagi/RB, mau/MD, bilang/VB, apa/WH, keretanya/NN, sudah/MD, bikin/VB, nyaman/JJ, palembang/NNP, makmurkan/NN, terus/RB, iya/X
+suatu/CD, kebanggaan/NN, akhirnya/RB, kita/PRP, memiliki/VB, suatu/CD, yang/SC, aman/JJ, nyaman/JJ, dan/CC, modern/JJ, yang/SC, telah/MD, lama/JJ, di/IN, mimpikan/NN
+dibangunnya/VB, atau/CC, kereta/NN, api/NN, ringan/JJ, di/IN, palembang/NNP, diyakini/NN, menimbulkan/VB, dampak/NN, positif/NN, bagi/IN, kehidupan/NN, masyarakat/NN, di/IN, masa/NN, mendatang/VB
+pelayanan/NN, cukup/JJ, baik/JJ, standarlah/NN, bagi/IN, saya/PRP
+berikut/NN, suasana/DT, uji/VB, coba/NN, terbatas/VB, sumsel/NNP, hari/NN, terakhir/JJ, yang/SC, tampak/VB, penuh/JJ, sesak/NN, dan/CC, sangat/RB, diminati/VB, oleh/IN, masyarakat/NN, kota/NNP, palembang/NNP
+semoga/SC, tak/NEG, palembang/NNP, yang/SC, merugi/PRP, karena/CC, sepi/JJ, penumpang/NN
+stasiun/NN, masih/RB, kurang/RB, terawat/VB, dengan/IN, baik/JJ
+sejauh/NN, ini/PR, belum/NEG, terasa/VB, manfaat/NN, dari/IN, di/IN, palembang/NNP
+rasanya/NN, asyik/NN, sudah/MD, naik/VB
+jelang/VB, asean/FW, games/FW, palembang/NNP, mogok/VB, warga/NN, marah/JJ, sampai/SC, minta/NN, kembalikan/NN, tiket/NN, palembang/NNP, sebelum/SC, asean/FW, games/FW, mogok/VB, kejadian/NN, itu/PR, terjadi/VB, setelah/SC, hujan/NN, deras/JJ, mengguyur/VB, kota/NNP, palembang/NNP
+konstruksi/NN, dari/IN, terlihat/NN, sangat/RB, kokoh/NN, dan/CC, memiliki/VB, nilai/NN, estetika/NN, yang/SC, cukup/JJ, tinggi/JJ
+palembang/NNP, ikon/NN, baru/JJ, di/IN, kota/NNP, palembang/NNP, selain/IN, jembatan/VB, musi/NN, pembangunannya/NN, sudah/MD, mencapai/VB, per/NN, januari/NN
+palembang/NNP, dengan/IN, ikon/NN, dan/CC, jakabaring/NN, otomatis/JJ, akan/MD, mendongkrak/VB, popularitas/NN, menggerakkan/VB, perekonomian/NN, sumsel/NNP, sebagian/CDI, besar/JJ, mata/NN, dunia/NN, akan/MD, pada/IN, palembang/NNP, hal/NN, ini/PR, akan/MD, mengundang/VB, investasi/NN, dunia/NN, di/IN, sini/PR, otomatis/JJ, kesejahteraan/NN, meningkat/VB
+bangga/JJ, melihat/VB, konstruksi/NN, di/IN, palembang/NNP, sudah/MD, selesai/VB, sambut/NN, asean/FW, games/FW, semoga/SC, penanganan/NN, atlet/NN, nasional/JJ, tidak/NEG, semengecewakan/NN, sea/FW, games/FW
+bikin/VB, yang/SC, tidak/NEG, diperlukan/VB, biaya/NN, operasional/NN, miliaran/NN, sebulan/NN, buat/VB, listrik/NN, saja/RB, sementara/JJ, pemasukan/NN, cuma/RB, miliaran/NN, infrastruktur/NN, gagal/JJ, total/NN, namanya/NNG
+saya/PRP, orang/NN, palembang/NNP, proyek/NN, adalah/VB, proyek/NN, yang/SC, mubazir/JJ, kurang/RB, manfaat/NN, nyata/JJ, nya/PRP, kereta/NN, sepi/JJ, dari/IN, penumpang/NN, orang/NN, palembang/NNP, butuh/VB, jembatan/NN, bukan/NEG, kereta/NN
+tahun/NN, ke/IN, tahun/NN, peminat/NN, akan/MD, semakin/RB, sepi/JJ, karena/CC, respon/NN, masyarakat/NN, lebih/RB, memilih/VB, angkutan/NN, yang/SC, cepat/JJ, dan/CC, lebih/RB, murah/JJ
+menjadi/VB, landmark/NN, terbaru/JJ, di/IN, kota/NNP, palembang/NNP
+palembang/NNP, terus/RB, melakukan/VB, uji/VB, coba/NN, dinamis/NN, terlihat/VB, sangat/RB, keren/NN, saat/NN, melintasi/VB, ampera/NNP, di/IN, atas/IN, sungai/NN, musi/NN, sumsel/NNP, semakin/RB, mantap/JJ, mempersiapkan/VB, diri/NN, mensukseskan/VB, asean/FW, games/FW, hanya/RB, pak/NNP, jokowi/NNP, yang/SC, mampu/MD, mewujudkan/VB, ini/PR
+naik/VB, rugi/JJ, mahal/JJ, sekali/RB, mending/JJ, jalan/NN, kaki/NN
+mempercantik/VB, tampilan/NN, tata/NN, kota/NNP, palembang/NNP
+budayakan/NN, naik/VB, umum/JJ, yang/SC, sudah/MD, disediakan/VB, pemerintah/NN
+semenjak/SC, ada/VB, saya/PRP, dan/CC, teman/NN, kantor/NN, mulai/VB, menggunakannya/VB, sesering/NN, mungkin/MD, belajar/NEG, mengubah/VB, pola/NN, palembang/NNP, dan/CC, keren/NN
+memang/RB, lagi/RB, hits/JJ, dan/CC, sedang/MD, menjadi/VB, perhatian/NN, di/IN, palembang/NNP, ini/PR, membuat/VB, penumpang/NN, lebih/RB, sering/RB, berfoto/VB, selfie/NN, daripada/SC, menikmati/VB, perjalanan/NN
+simpenan/NN, uang/NN, jadi/VB, pergi/VB, pulang/VB, naik/VB, favorit/JJ, yang/SC, bikin/VB, hemat/NN
+lama/JJ, sampainya/JJ, meskipun/CC, tidak/NEG, kena/VB, macet/JJ, sih/NN, tapi/CC, super/NN, duper/NN, lama/JJ, sampai/SC
+tapi/CC, sayang/NN, palembang/NNP, itu/PR, dibangun/VB, dengan/IN, alasan/NN, utama/JJ, menyambut/VB, asean/FW, games/FW, asean/FW, games/FW, selesai/VB, terminal/NN, dihantam/VB, badai/NN
+ini/PR, proyek/NN, yang/SC, merugi/VB, palembang/NNP
+biaya/NN, triliunan/NN, kena/VB, hujan/NN, bisa/MD, mogok/RB, diguyur/VB, hujan/NN, palembang/NNP, mogok/VB
+kereta/NN, tiba-tiba/RB, mogok/VB, saat/NN, tengah/NN, beroperasi/VB, di/IN, tengah/NN, lintas/NN, stasiun/NN, jakabaring/NN, palembang/NNP, sumatera/NNP, selatan/NNP, pada/IN, minggu/NN, sore/NN
+baru/JJ, diresmikan/VB, jokowi/NNP, palembang/NNP, sudah/MD, kali/NN, mogok/VB, ternyata/VB, mesin/VB, diimpor/VB, dari/IN, china/NN, tidak/NEG, belajar/NN, dari/IN, kasus/NN, bus/NN, yang/SC, impor/NN, dari/IN, china/NN, iya/X
+saya/PRP, sendiri/NN, pun/RP, tidak/NEG, terlalu/RB, senang/JJ, dengan/IN, walau/NN, pun/RP, saya/PRP, sendiri/NN, warga/NN, palembang/NNP, oleh/IN, karena/CC, kenapa/WH, saya/PRP, rasa/NN, manfaat/NN, nya/PRP, kurang/RB, berpengaruh/VB, untuk/IN, rakyat/NN, ditambah/VB, lagi/RB, stasiun/NN, nya/PRP, cuma/RB, sedikit/JJ, opi/JJ, -/-, ampera/NNP, -/-, cinde/NNP, -/-, ps/NN, mall/NN, -/-, polda/NN, -/-, kamu/PRP, -/-, bandara/NN, yang/SC, jarak/NN, stasiun/NN, nya/PRP
+penumpang/NN, palembang/NNP, sekali/RB, jalan/NN, cuma/RB, orang/NN, suaranya/DT, berisik/VB, mogoknya/NN, sering/RB, peresmiannya/NN, luar/NN, biasa/JJ
+saya/PRP, tahun/NN, lalu/JJ, ke/IN, palembang/NNP, miris/JJ, lihat/VB, yang/SC, sepi/JJ, penumpang/NN, jam/NN, operasionalnya/NN, pun/RP, dibatasi/VB, wisatawan/FW, kebanyakan/CD, pakai/VB, mobil/NN, bus/NN, sewa/NN, harusnya/MD, uangnya/NN, dapat/MD, digunakan/VB, menata/VB, sungai/NN, musi/NN, yang/SC, menjadi/VB, objek/NN, wisata/FW, utama/JJ, di/IN
+wah/UH, ternyata/VB, mesin/VB, palembang/NNP, yang/SC, mogok/VB, beberapa/CD, kali/NN, buatan/NN, china/NN
+saya/PRP, orang/NN, palembang/NNP, memang/RB, benar/JJ, tidak/NEG, terlalu/RB, berguna/VB, mau/MD, kemana/NN, juga/RB, jalan/NN, di/IN, palembang/NNP, cukup/JJ, -/-, minta/NN, sudah/MD, sampai/SC, tujuan/NN, tidak/NEG, perlu/MD, pakai/VB
+saya/PRP, rasa/NN, adanya/NN, tak/NEG, memberikan/VB, solusi/NN, bagi/IN, kemacetan/NN, di/IN, palembang/NNP, ini/PR
+naik/VB, membosankan/VB, malas/NN, naik/VB, lagi/RB, nih/NNP
+setidaknya/RB, ini/PR, sudah/MD, membantu/VB, bagi/IN, masyarakat/NN, yang/SC, sulit/JJ, dalam/IN, bepergian/NN, dan/CC, tidak/NEG, mempunyai/VB, kendaraan/NN
+tinggal/VB, kita/PRP, tunggu/NN, kejadian/NN, yang/SC, sama/JJ, menimpa/VB, dan/CC, kereta/NN, cepat/JJ, buah/NN, proyek/NN, serampangan/NN, tanpa/IN, studi/NN, kelayakan/NN, yang/SC, memadai/VB, adalah/VB, fasilitas/NN, gagal/JJ, kurang/RB, diminati/VB, bukan/NEG, solusi/NN, terbaik/JJ, untuk/IN, masalah/NN, yang/SC, dihadapi/VB, rakyat/NN, sementara/JJ, hutang/NN, pln/NN, terus/RB, menumpuk/VB, bebani/NN, generasi/NN, masa/NN, depan/NN
+di/IN, palembang/NNP, mogok/VB, lagi/RB, aduh/UH, bikin/VB, malu/NN
+aduh/UH, bagaimana/WP, rasanya/NN, naik/VB, tidak/NEG, menarik/VB, sekali/RB
+kalian/PRP, tidak/NEG, akan/MD, nyesel/JJ, naik/VB, palembang/NNP, karena/CC, bukan/NEG, cuma/RB, nyaman/JJ, palembang/NNP, juga/RB, jadi/VB, sorotan/NN, netizen/NN, terkait/VB, arsitekturnya/NN, yang/SC, luar/NN, biasa/JJ
+palembang/NNP, mogok/VB, terus/RB, padahal/IN, pengadaan/NN, keretanya/NN, tidak/NEG, makan/VB, biaya/NN, sedikit/JJ
+pasca/NN, plafon/NN, ambruk/JJ, stasiun/NN, palembang/NNP, djka/NN, tak/NEG, beroperasi/VB, parah/JJ, cepat/JJ, sekali/RB, rusak/JJ, iya/X, infrastruktur/NN, buru-buru/NN, diresmikan/VB, tanpa/IN, kekuatannya/NN, membahayakan/VB, penumpang/NN, dan/CC, menghambat/VB, memang/RB, sontoloyo/NN, sigh/NN
+selain/IN, itu/PR, pembangunan/NN, dianggap/NN, sebagai/IN, solusi/NN, kepadatan/NN, kendaraan/NN, yang/SC, berlalu/VB, lalang/JJ, di/IN, kota/NNP, palembang/NNP
+masyarakat/NN, palembang/NNP, sangat/RB, antusias/JJ, dengan/IN, keberadaan/NN, moda/NN, hal/NN, itu/PR, bisa/MD, kita/PRP, lihat/VB, dengan/IN, ramainya/NN, yang/SC, ingin/VB, menggunakan/VB, sebagai/IN, alat/NN, mereka/PRP
+palembang/NNP, kembali/RB, mogok/VB, penumpang/NN, kecewa/JJ, sontak/NN, hal/NN, ini/PR, tuai/NN, profesional/NN, kontra/NN
+anti/JJ, macet/JJ, adalah/VB, sangat/RB, membantu/VB, masyarakat/NN, di/IN, palembang/NNP
+pernah/NN, mogok/VB, jadi/VB, saya/PRP, takut/JJ, naik/VB
+aneh/JJ, pembangunan/NN, sumsel/NNP, habiskan/VB, dana/NN, triliun/CDP, namun/CC, pembangunan/NN, infrastruktur/NN, bahkan/RB, mogok/VB, ada/VB, apa/WH
+pembangunan/NN, di/IN, palembang/NNP, bukan/NEG, hanya/RB, untuk/IN, menyambut/VB, asean/FW, games/FW, tetapi/CC, juga/RB, diharapkan/VB, menjadi/VB, massal/JJ, sehari/SC, hari/NN, di/IN, kota/NNP, palembang/NNP
+dapat/MD, memajukan/VB, kota/NNP, palembang/NNP
+terpantau/NN, palembang/NNP, tidak/NEG, berguna/VB, sepi/JJ
+proyek/NN, ambisius/NN, yang/SC, gagal/JJ, dan/CC, terus/RB, merugi/VB, permasalahan/NN, palembang/NNP, tak/NEG, terbendung/VB, lagi/RB
+penumpang/NN, palembang/NNP, menikmati/VB, perjalanan/NN, nyaman/JJ, dan/CC, dingin/VB, selama/IN, menit/NN
+palembang/NNP, sepi/JJ, peminat/NN, dari/IN, sini/PR, saya/PRP, melihat/VB, pemerintah/NN, kurang/RB, melihat/VB, aspek/NN, kebutuhan/NN, masyarakatnya/NN, jangan/NEG, hanya/RB, karena/CC, ada/VB, asean/FW, games/FW, lalu/JJ, dengan/IN, gegabah/NN, membangun/VB, karena/CC, ingin/VB, dipandang/VB, maju/VB, oleh/IN, bangsa/NN, asia/NN, lain/JJ, dan/CC, ini/PR, baru/JJ, di/IN, subsidi/NN
+kotaku/NN, kini/RB, modern/JJ, dengan/IN, untuk/IN, rakyat/NN, palembang/NNP, khusus/JJ, maupun/CC, asean/FW, games/FW, yang/SC, datang/VB, ke/IN, palembang/NNP, merasakan/VB, pelayanan/NN, yang/SC, baik/JJ, dan/CC, nyaman/JJ, terima/NN, kasih/NN, jokowi/NNP
+memperindah/VB, kota/NNP, palembang/NNP, yang/SC, patut/NN, bagi/IN, seluruh/CDI, masyarakat/NN, untuk/IN, menjaganya/VB, mulai/VB, dari/IN, menaati/VB, peraturan/NN, disiplin/VB, dalam/IN, mengantre/VB, menjaga/VB, kebersihan/NN, lingkungan/NN, dalam/IN, itu/PR, sendiri/NN
+semua/CD, stasiun/NN, sumsel/NNP, di/IN, lengkapi/NN, dengan/IN, lift/NN, dan/CC
+stasiun/NN, palembang/NNP, tidak/NEG, strategis/JJ
+senang/NN, lihat/VB, foto-foto/NN, fasilitas/NN, sumsel/NNP, palembang/NNP, yang/SC, ramah/JJ, difabel/NN, ada/VB, guiding/NN, block/FW, elevator/NN, toilet/NN, difabel/NN, dan/CC, ruang/NN, khusus/JJ, untuk/IN, pengguna/NN, kursi/NN, roda/NN, terima/NN, kasih/NN
+adanya/NN, memudahkan/VB, di/IN, palembang/NNP, perjalanan/NN, yang/SC, awalnya/NN, ribet/CDP, jadi/VB, lebih/RB, mudah/JJ, tapi/CC, sayangnya/NN, jalanya/NN, lambat/NN, sekali/RB, jadi/VB, agak/SC, kurang/RB, efektif/JJ
+di/IN, palembang/NNP, ini/PR, sepi/JJ, penumpang/NN, rata/NN, harian/NN, sekitar/IN, sampai-dengan/NN, orang/NN, orang/NN, jalanan/NN, di/IN, palembang/NNP, lancar/JJ, tidak/NEG, macet/JJ, waktu/NN, mau/MD, bikin/VB, tidak/NEG, dipikir/VB, biaya/NN, operasionalnya/NN, berapa/WH, pemasukan/NN, dari/IN, tiket/NN, penumpang/NN, berapa/WH
+dampak/NN, pembangunan/NN, palembang/NNP, kehilangan/NN, banyak/CD, pohon/NN, beberapa/CD, koleksi/NN, taman/NN, milik/NN, pemerintah/NN, palembang/NNP, juga/RB
+yang/SC, saya/PRP, rasakan/NN, sih/NN, sebagai/IN, orang/NN, palembang/NNP, itu/PR, belum/NEG, diperlukan/VB, orang/NN, cilik/NN, kami/PRP, ini/PR, belum/NEG, sekalipun/NN, naik/VB, dan/CC, memang/RB, tidak/NEG, minat/NN
+stasiun/NN, palembang/NNP, ambruk/JJ, infrastruktur/NN, baru/JJ, sudah/MD, ambruk/JJ, ada/VB, apa/WH, ini/PR, proyek/NN
+stasiun/NN, palembang/NNP, proyek/NN, triliunan/NNP, tadi/RB, sore/NN, rusak/JJ, di/IN, terjang/VB, angin/NN
+palembang/NNP, kena/VB, hujan/NN, lebat/NN, ambruk/JJ, plafonnya/NN, tidak/NEG, terbayangkan/JJ, jika/SC, seluruh/CDI, infrastruktur/NN, tahun/NN, ini/PR, diaudit/VB, secara/IN, jujur/JJ, dan/CC, transparan/NN, akan/MD, memakan/VB, korban/NN, dari/IN, kelas/NN, kakap/NN, raksasa/NN, sampai/SC, teri/IN, masuk/VB, bui/NN, apalagi/CC, bapak/NN, sudah/MD, mendapat/VB, temuan/NN, kira-kira/RB, triliun/CDP, indikasi/NN, menyeleweng/VB
+palembang/NNP, nasibmu/JJ, kini/RB, proyek/NN, menghabiskan/VB, dana/NN, triliun/CDP, tiap/NN, bulan/NN, pemerintah/NN, memberikan/VB, subsidi/NN, oprasional/JJ, miliar/CDP, namun/CC, proyek/NN, triliunan/NN, itu/PR, seakan/SC, sia-sia/NN, karena/CC, penumpang/NN, selalu/RB, sepi/JJ
+palembang/NNP, sudah/MD, siap/JJ, meluncur/VB, sukseskan/NN, asean/FW, games/FW, pastinya/RB, nyaman/JJ, karena/CC, dilengkapi/VB, ac/NN, dan/CC, wifi/FW, gratis/FW
+bukan/NEG, untuk/IN, yang/SC, kalinya/NND, palembang/NNP, kembali/RB, mogok/VB, pada/IN, minggu/NN, sore/NN
+saya/PRP, sudah/MD, coba/NN, naik/VB, dan/CC, ternyata/VB, asyik/JJ, juga/RB, tidak/NEG, kalah/NN, sama/JJ, yang/SC, ada/VB, diluar/VB, negeri/NN
+naik/VB, semakin/RB, nyaman/JJ, karena/CC, ada/VB, lift/NN, yang/SC, dapat/MD, membantu/VB, menumpang/NN, yang/SC, disabilitas/VB
+sesuatu/PRP, yang/SC, terburu/JJ, itu/PR, tidak/NEG, baik/JJ, dilaan/VB, sering/RB, mogok/VB, palembang/NNP, akan/MD, dievaluasi/VB, menyeluruh/JJ
+ini/PR, salah/CD, satu/CD, contoh/NN, ketidakberesan/NN, proyek/NN, infrastruktur/NN, palembang/NNP, mengalami/VB, defisit/NN, oleh/IN, operasional/NN, mbln/NN, sementara/JJ, tidak/NEG, sampai/SC, mbln/NN, bikin/VB, susah/JJ, sendiri/NN, seharusnya/RB, dana/NN, pembangunan/NN, yang/SC, triliunan/NNP, bisa/MD, dipergunakan/VB, untuk/IN, penguatan/NN, ekonomi/NN, rakyat/NN, dulu/RB
+terlihat/NN, berbahaya/NN, kalau/SC, orang/NN, yang/SC, sudah/MD, lanjut/VB, usia/NN, harus/MD, naik/VB, karena/CC, dari/IN, segi/RB, keselamatan/NN, belum/NEG, memadai/VB
+kalau/SC, naik/VB, itu/PR, kadang/NN, aku/PRP, suka/VB, kelewatan/JJ, tempat/NN, tujuanku/NN, ini/PR, membuatku/VB, kesal/NN
+itu/PR, menambah/VB, lowongan/NN, kerja/VB, bagi/IN, siapapun/CD, yang/SC, bisa/MD, menyetir/VB, kendaraan/NN, seperti/IN, kereta/NN, api/NN, ini/PR, seperti/IN, masinis/NN, dong/RP
+tarif/NN, sangat/RB, terjangkau/VB, dengan/IN, rupiah/NN, yang/SC, setara/VB, tarif/NN, angkot/NN, malang/NN, warga/NN, bisa/MD, naik/VB
+ini/PR, infrastruktur/NN, yang/SC, dibanggakan/VB, di/IN, palembang/NNP, ambruk/JJ, tol/NN, di/IN, solo/NN, roboh/NN, kualitasnya/NN, jelek/NN, benar/JJ, seperti/IN, pemimpin/NN, kita/PRP
+kereta/NN, tiba-tiba/RB, mogok/VB, saat/NN, tengah/NN, beroperasi/VB, di/IN, tengah/NN, lintas/NN, stasiun/NN, jakabaring/NN, palembang/NNP, sumatera/NNP, selatan/NNP, pada/IN, minggu/NN, sore/NN
+ini/PR, baru/JJ, keren/NN, teman-teman/NN, pemerintah/NN, pusat/NN, dan/CC, daerah/NN, bersinergi/NN, mempersiapkan/VB, segala/RB, sesuatunya/RB, untuk/IN, menyambut/VB, asean/FW, games/FW, di/IN, palembang/NNP, penampakan/NN, trainset/NN, saat/NN, uji/VB, coba/NN, dinamis/VB, beberapa/CD, waktu/NN, yang/SC, lalu/JJ
+di/IN, palembang/NNP, bukan/NEG, hanya/RB, mengatasi/VB, masalah/NN, tapi/CC, jadi/VB, ikon/NN, kota/NNP, yang/SC, memiliki/VB, dampak/NN, positif/NN, bagi/IN, masyarakatnya/NN
+mengikuti/VB, tren/NN, terkini/NN, mencoba/VB, lancar/JJ, dan/CC, tidak/NEG, mogok/VB, sewaktu/NN, jalan/NN, seperti/IN, ada/VB, jepang-jepangnya/NN, beruntung/VB, masyarakat/NN, sumsel/NNP, khususnya/JJ, palembang/NNP, bisa/MD, merasakan/VB
+puting/NN, beliung/NN, palembang/NNP, hancurkan/RB, stasiun/NN, kebanggaan/NN, mulyono/NN, sekarang/NN, kesombongan/NN, apalagi/CC, yang/SC, mau/MD, kamu/PRP
+ke/IN, bandara/NN, smb/NN, ii/CD, cuma/RB, ribu/CD, sayang/NN, kalau/SC, lagi/RB, di/IN, palembang/NNP, tak/NEG, dinikmati/VB, kenyamanan/NN, dan/CC, kemurahannya/NN, ayo/UH, naik/VB
+palembang/NNP, siap/JJ, siap/JJ, hari/NN, lagi/RB, menuju/VB, asean/FW, games/FW
+sebagai/IN, orang/NN, palembang/NNP, saya/PRP, melihat/VB, sendiri/NN, bagaimana/WP, sepinya/NN, minat/NN, orang/NN, palembang/NNP, naik/VB
+sejak/SC, dioperasikan/VB, untuk/IN, umum/JJ, dalam/IN, masa/NN, proses/NN, uji/VB, coba/NN, operasi/VB, lalu/JJ, terus/RB, terganjal/VB, masalah/NN, telah/MD, kali/NN, mendadak/RB, mogok/VB, di/IN, tengah/NN, jalan/NN, kejadian/NN, ini/PR, pun/RP, menjadi/VB, cibiran/NN, warga/NN, palembang/NNP, akibat/NN, sering/RB, mogok/VB
+dan/CC, juga/RB, untuk/IN, menghindari/VB, kemacetan/NN, yang/SC, terjadi/VB, di/IN, kota/NNP, palembang/NNP, sehingga/SC, kereta/NN, listrik/NN, itu/PR, cukup/JJ, diminati/VB, bahkan/RB, menhub/VB, sebelumnya/RB, mengajak/VB, masyarakat/NN, agar/SC, semakin/RB, mencintai/VB, sebagai/IN, angkutan/NN, massal/JJ, terlebih/RB, lagi/RB, harga/NN, tiket/NN, sangat/RB, terjangkau/VB, karena/CC, masih/RB
+dibangun/VB, kontraktor/NN, china/NN, atap/IN, stasiun/NN, palembang/NNP, rontok/NN, dihantam/VB, badai/NN
+wow/UH, palembang/NNP, makin/RB, keren/JJ, trainset/NN, saat/NN, sedang/MD, memasuki/VB, stasiun/NN, bumi/NN, sriwijaya/NNP, palembang/NNP
+bagus/IN, sih/NN, ada/VB, tapi/CC, coba/NN, dong/RP, diperpanjang/VB, sampai/SC, unsri/NN, indralaya/NN, jadi/VB, mahasiswa/NN, bisa/MD, naik/VB, tidak/NEG, harus/MD, naik/VB, damri/NN, atau/CC, tm/NN, lagi/RB
+walaupun/CC, harga/NN, tiket/NN, ini/PR, terbilang/VB, mahal/JJ, tetapi/CC, ini/PR, mampu/MD, mengurangi/VB, kemacetan/NN, di/IN, kota/NNP, palembang/NNP
+barusan/NN, dengar/VB, cerita/NN, dari/IN, seseorang/NN, kalau/SC, di/IN, palembang/NNP, masih/RB, sepi/JJ, penumpang/NN, kemarin/NN, bahkan/RB, jadwal/NN, pengoperasiannya/NN, diperpendek/VB, salah/CD, satu/CD, langkah/NN, penanggulangannya/NN, akan/MD, ada/VB, upaya/NN, kerja/VB, sama/JJ, dengan/IN, pihak/NN, di/IN, jepang/NN, karena/CC, jepang/NN, todnya/NN, bagus/IN
+baru/JJ, beroperasi/VB, palembang/NNP, mogok/VB, menit/NN
+dengan/IN, adanya/NN, diharapkan/VB, dapat/MD, mengurangi/VB, masalah/NN, di/IN, palembang/NNP, ini/PR
+beginilah/RB, sedikit/JJ, gambaran/NN, stasiun/NN, kota/NNP, palembang/NNP, yang/SC, memiliki/VB, fasilitas/NN, berkelas/NN, modern/JJ, dan/CC, internasional/JJ
+palembang/NNP, sudah/MD, membangunnya/VB, kemahalan/NN, ternyata/VB, sepi/JJ, peminat/NN, biaya/NN, operasional/NN, jauh/JJ, lebih/RB, besar/JJ, dari/IN, pendapatan/NN, tiap/NN, bulan/NN
+kereta/NN, palembang/NNP, mogok/VB, lagi/RB, penumpang/NN, panik/NN, dan/CC, menangis/VB
+pembangunan/NN, yang/SC, cukup/JJ, lama/JJ, dan/CC, memakan/VB, waktu/NN, membuat/VB, jalanan/NN, palembang/NNP, sering/RB, mengalami/VB, kemacetan/NN
+palembang/NNP, yang/SC, terbaik/JJ, suka/VB, sekali/RB, naik/VB
+puluhan/CDC, penumpang/NN, di/IN, palembang/NNP, terpaksa/JJ, berjalan/VB, kaki/NN, di/IN, pinggir/NN, jalur/NN, akibat/NN, kereta/NN, yang/SC, ditumpangi/VB, mogok/VB, di/IN, tengah/NN, jalan/NN
+keren/NN, stasiun/NN, dan/CC, rel/NN, palembang/NNP, sudah/MD, terpasang/VB
+akhirnya/RB, lihat/VB, langsung/RB, dan/CC, melihat/VB, antusiasme/NN, masyarakat/NN, terhadap/IN, moda/NN, canggih/NN, ini/PR
+selain/IN, tidak/NEG, memberikan/VB, manfaat/NN, masyarakat/NN, sumsel/NNP, sebentar/NN, lagi/RB, palembang/NNP, akan/MD, jadi/VB, tidak/NEG, perform/NN, karena/CC, semua/NN, itu/PR, dibuat/VB, pakai/VB, perutangan/NN
+naik/VB, sangat/RB, seru/JJ, ketika/SC, melewati/VB, sungai/NN, musi/NN, jangan/NEG, saja/RB, kereta/NN, nya/PRP, berhenti/VB, di/IN, tengah/NN, sungai/NN, saat/NN, saya/PRP, naik/VB
+teman-teman/NN, nanti/SC, asean/FW, games/FW, wisatawan/FW, akan/MD, naik/VB, ya/UH, ini/PR, keren/NN, dan/CC, mengurangi/VB, yang/SC, namanya/NNG, kemacetan/NN, palembang/NNP, aman/JJ, dan/CC, anti/JJ, macet/JJ
+akan/MD, menjadikan/VB, palembang/NNP, lebih/RB, modern/JJ, di/IN, indonesia/NNP, selesai/VB
+salah/CD, satu/CD, dampak/NN, positif/NN, pembangunan/NN, menuju/VB, masyarakat/NN, sumsel/NNP, yang/SC, lebih/RB, modern/JJ
+palembang/NNP, berguna/VB, dan/CC, bermanfaat/VB, membangun/VB, citra/NN, baik/JJ, bangsa/NN, dan/CC, merupakan/VB, investasi/NN, jangka/NN, panjang/JJ, bukan/NEG, bisnis/NN, kecil/JJ, jika/SC, tidak/NEG, segera/RB, dibangun/VB, maka/SC, biaya/NN, pembangunan/NN, akan/MD, semakin/RB, tinggi/JJ, dan/CC, susah/JJ
+sumatera/NNP, selatan/NNP, di/IN, kota/NNP, palembang/NNP, sudah/MD, jalan/NN, teman-teman/NN, nyaman/JJ, sekali/RB, naik/VB, atau/CC, turun/VB, ke/IN, stasiun/NN, sudah/MD, pakai/VB, eskalator/NN, atau/CC, lift/NN, keretanya/NN, pun/RP, melaju/VB, dengan/IN, nyamannya/NN
+kenapa/WH, pajangan/NN, saja/RB
+masyarakat/NN, cerdas/NN, naik/VB
+presensi/NN, di/IN, praja/NN, palembang/NNP, menyebarkan/VB, luas/JJ, manfaat/NN, terpenting/JJ, di/IN, faktor/NN, pemindahan/NN
+pantesan/NN, di/IN, palembang/NNP, sering/RB, mogok/VB, yang/SC, mengerjakan/VB, juga/RB, tka/NN, ilegal/JJ, memalukan/JJ, indonesia/NNP
+kereta/NN, nya/PRP, nyaman/JJ, dan/CC, petugas/NN, nya/PRP, ramah/JJ, dan/CC, baik/JJ, sangat/RB, terbantu/VB, sekali/RB, dengan/IN, adanya/NN, ini/PR
+dengan/IN, adanya/NN, palembang/NNP, saya/PRP, lebih/RB, mudah/JJ, untuk/IN, bepergian/NN, tanpa/IN, perlu/MD, pribadi/JJ
+sudah/MD, tahu/VB, belum/NEG, per/NN, tanggal/NN, desember/NN, kemarin/NN, sumsel/NNP, sudah/MD, bisa/MD, bayar/VB, dengan/IN, uang/NN, elektronik/NN, wah/UH, keren/NN, sekali/RB, kan/RP, dengan/IN, semuanya/NN, bisa/MD, lancar/VB
+tidak/NEG, perlu/MD, lagi/RB, merasakan/VB, panas/JJ, terik/JJ, dan/CC, kemacetan/NN, kota/NNP, palembang/NNP, jika/SC, naik/VB
+saya/PRP, orang/NN, palembang/NNP, memang/RB, benar/JJ, tidak/NEG, terlalu/RB, berguna/VB, mau/MD, kemana/NN, juga/RB, jalan/NN, di/IN, palembang/NNP, cukup/JJ, -/-, minta/NN, sudah/MD, sampai/SC, tujuan/NN, tidak/NEG, perlu/MD, pakai/VB
+kita/PRP, intip/NN, palembang/NNP, ayo/UH, teman-teman/NN, yang/SC, sudah/MD, punya/VB, dan/CC, siap/JJ, melayani/VB, asean/FW, games/FW, ini/PR, hasil/NN, karya/NN, siapa/WH, ini/PR, di/IN, zaman/NN, presiden/NN, siapa/WH, kemajuan/NN, mana/WH, lagi/RB, yang/SC, kalian/PRP, dustakan/NN
+mengira/VB, dengan/IN, adanya/NN, akan/MD, mengurangi/VB, kemacetan/NN, tapi/CC, nyatanya/NN, masih/RB, sama/JJ, saja/RB, di/IN, jalanan/NN, masih/RB, macet/JJ, macet/JJ, saja/RB, itu/PR, jadi/VB, apa/WH, dong/RP, nilai/NN, dari/IN, adanya/NN, selain/IN, untuk/IN, bawa/NN, atlet/NN
+penumpang/NN, sering/RB, marah/JJ, kalau/SC, naik/VB, karena/CC, antrean/NN, yang/SC, panjang/JJ, sekali/RB
+palembang/NNP, bawa/NN, budaya/NN, baru/JJ, di/IN, sektor/NN, ini/PR, akan/MD, menghubungkan/VB, bandara/NN, internasional/JJ, sultan/NNP, mahmud/NNP, badaruddin/NNP, menuju/VB, kawasan/NN, city/NN, jakabaring/NN, hasil/NN, kerjasama/NN, pusat/NN, dan/CC, daerah/NN, saling/RB, bersinergi/VB
+palembang/NNP, mogok/VB, bangun/VB, pakai/VB, hutang/NN, biaya/NN, mahal/JJ, bahkan/RB, mogok/VB, membiarkan/VB, penumpang/NN, palembang/NNP, yang/SC, mogok/VB, untuk/IN, berjalan/VB, di/IN, rel/NN, sangatlah/RB, berbahaya/VB
+mengurangi/VB, kemacetan/NN, meningkatkan/VB, keselamatan/NN, di/IN, sumatera/NNP, selatan/NNP

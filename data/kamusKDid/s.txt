@@ -239,7 +239,6 @@ samijaga
 samin
 samir
 samovar
-sampa
 sampah
 sampai
 sampak
@@ -653,7 +652,6 @@ sekadar
 sekak
 sekakar
 sekakmat
-sekal
 sekala
 sekaligus
 sekalipun
@@ -1264,7 +1262,6 @@ senyar
 senyum
 senyur
 seok
-sep
 sepada
 sepah
 sepai
@@ -1838,7 +1835,6 @@ simulator
 simulfiks
 simultan
 simuntu
-sin
 sinagoge
 sinambung
 sinanaga

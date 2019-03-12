@@ -16,8 +16,8 @@ import java.util.List;
  * @author Asus
  */
 public final class Evaluator {
-    double fMeasure, precision, accuracy, recall;
-    int TP, FP, TN, FN;
+    private double fMeasure, precision, accuracy, recall;
+    private int TP, FP, TN, FN;
     
     
     public Evaluator(int[] classify, MNBClassifier mnbc) {
@@ -44,23 +44,31 @@ public final class Evaluator {
         }
 
         
-        System.out.println("TN :" + " " + TN );
-        System.out.println("FN :" + " " + FN );
-        System.out.println("TP :" + " " + TP );
-        System.out.println("FP :" + " " + FP );
+        
+//        System.out.println("TP :" + " " + TP );
+//        System.out.println("FP :" + " " + FP );
+//        System.out.println("TN :" + " " + TN );
+//        System.out.println("FN :" + " " + FN );
+        
+        System.out.println("TP FP TN FN");
+        System.out.println(TP + " " + FP + " " + TN + " " + FN);
 
         
-        precision(TN, FN, TP, FP);
+        precision(TP, FP);
         recall(TN, FN, TP, FP);
-        fMeasure(TN, FN, TP, FP);
+        fMeasure();
         accuracy(TN, FN, TP, FP);
         
     }
     
 
-    private void precision(int TN, int FN, int TP, int FP) {
-       
-        precision = (double)TP/(TP+FP);
+    private void precision(int TP, int FP) {
+       if(TP>0||FP>0) {
+           precision = (double)TP/(TP+FP);
+       } else {
+           precision = 0;
+       }
+        
     }
     
     public double getPrecision(){
@@ -68,15 +76,27 @@ public final class Evaluator {
     }
 
     private void recall(int TN, int FN, int TP, int FP) {
-        recall = (double)TP/(TP+FN);
+        if(TP>0||FP>0) {
+            recall = (double)TP/(TP+FN);
+        } else {
+            recall = 0;
+        }
+        
     }
     
     public double getRecall(){
         return round(recall, 4);
     }
 
-    private void fMeasure(int TN, int FN, int TP, int FP) {
-        fMeasure = (double)2 * ((getPrecision()* getRecall())/(getPrecision()+ getRecall()));
+    private void fMeasure() {
+        
+        if(getPrecision()>0 || getRecall()>0) {
+            fMeasure = (double)2 * ((getPrecision()* getRecall())/(getPrecision()+ getRecall()));
+        } else {
+            fMeasure = 0;
+        }
+        
+        
     }
     
     public double getFMeasure(){
@@ -107,7 +127,7 @@ public final class Evaluator {
         return FN;
     }
     
-    public double round(double value, int numberOfDigitsAfterDecimalPoint) {
+    private double round(double value, int numberOfDigitsAfterDecimalPoint) {
         BigDecimal bigDecimal = new BigDecimal(value);
         bigDecimal = bigDecimal.setScale(numberOfDigitsAfterDecimalPoint,
                 BigDecimal.ROUND_HALF_UP);

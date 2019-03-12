@@ -13,7 +13,7 @@ import java.util.List;
  * @author Asus
  */
 public class TermList {
-    List<Term> listTerm;
+    private List<Term> listTerm;
     
     public TermList(){
         listTerm = new ArrayList<>();

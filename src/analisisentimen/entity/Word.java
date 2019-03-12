@@ -11,14 +11,9 @@ package analisisentimen.entity;
  */
 public class Word {
     private String word;
-    private String[] word2;
-
+    
     public Word(String word) {
         this.word = word;
-    }
-
-    public Word(String[] word) {
-        this.word2 = word;
     }
 
     @Override

@@ -19,17 +19,16 @@ import java.util.Set;
  * @author Asus
  */
 public class Viterbi {
-    HMMProb hmmProb = new HMMProb();
-    List<Tag> tagList;
+    private HMMProb hmmProb = new HMMProb();
+    private List<Tag> tagList;
     private List<Sentence> sentenceList = new ArrayList<Sentence>();
     private Sentence sentence = new Sentence();
-    List<Tag> viterbiPath = new ArrayList<Tag>();
-    List<Word> word = new ArrayList<Word>();
+    private List<Tag> viterbiPath = new ArrayList<Tag>();
+    private List<Word> word = new ArrayList<Word>();
     
     public void posTagger() {
         
-        hmmProb.prepareCountHolderMaps();
-        List<Tag> tagList = convertKeySetToList(hmmProb);
+        List<Tag> tagList = convertKeySetToList();
 
         runViterbi(tagList);
     }
@@ -52,8 +51,7 @@ public class Viterbi {
         sentenceList.add(sentence);
         
     }
-    
-    
+        
     public void runViterbi(List<Tag> tagList) {
 
         try {
@@ -73,10 +71,10 @@ public class Viterbi {
                 // calculate first transition (first column in table)
                 for (int t = 1; t < tagListLength; t++) {
 
-                    Double tagTransitionProb = hmmProb.transitionProb(tagList.get(0), tagList.get(t));
-                    Double wordTagLikelihoodProb = hmmProb.emitionProb(sentence.getWords().get(1), tagList.get(t));
+                    Double transitionProb = hmmProb.transitionProb(tagList.get(0), tagList.get(t));
+                    Double emitionProb = hmmProb.emitionProb(sentence.getWords().get(1), tagList.get(t));
 
-                    viterbiTable[t][1] = tagTransitionProb * wordTagLikelihoodProb;
+                    viterbiTable[t][1] = transitionProb * emitionProb;
 
                 }
 
@@ -140,10 +138,6 @@ public class Viterbi {
 
         viterbiPath.add(0, new Tag(Constants.SENTENCE_START));
 
-//        System.out.println("test sentence words: " + sentence.getWords());
-//        System.out.println("vibertiPath        : " + viterbiPath);
-//        System.out.println("\n" + "\n");
-
     }
     
     private void wordSentence(Sentence sentence) {
@@ -181,7 +175,9 @@ public class Viterbi {
         return argmax;
     }
 
-    public List<Tag> convertKeySetToList(HMMProb hmmProb) {
+    public List<Tag> convertKeySetToList() {
+        
+        hmmProb.prepareCountHolderMaps();
 
         Set set = hmmProb.getTagMap().keySet();
 

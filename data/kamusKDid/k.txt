@@ -150,7 +150,6 @@ kaktus
 kaku
 kakuminal
 kakus
-kal
 kala
 kalah
 kalai
@@ -188,7 +187,6 @@ kalem
 kalempagi
 kalender
 kaleng
-kali
 kalian
 kaliber
 kalibit
@@ -1525,7 +1523,6 @@ keresek
 kereseng
 keresot
 kereta
-keretaapi
 keretan
 keretek
 keretot

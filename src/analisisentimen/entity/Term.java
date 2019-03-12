@@ -13,8 +13,6 @@ import java.util.List;
  */
 public class Term {
     private String term;
-    List<Tweet> tweet;
-    
     
     public Term(String term){
         this.term = term;

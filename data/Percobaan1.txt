@@ -1,0 +1,181 @@
+run:
+Selected File: C:\Users\Asus\Documents\NetBeansProjects\ProgramSkripsi\data\KicauanBerlabel.txt
+Number of folds: 10
+
+Fold: 1 MNB(POS Tagging)
+TN : 15
+FN : 14
+TP : 19
+FP : 5
+Total time to train (in seconds): 285.571
+Total time to test (in seconds): 13.788
+
+Number of folds: 10
+
+Fold: 2 MNB(POS Tagging)
+TN : 15
+FN : 15
+TP : 15
+FP : 9
+Total time to train (in seconds): 249.454
+Total time to test (in seconds): 13.645
+
+Number of folds: 10
+
+Fold: 3 MNB(POS Tagging)
+TN : 17
+FN : 17
+TP : 16
+FP : 4
+Total time to train (in seconds): 249.47
+Total time to test (in seconds): 16.943
+
+Number of folds: 10
+
+Fold: 4 MNB(POS Tagging)
+TN : 12
+FN : 10
+TP : 14
+FP : 18
+Total time to train (in seconds): 266.919
+Total time to test (in seconds): 15.354
+
+Number of folds: 10
+
+Fold: 5 MNB(POS Tagging)
+TN : 13
+FN : 15
+TP : 15
+FP : 11
+Total time to train (in seconds): 244.597
+Total time to test (in seconds): 13.486
+
+Number of folds: 10
+
+Fold: 6 MNB(POS Tagging)
+TN : 10
+FN : 10
+TP : 18
+FP : 15
+Total time to train (in seconds): 180.586
+Total time to test (in seconds): 13.851
+
+Number of folds: 10
+
+Fold: 7 MNB(POS Tagging)
+TN : 14
+FN : 13
+TP : 12
+FP : 15
+Total time to train (in seconds): 158.788
+Total time to test (in seconds): 14.548
+
+Number of folds: 10
+
+Fold: 8 MNB(POS Tagging)
+TN : 14
+FN : 14
+TP : 17
+FP : 9
+Total time to train (in seconds): 197.252
+Total time to test (in seconds): 16.926
+
+Number of folds: 10
+
+Fold: 9 MNB(POS Tagging)
+TN : 12
+FN : 13
+TP : 16
+FP : 13
+Total time to train (in seconds): 118.987
+Total time to test (in seconds): 5.945
+
+Number of folds: 10
+
+Fold: 10 MNB(POS Tagging)
+TN : 13
+FN : 15
+TP : 15
+FP : 11
+Total time to train (in seconds): 123.399
+Total time to test (in seconds): 7.55
+
+Fold: 1 MNB
+TN : 10
+FN : 20
+TP : 13
+FP : 10
+Total time to train (in seconds): 51.073
+Total time to test (in seconds): 0.402
+
+Fold: 2 MNB
+TN : 12
+FN : 13
+TP : 17
+FP : 12
+Total time to train (in seconds): 47.595
+Total time to test (in seconds): 0.38
+
+Fold: 3 MNB
+TN : 9
+FN : 15
+TP : 18
+FP : 12
+Total time to train (in seconds): 47.582
+Total time to test (in seconds): 0.335
+
+Fold: 4 MNB
+TN : 17
+FN : 9
+TP : 15
+FP : 13
+Total time to train (in seconds): 47.531
+Total time to test (in seconds): 0.355
+
+Fold: 5 MNB
+TN : 15
+FN : 14
+TP : 16
+FP : 9
+Total time to train (in seconds): 49.616
+Total time to test (in seconds): 0.359
+
+Fold: 6 MNB
+TN : 14
+FN : 13
+TP : 15
+FP : 11
+Total time to train (in seconds): 50.897
+Total time to test (in seconds): 0.388
+
+Fold: 7 MNB
+TN : 14
+FN : 10
+TP : 15
+FP : 15
+Total time to train (in seconds): 50.308
+Total time to test (in seconds): 0.476
+
+Fold: 8 MNB
+TN : 10
+FN : 14
+TP : 17
+FP : 13
+Total time to train (in seconds): 44.66
+Total time to test (in seconds): 0.377
+
+Fold: 9 MNB
+TN : 18
+FN : 14
+TP : 15
+FP : 7
+Total time to train (in seconds): 54.385
+Total time to test (in seconds): 0.526
+
+Fold: 10 MNB
+TN : 10
+FN : 14
+TP : 16
+FP : 14
+Total time to train (in seconds): 53.784
+Total time to test (in seconds): 0.508

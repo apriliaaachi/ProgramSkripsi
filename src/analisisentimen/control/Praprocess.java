@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
@@ -23,14 +24,13 @@ import java.util.List;
  */
 public class Praprocess {
     
-    TermList listToken;
-    TermList listTokenCurrent;
-    Sentence sentence;
-    List<Tweet>tweetList;
-    List<Sentence> sentenceList = new ArrayList<Sentence>();
+    private TermList listToken;
+    private TermList listTokenCurrent;
+    private Sentence sentence;
+    private List<Tweet> tweetList;
+    private List<Sentence> sentenceList = new ArrayList<>();
     
-
-	
+    
     public Praprocess() {
         listToken = new TermList();
     }
@@ -49,8 +49,6 @@ public class Praprocess {
         String[] n = dictionaryFormalize(u);
         String[] s = stemming1(n);
         
-        //cetak(n);
-        
 	listTokenCurrent = new TermList();
 
         for(int i=0; i<s.length; i++){
@@ -58,6 +56,7 @@ public class Praprocess {
 		if(!findStopWord(s[i])) {
                     s[i] = s[i].toLowerCase();
                     listTokenCurrent.addTerm(new Term(s[i]));
+                    
                     Term token = listToken.checkTerm(s[i]);
                     if(token==null) {
 			listToken.addTerm(new Term(s[i]));
@@ -72,36 +71,37 @@ public class Praprocess {
         Viterbi viterbi = new Viterbi();
         String[] p = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
         String[] u = removeUniqueCharacter(p);
-        String[] n = dictionaryFormalize(u);       
+        String[] n = dictionaryFormalize(u); 
+        
         viterbi.prepareCountViterbi(n);
         viterbi.posTagger();
         String[] s = stemming2(viterbi.getListWord(), viterbi.getListTag());
-        
-//        System.out.println("test sentence words: " + viterbi.getListWord()+viterbi.getListWord().size());
-//        System.out.println("vibertiPath        : " + viterbi.getListTag());
-//        System.out.println("\n");
+       
+//        cetak(s);
         
 	listTokenCurrent = new TermList();
 
         for(int i=0; i<s.length; i++){
             if(s[i].length()>1) {
-		if((s[i].contains("NN")&&!s[i].contains("NNP"))||
-                   s[i].contains("RB")||
-                   s[i].contains("NEG")||
-                   s[i].contains("VB")||
-                   s[i].contains("JJ")) {
+                if(!findStopWord(s[i])) {
+                    if((s[i].contains("NN")&&!s[i].contains("NNP")&&!s[i].contains("NND"))||
+                        s[i].contains("RB")||
+                        s[i].contains("VB")||
+                        s[i].contains("JJ")) {
 
-                    listTokenCurrent.addTerm(new Term(s[i]));
-                    Term tkn = listToken.checkTerm(s[i]);
-                    if(tkn==null) {
-			listToken.addTerm(new Term(s[i]));
+                        listTokenCurrent.addTerm(new Term(s[i]));
+                        Term token = listToken.checkTerm(s[i]);
+                        if(token==null) {
+                            listToken.addTerm(new Term(s[i]));
+                        }
                     }
-		}
+                }
+                	
             }
         }
     }
     
-    public String[] removeUniqueCharacter(String[] token){
+    private String[] removeUniqueCharacter(String[] token){
           
           List<String> list = new ArrayList<String>(Arrays.asList(token));
           List<Integer> temp = new ArrayList<Integer>();
@@ -115,7 +115,6 @@ public class Praprocess {
                  list.get(i).contains("www")||
                  list.get(i).contains("cc")||
                  list.get(i).contains("via")||
-                 list.get(i).contains("rt")||
                  list.get(i).contains("cont")||
                  list.get(i).contains("com")) {
                   
@@ -128,6 +127,7 @@ public class Praprocess {
         for(int k=temp.size()-1;k>=0;k--){
             index = temp.get(k);
             list.remove(index);
+
         }
         
         token = list.toArray(new String[0]);
@@ -136,7 +136,7 @@ public class Praprocess {
     }
     
     
-    public String[] dictionaryFormalize(String[] token) throws IOException {
+    private String[] dictionaryFormalize(String[] token) throws IOException {
         
         DocumentReader dr = new DocumentReader();
         String[][] kamusFormal = dr.readKamusFormal();
@@ -153,14 +153,12 @@ public class Praprocess {
         return token;
     }
     
-    public String removePunctuation(String tweet){
-        // Filter Punctuation
-        String result = tweet;
-        String P = "[!\"$%&'()*\\+,.;:<=>?\\[\\]^~_\\`{|}…0987654321]";
-        return result.replaceAll(P, "");
+    private String removePunctuation(String tweet){
+        String P = "[!\"$%&'()*\\+,.;:/<=>?\\[\\]^~_\\`{|}…0987654321]";
+        return tweet.replaceAll(P, "");
     }
 
-    public String[] stemming1 (String[] token) throws IOException{
+    private String[] stemming1 (String[] token) throws IOException{
         Stemming stem = new Stemming();
         
         String st = "";
@@ -173,7 +171,7 @@ public class Praprocess {
 
     }
     
-    public String[] stemming2 (List<Word> token, List<Tag> tag){
+    private String[] stemming2 (List<Word> token, List<Tag> tag){
         Stemming stem = new Stemming();
         
         String[] st = new String[token.size()];
@@ -197,12 +195,13 @@ public class Praprocess {
         
         boolean ada=false;
         for(int i=0; i<listStopword.size(); i++) {
-            if(listStopword.get(i).equals(str)) {
+            if(listStopword.get(i).contains(str)) {
                 ada=true;
                 break;
             }
+            
         }
-//      System.out.println(ada);
+        //System.out.println(ada);
 	return ada;
     }
     
