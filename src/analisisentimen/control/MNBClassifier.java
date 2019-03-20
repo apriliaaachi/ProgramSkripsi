@@ -86,7 +86,7 @@ public class MNBClassifier {
             for (int j = 0; j < testingSet.get(i).getTermList().getTotalTerm(); j++) {
             
                 for (int k = 0; k < priorProb.length; k++) {
-                    result = Math.log10(priorProb[k]) + testingSet.get(i).getTermList().getTotalTerm() *
+                    result = Math.log10(priorProb[k]) + 
                             (numberOfConditionalProb(testingSet.get(i).getTermList().getTermAt(j).getTerm(), k));
                     data[i][k] = result;
                 }

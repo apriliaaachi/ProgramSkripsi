@@ -78,35 +78,16 @@ public class Weighting {
         resultOfWeighting = new double[globaltermlist.getTotalTerm()][trainingSet.size()];
         for(int i=0; i<trainingSet.size(); i++){
             String tweets[] = trainingSet.get(i).getTermList().toStringArray(); 
-            //System.out.println("panjang= " + tweets.length);
-//            System.out.println(tweets.length);
-//            System.out.println("Data" + "ke :" + " " +i);
-//            System.out.println(trainingSet.get(i).getContentTweet() + " : " + Arrays.toString(trainingSet.get(i).getTermList().toStringArray()));
             
             for(int j=0; j<resultOfWeighting.length; j++){
-                //System.out.println(tf(tweets, globaltermlist.getTermAt(j).getTerm()));
                 
                 resultOfWeighting[j][i] = tf(tweets, globaltermlist.getTermAt(j).getTerm()) * 
                         idf(trainingSet, globaltermlist.getTermAt(j).getTerm());
-                
-                
-//                ------------------------Print out pembobotan-----------------------------
-                
-//                System.out.print(globaltermlist.getTermAt(j).getTerm() + ": ");
-//                System.out.print(tf(tweets, globaltermlist.getTermAt(j).getTerm()) + " * " 
-//                        + idf(trainingSet, globaltermlist.getTermAt(j).getTerm()) + " = ");
-//                System.out.println(resultOfWeighting[j][i]);
-                
-                
-//--------------------------------------------------------------------------
 
             }
-//            System.out.print("\n");
+
         }
-        System.out.println("-------------Pembobotan selesai--------------");
-            for(int i=0; i<globaltermlist.getTotalTerm(); i++){
-                System.out.println(globaltermlist.getTermAt(i).getTerm());
-            }
+
     }
     
     public void doWeightingPOS(){
@@ -120,21 +101,15 @@ public class Weighting {
             for (int k = 0; k < resultOfWeighting.length; k++) {
                 value += tfPOS(tweets, globaltermlist.getTermAt(k).getTerm());
             }
-            
-            
+                        
             for(int j=0; j<resultOfWeighting.length; j++){
                 
                 resultOfWeighting[j][i] = tfPOS(tweets, globaltermlist.getTermAt(j).getTerm())/value * 
                         idf(trainingSet, globaltermlist.getTermAt(j).getTerm());
                 
-
             }
 
         }
-        System.out.println("-------------Pembobotan selesai--------------");
-            for(int i=0; i<globaltermlist.getTotalTerm(); i++){
-                System.out.println(globaltermlist.getTermAt(i).getTerm());
-            }
         
     }
     
@@ -236,7 +211,6 @@ public class Weighting {
             if(trainingSet.get(i).getClassSentiment() == classes ) {
                 
                 numberOfTermWeightWithClass += trainingSet.get(i).getTermList().getTotalTerm();
-                //System.out.println(twList.get(temp.get(j)).getTermList().getTotalTerm());
             }       
         }
         

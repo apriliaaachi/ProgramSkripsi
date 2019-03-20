@@ -38,6 +38,7 @@ public class MainForm extends javax.swing.JFrame {
     private static final HMMProb hmmProbab = new HMMProb();
     private String selectedFile;
     private DefaultTableModel modelBobot;  
+    private DefaultTableModel model;
     private DocumentReader dr;
     private static Folds kFoldCV;
     private List<Tweet> tweetList;
@@ -54,7 +55,6 @@ public class MainForm extends javax.swing.JFrame {
         mnbRB.setEnabled(false);
         mnbPosRB.setEnabled(false);
         foldCombo.setEnabled(false);
-        limitCombo.setEnabled(false);
 
     }
 
@@ -194,6 +194,7 @@ public class MainForm extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         precisionP.setEditable(false);
+        precisionP.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         precisionP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         precisionP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,39 +203,48 @@ public class MainForm extends javax.swing.JFrame {
         });
         jPanel2.add(precisionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 55, 90, 31));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Recall");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 101, -1, 18));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("F-Measure");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("Accurascy");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 175, -1, 31));
 
         recallP.setEditable(false);
+        recallP.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         recallP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.add(recallP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 95, 90, 31));
 
         accuracyP.setEditable(false);
+        accuracyP.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         accuracyP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.add(accuracyP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 175, 90, 31));
 
         fMeasureP.setEditable(false);
+        fMeasureP.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         fMeasureP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.add(fMeasureP, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 135, 90, 31));
 
         recall.setEditable(false);
+        recall.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         recall.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         recall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         recall.setPreferredSize(new java.awt.Dimension(6, 26));
         jPanel2.add(recall, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 95, 90, 31));
 
         fMeasure.setEditable(false);
+        fMeasure.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         fMeasure.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         fMeasure.setPreferredSize(new java.awt.Dimension(6, 26));
         jPanel2.add(fMeasure, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 135, 90, 31));
 
         accuracy.setEditable(false);
+        accuracy.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         accuracy.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         accuracy.setPreferredSize(new java.awt.Dimension(6, 26));
         jPanel2.add(accuracy, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 175, 90, 31));
@@ -247,10 +257,12 @@ public class MainForm extends javax.swing.JFrame {
         jLabel11.setText("MNB (POS Tagging)");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setText("Precision");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         precision.setEditable(false);
+        precision.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         precision.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         precision.setPreferredSize(new java.awt.Dimension(6, 26));
         precision.addActionListener(new java.awt.event.ActionListener() {
@@ -296,7 +308,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel12.setText("Limit");
 
         limitCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        limitCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "300", "400", "500" }));
+        limitCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "300", "400", "500", "538" }));
         limitCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limitComboActionPerformed(evt);
@@ -362,22 +374,24 @@ public class MainForm extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Hasil Pengujian MNB");
 
+        klasifikasiTable2.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         klasifikasiTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane5.setViewportView(klasifikasiTable2);
 
+        klasifikasiTable1.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         klasifikasiTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane7.setViewportView(klasifikasiTable1);
@@ -488,6 +502,7 @@ public class MainForm extends javax.swing.JFrame {
         });
 
         testExecTime.setEditable(false);
+        testExecTime.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         testExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         testExecTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -496,6 +511,7 @@ public class MainForm extends javax.swing.JFrame {
         });
 
         trainExecTime.setEditable(false);
+        trainExecTime.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         trainExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         trainExecTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -507,6 +523,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel29.setText("Training Exec. Time :");
 
         trainPOSExecTime.setEditable(false);
+        trainPOSExecTime.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         trainPOSExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         trainPOSExecTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -518,6 +535,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel30.setText("Testing Exec. Time  :");
 
         testPOSExecTime.setEditable(false);
+        testPOSExecTime.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         testPOSExecTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         testPOSExecTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -530,48 +548,53 @@ public class MainForm extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(33, 33, 33)
                         .addComponent(jLabel18)
-                        .addGap(125, 125, 125)
+                        .addGap(158, 158, 158)
                         .addComponent(jLabel23)
-                        .addGap(127, 127, 127)
+                        .addGap(157, 157, 157)
                         .addComponent(jLabel22)
-                        .addGap(124, 124, 124)
-                        .addComponent(jLabel24))
+                        .addGap(163, 163, 163)
+                        .addComponent(jLabel24)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(tp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
+                                .addGap(91, 91, 91)
                                 .addComponent(fp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                                .addGap(84, 84, 84)
                                 .addComponent(tn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(fn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel15)
                             .addComponent(jLabel2)
-                            .addComponent(jScrollPane7)
                             .addComponent(jScrollPane5)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel25)
-                                .addGap(125, 125, 125)
-                                .addComponent(jLabel26)
-                                .addGap(127, 127, 127)
-                                .addComponent(jLabel27)
-                                .addGap(124, 124, 124)
-                                .addComponent(jLabel28))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(tpP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55)
-                                .addComponent(fpP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(tnP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fnP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel25))
+                                    .addComponent(tpP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(88, 88, 88)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(fpP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tnP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(88, 88, 88)
+                                        .addComponent(fnP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jLabel26)
+                                        .addGap(166, 166, 166)
+                                        .addComponent(jLabel27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel28)
+                                        .addGap(36, 36, 36)))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(trainExecTime)
@@ -611,13 +634,14 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                    .addComponent(fp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
                 .addComponent(jLabel15)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel29)
@@ -630,16 +654,18 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel28)
+                        .addComponent(jLabel27))
                     .addComponent(jLabel26)
-                    .addComponent(jLabel27)
                     .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(fpP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tpP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tnP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fnP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fnP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tnP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(55, 55, 55))
         );
 
@@ -678,7 +704,7 @@ public class MainForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(klasifikasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -742,19 +768,19 @@ public class MainForm extends javax.swing.JFrame {
         MNBProbabilistik mnbp = new MNBProbabilistik(weight);
         priorProbability = mnbp.calculatePriorProbability();
         
-         for (int k = 0; k < priorProbability.length; k++) {
-             System.out.println(priorProbability[k] + " ");
-         }
+//         for (int k = 0; k < priorProbability.length; k++) {
+//             System.out.println(priorProbability[k] + " ");
+//         }
         
         
         conditionalProbability = mnbp.calculateConditionalProbability();
-        System.out.println("Conditional Probability");
-         for (int i = 0; i < conditionalProbability.length; i++) {
-             for (int j = 0; j < conditionalProbability[0].length; j++) {
-                 System.out.println(conditionalProbability[i][j] + " ");
-             }
-             System.out.println("");
-         }
+//        System.out.println("Conditional Probability");
+//         for (int i = 0; i < conditionalProbability.length; i++) {
+//             for (int j = 0; j < conditionalProbability[0].length; j++) {
+//                 System.out.println(conditionalProbability[i][j] + " ");
+//             }
+//             System.out.println("");
+//         }
 
         trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
           
@@ -765,18 +791,18 @@ public class MainForm extends javax.swing.JFrame {
         mnbc.prepareToClassify(); 
                 
         int[] classify = mnbc.classifyFull();
-        System.out.println("Hasil Klasifikasi");
-        for (int i = 0; i < mnbc.classifyFul().length; i++) {
-             for (int j = 0; j < mnbc.classifyFul()[i].length; j++) {
-                 System.out.print(mnbc.classifyFul()[i][j] + " ");
-             }
-             System.out.println("");
-         }
-         
-
-         for (int i = 0; i < classify.length; i++) {
-             System.out.println("Data Testing " + i + ": " + classify[i]);
-         }
+//        System.out.println("Hasil Klasifikasi");
+//        for (int i = 0; i < mnbc.classifyFul().length; i++) {
+//             for (int j = 0; j < mnbc.classifyFul()[i].length; j++) {
+//                 System.out.print(mnbc.classifyFul()[i][j] + " ");
+//             }
+//             System.out.println("");
+//         }
+//         
+//
+//         for (int i = 0; i < classify.length; i++) {
+//             System.out.println("Data Testing " + i + ": " + classify[i]);
+//         }
         
         testElapsedTime += System.currentTimeMillis() - testStartTime;
         Evaluator evaluator = new Evaluator(classify, mnbc);
@@ -826,18 +852,18 @@ public class MainForm extends javax.swing.JFrame {
         
         MNBProbabilistik mnbp = new MNBProbabilistik(weight);
         priorProbability = mnbp.calculatePriorProbability();
-         for (int k = 0; k < priorProbability.length; k++) {
-             System.out.println(priorProbability[k]);
-         }
+//         for (int k = 0; k < priorProbability.length; k++) {
+//             System.out.println(priorProbability[k]);
+//         }
         
         conditionalProbability = mnbp.calculateConditionalProbability();
-         System.out.println("Conditional");
-         for (int i = 0; i < conditionalProbability.length; i++) {
-             for (int j = 0; j < conditionalProbability[0].length; j++) {
-                 System.out.println(conditionalProbability[i][j] + " ");
-             }
-             System.out.println("");
-         }
+//         System.out.println("Conditional");
+//         for (int i = 0; i < conditionalProbability.length; i++) {
+//             for (int j = 0; j < conditionalProbability[0].length; j++) {
+//                 System.out.println(conditionalProbability[i][j] + " ");
+//             }
+//             System.out.println("");
+//         }
         
         trainingElapsedTime += System.currentTimeMillis() - trainingStartTime;
          
@@ -849,17 +875,17 @@ public class MainForm extends javax.swing.JFrame {
         MNBClassifier mnbc = new MNBClassifier(testingSet,priorProbability,conditionalProbability,weight);
         mnbc.prepareToClassifyWithPOS();
         int[] classify = mnbc.classifyFull();
-         System.out.println("Hasil Klasifikasi");
-         for (int i = 0; i < mnbc.classifyFul().length; i++) {
-             for (int j = 0; j < mnbc.classifyFul()[i].length; j++) {
-                 System.out.print(mnbc.classifyFul()[i][j] + " ");
-             }
-             System.out.println("");
-         }
-        
-         for (int i = 0; i < classify.length; i++) {
-             System.out.println("Data Testing " + i + ": " + classify[i]);
-         }
+//         System.out.println("Hasil Klasifikasi");
+//         for (int i = 0; i < mnbc.classifyFul().length; i++) {
+//             for (int j = 0; j < mnbc.classifyFul()[i].length; j++) {
+//                 System.out.print(mnbc.classifyFul()[i][j] + " ");
+//             }
+//             System.out.println("");
+//         }
+//        
+//         for (int i = 0; i < classify.length; i++) {
+//             System.out.println("Data Testing " + i + ": " + classify[i]);
+//         }
         
         testElapsedTime += System.currentTimeMillis() - testStartTime;
         Evaluator evaluator = new Evaluator(classify, mnbc);
@@ -888,13 +914,14 @@ public class MainForm extends javax.swing.JFrame {
     }
      
     private void loadData(List<Tweet> data, int[] outClass){
-
-        DefaultTableModel model = null;
+        
+        model = new DefaultTableModel();
+        
         if(mnbRB.isSelected()){
-            model = (DefaultTableModel) klasifikasiTable1.getModel();
+            klasifikasiTable1.setModel(model);
             
         } else if(mnbPosRB.isSelected()) {
-            model = (DefaultTableModel) klasifikasiTable2.getModel();
+            klasifikasiTable2.setModel(model);
         }
         
         model.addColumn("Id");
@@ -902,6 +929,20 @@ public class MainForm extends javax.swing.JFrame {
         model.addColumn("Class Sentiment");
         model.addColumn("Output Class");
         
+        klasifikasiTable1.setAutoResizeMode(klasifikasiTable1.AUTO_RESIZE_OFF);
+        klasifikasiTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
+        klasifikasiTable1.getColumnModel().getColumn(1).setPreferredWidth(470);
+        klasifikasiTable1.getColumnModel().getColumn(2).setPreferredWidth(60);
+        klasifikasiTable1.getColumnModel().getColumn(3).setPreferredWidth(60);
+        klasifikasiTable1.setRowHeight(26);
+        
+        klasifikasiTable2.setAutoResizeMode(klasifikasiTable1.AUTO_RESIZE_OFF);
+        klasifikasiTable2.getColumnModel().getColumn(0).setPreferredWidth(30);
+        klasifikasiTable2.getColumnModel().getColumn(1).setPreferredWidth(470);
+        klasifikasiTable2.getColumnModel().getColumn(2).setPreferredWidth(60);
+        klasifikasiTable2.getColumnModel().getColumn(3).setPreferredWidth(60);
+        klasifikasiTable2.setRowHeight(26);
+ 
         for (int j = 0; j < data.size(); j++) {
             Vector<Integer> id = new Vector<>(Arrays.asList(j));
             Vector<String> contentTweet = new Vector<>(Arrays.asList(data.get(j).getContentTweet()));
@@ -1094,6 +1135,9 @@ public class MainForm extends javax.swing.JFrame {
         } else if(limitCombo.getSelectedItem() == "500"){
             
             limit=500;
+        } else if(limitCombo.getSelectedItem() == "538"){
+            
+            limit=538;
         }
     }//GEN-LAST:event_limitComboActionPerformed
     

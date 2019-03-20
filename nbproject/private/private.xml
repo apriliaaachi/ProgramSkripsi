@@ -3,14 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Weighting.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/MNBClassifier.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/Sentence.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/HMMProb.java</file>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Praprocess.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Viterbi.java</file>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Evaluator.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/boundary/MainForm.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Constants.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Weighting.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/Term.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/Word.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Praprocess.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/TagsBigram.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/Evaluator.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/MNBProbabilistik.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/Folds.java</file>
             <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/control/DocumentReader.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/Tweet.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/TermList.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/ProgramSkripsi/src/analisisentimen/entity/WordTagBigram.java</file>
         </group>
     </open-files>
 </project-private>

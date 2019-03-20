@@ -34,14 +34,6 @@ public class Praprocess {
     public Praprocess() {
         listToken = new TermList();
     }
-
-    public void setTokenList(TermList tokenList) {
-	listToken = tokenList;
-    }
-    
-    public List<Sentence> getSentenceList() {
-        return sentenceList;
-    }
     
     public void PraWithoutPOSTag(Tweet tweetList) throws IOException {
         String[] p = removePunctuation(tweetList.getContentTweet().toLowerCase()).split("\\s+");
